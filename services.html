@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — NexRise</title>
+  <meta name="description" content="Explore our premium range of digital agency services, including web development, UI/UX design, SEO, and cloud solutions." />
+  <meta name="keywords" content="digital agency, web development, UI/UX design, WordPress, SEO, cloud solutions, NexRise" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <!-- Bootstrap 5 Grid & Accordion CSS (Bootstrap 5 Bundle) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Icons (Phosphor Icons for Site Header/Footer, Bootstrap Icons for Sub-page elements) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Main Root Stylesheet (For Header, Footer, Cursor, Navigation, Loader, Theme) -->
+  <link rel="stylesheet" href="style.css?v=5" />
+  <!-- Services Custom Stylesheet (For Sub-page sections) -->
+  <link rel="stylesheet" href="css/services.css" />
+</head>
+<body data-theme="light">
+
+  <!-- Custom Cursor (Exact matches index.html) -->
+  <div id="cursor" class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <span class="cursor__text"></span>
+  </div>
+
+  <!-- Page Loader (Exact matches index.html) -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader__logo">
+      <img src="logo.jpg" alt="NexRise" class="loader__logo-img" />
+    </div>
+    <div class="loader__bar"><div class="loader__progress"></div></div>
+  </div>
+
+  <!-- Header (Exact matches index.html, with logo link corrected to index.html) -->
+  <header id="header" class="site-header">
+    <div class="header__logo">
+      <a href="index.html" class="logo-link">
+        <img src="logo.jpg" alt="NexRise" class="header-logo-img" />
+      </a>
+    </div>
+    <div class="header__controls">
+      <a href="#contact-footer" class="btn btn-outline header__cta magnetic-btn">
+        <span>Say Hello</span>
+        <i class="ph ph-arrow-up-right"></i>
+      </a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="theme-toggle__label">Night</span>
+        <span class="theme-toggle__icon">
+          <i class="ph ph-moon-stars"></i>
+        </span>
+      </button>
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+  </header>
+
+  <!-- Full Screen Navigation -->
+  <nav id="fullscreen-nav" class="fullscreen-nav" aria-hidden="true">
+    <div class="nav-backdrop"></div>
+    <div class="nav-overlay">
+      <!-- Circular Close Button -->
+      <button class="nav-close-btn" aria-label="Close menu"><i class="ph ph-x"></i></button>
+
+      <div class="nav-content">
+        <!-- Left column (70% width) -->
+        <div class="nav-left">
+          <div class="nav-left-header">
+            <p class="nav-left-tagline">🚀 Rise to the Next Level</p>
+            <p class="nav-left-services">Web Development | Digital Marketing | Growth Solutions</p>
+          </div>
+          
+          <ul class="nav-menu" id="main-nav">
+            <!-- Row 1: Home -->
+            <li class="nav-item">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 01</span>
+                <span class="nav-item__label">Home</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="#">Digital Agency</a></li>
+                <li><a href="#">Creative Agency</a></li>
+                <li><a href="#">Branding Studio</a></li>
+                <li><a href="#">Web Developer</a></li>
+              </ul>
+            </li>
+            
+            <!-- Row 2: About Us -->
+            <li class="nav-item nav-item--link">
+              <a href="about.html" class="nav-item__header">
+                <span class="nav-item__num">/ 02</span>
+                <span class="nav-item__label">About Us</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+            
+            <!-- Row 3: Pages -->
+            <li class="nav-item">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 03</span>
+                <span class="nav-item__label">Pages</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </li>
+            
+            <!-- Row 4: Insights -->
+            <li class="nav-item">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 04</span>
+                <span class="nav-item__label">Insights</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="#">Blog Standard</a></li>
+                <li><a href="#">Blog Creative</a></li>
+                <li><a href="#">Single Post</a></li>
+              </ul>
+            </li>
+
+            <!-- Row 5: Services (Active Highlighted) -->
+            <li class="nav-item nav-item--link nav-item--active">
+              <a href="services.html" class="nav-item__header">
+                <span class="nav-item__num">/ 05</span>
+                <span class="nav-item__label">Services</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+
+            <!-- Row 6: Portfolio -->
+            <li class="nav-item nav-item--link">
+              <a href="index.html#works" class="nav-item__header">
+                <span class="nav-item__num">/ 06</span>
+                <span class="nav-item__label">Portfolio</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+
+            <!-- Row 7: Contact -->
+            <li class="nav-item nav-item--link">
+              <a href="#contact" class="nav-item__header">
+                <span class="nav-item__num">/ 07</span>
+                <span class="nav-item__label">Contact</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right column (30% width) -->
+        <div class="nav-right">
+          <!-- Contact Card Premium -->
+          <div class="contact-card-premium">
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-envelope"></i></div>
+              <div class="contact-card-info">
+                <a href="mailto:hello@nexrise.com" class="contact-card-link">hello@nexrise.com</a>
+                <p class="contact-card-sub">We reply within 24 hours</p>
+              </div>
+            </div>
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-phone"></i></div>
+              <div class="contact-card-info">
+                <a href="tel:+12127089400" class="contact-card-link">+1 212-708-9400</a>
+                <p class="contact-card-sub">Mon - Fri: 9AM - 6PM</p>
+              </div>
+            </div>
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-map-pin"></i></div>
+              <div class="contact-card-info">
+                <span class="contact-card-text">11 West 53 Street,<br>New York, NY 10019<br>United States</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Follow Us icon row -->
+          <div class="follow-us-section">
+            <p class="follow-us-title">Follow Us</p>
+            <div class="follow-us-icons">
+              <a href="#" target="_blank" class="follow-icon" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            </div>
+          </div>
+
+          <!-- Footer note -->
+          <div class="nav-right-footer">
+            <p>Made with <span>❤️</span> by <a href="index.html">NexRise</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Section 1: Hero Banner -->
+    <section class="services-hero" id="hero">
+      <div class="hero-glow-overlay"></div>
+      <div class="floating-shape-blur shape-blur-1"></div>
+      <div class="floating-shape-blur shape-blur-2"></div>
+      
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-duration="1000">
+            <span class="section-badge">Our Services</span>
+            <h1 class="hero-title">Custom Tech &amp; Design <br/><span class="gradient-text">Engineered for Growth</span></h1>
+            <p class="hero-subtitle">
+              We design and construct premium SaaS products, custom marketing architectures, and digital design platforms that attract users and accelerate conversion goals.
+            </p>
+            <div class="hero-ctas">
+              <a href="#services-grid" class="services-btn services-btn-primary magnetic-btn">Explore Services</a>
+              <a href="#contact-footer" class="services-btn services-btn-outline magnetic-btn">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator Animation -->
+      <div class="scroll-indicator-wrap" data-aos="fade-up" data-aos-delay="500">
+        <span>Scroll Down</span>
+        <div class="mouse-scroller">
+          <div class="mouse-wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Service Cards Grid -->
+    <section id="services-grid" class="services-section services-section-accent" aria-label="Core Services">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-8" data-aos="fade-up">
+            <span class="section-badge">Capabilities</span>
+            <h2 class="section-title">High-Impact Solutions for <br/><span class="gradient-text">Modern Enterprises</span></h2>
+            <p class="section-subtitle">
+              We deliver custom full-cycle software architectures, brand design structures, and marketing frameworks tailored to scale.
+            </p>
+          </div>
+        </div>
+
+        <div class="services-grid-wrapper">
+          <div class="row g-4">
+            <!-- 1. Web Development -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-card">
+                <div class="service-icon-box"><i class="bi bi-code-slash"></i></div>
+                <h3 class="service-card-title">Web Development</h3>
+                <p class="service-card-desc">Robust, lightweight, and modern applications tailored to deliver maximum speed and seamless performance.</p>
+                <ul class="service-features-list">
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Custom React &amp; Next.js</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> RESTful API Integrations</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Headless CMS setups</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Performance optimization</li>
+                </ul>
+                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- 2. UI/UX Design -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card">
+                <div class="service-icon-box"><i class="bi bi-palette"></i></div>
+                <h3 class="service-card-title">UI/UX Design</h3>
+                <p class="service-card-desc">Visual design architectures and interactive systems optimized for fluid user navigation and engagement.</p>
+                <ul class="service-features-list">
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Figma Design Systems</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Dynamic Prototyping</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Interactive wireframes</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> User research &amp; testing</li>
+                </ul>
+                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- 3. WordPress Development -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card">
+                <div class="service-icon-box"><i class="bi bi-wordpress"></i></div>
+                <h3 class="service-card-title">WordPress Dev</h3>
+                <p class="service-card-desc">Flexible, fully customized CMS solutions designed for effortless control and rapid page load speeds.</p>
+                <ul class="service-features-list">
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Custom Theme Coding</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Elementor Customizations</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Custom plugin overrides</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Security hardening</li>
+                </ul>
+                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- 4. E-Commerce Solutions -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-card">
+                <div class="service-icon-box"><i class="bi bi-cart3"></i></div>
+                <h3 class="service-card-title">E-Commerce</h3>
+                <p class="service-card-desc">High-conversion checkout paths and catalog pipelines built to support high user traffic and sales growth.</p>
+                <ul class="service-features-list">
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> WooCommerce Platforms</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Stripe &amp; Gateway setup</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Inventory automation</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Abandoned cart funnels</li>
+                </ul>
+                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- 5. SEO Optimization -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card">
+                <div class="service-icon-box"><i class="bi bi-search"></i></div>
+                <h3 class="service-card-title">SEO Optimization</h3>
+                <p class="service-card-desc">Strategic audits and schema markups structured to maximize visibility and boost organic search rankings.</p>
+                <ul class="service-features-list">
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Technical SEO Audits</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Strategic Schema Markup</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Keyword targeting</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Site speed architecture</li>
+                </ul>
+                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- 6. Digital Marketing -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card">
+                <div class="service-icon-box"><i class="bi bi-megaphone"></i></div>
+                <h3 class="service-card-title">Digital Marketing</h3>
+                <p class="service-card-desc">Data-driven performance campaigns and landing pages optimized for maximum return on marketing spend.</p>
+                <ul class="service-features-list">
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Google &amp; Social Ads</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> High-converting landing pages</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Multi-channel funnels</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Realtime analytics monitoring</li>
+                </ul>
+                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- 7. Mobile App Development -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-card">
+                <div class="service-icon-box"><i class="bi bi-phone"></i></div>
+                <h3 class="service-card-title">Mobile App Dev</h3>
+                <p class="service-card-desc">Cross-platform iOS and Android mobile architectures crafted to offer sleek native feel and fluid animations.</p>
+                <ul class="service-features-list">
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> React Native &amp; Flutter</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Shared offline storage</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Push notifications systems</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Store deployment management</li>
+                </ul>
+                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- 8. Maintenance & Support -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card">
+                <div class="service-icon-box"><i class="bi bi-wrench-adjustable"></i></div>
+                <h3 class="service-card-title">Maintenance &amp; Support</h3>
+                <p class="service-card-desc">24/7 uptime monitoring, server updates, and rapid incident response to keep your operations completely secure.</p>
+                <ul class="service-features-list">
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> 24/7 Server monitoring</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Security updates &amp; backups</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Uptime SLA guarantees</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Custom feature additions</li>
+                </ul>
+                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- 9. Cloud Solutions -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card">
+                <div class="service-icon-box"><i class="bi bi-cloud-arrow-up"></i></div>
+                <h3 class="service-card-title">Cloud Solutions</h3>
+                <p class="service-card-desc">Scalable infrastructure hosting setups and automated deployment pipelines designed for 99.9% uptime.</p>
+                <ul class="service-features-list">
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> AWS &amp; Google Cloud setups</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Docker &amp; CI/CD Pipelines</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Database cluster designs</li>
+                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Serverless setups</li>
+                </ul>
+                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Process Section -->
+    <section class="services-section services-section-light" aria-label="Development Process">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8" data-aos="fade-up">
+            <span class="section-badge">How We Work</span>
+            <h2 class="section-title">Our Step-by-Step <br/><span class="gradient-text">Execution Roadmap</span></h2>
+            <p class="section-subtitle mx-auto">
+              We deploy an interactive, iterative development timeline to transform complex ideas into reliable production platforms.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-timeline">
+          <!-- Step 1 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-row">
+              <div class="timeline-content-col">
+                <div class="timeline-content-card">
+                  <span class="timeline-step-num">01 / DISCOVERY</span>
+                  <h4 class="timeline-step-title">Consultation &amp; Scoping</h4>
+                  <p class="timeline-step-desc">We align on core business objectives, define the exact scope, map technical challenges, and set architectural targets.</p>
+                </div>
+              </div>
+              <div class="timeline-node-col">
+                <div class="timeline-node">1</div>
+              </div>
+              <div class="timeline-content-col"></div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-row">
+              <div class="timeline-content-col">
+                <div class="timeline-content-card">
+                  <span class="timeline-step-num">02 / ARCHITECTURE</span>
+                  <h4 class="timeline-step-title">Planning &amp; Blueprinting</h4>
+                  <p class="timeline-step-desc">We compile user flows, document functional specification protocols, select core database backbones, and architect data paths.</p>
+                </div>
+              </div>
+              <div class="timeline-node-col">
+                <div class="timeline-node">2</div>
+              </div>
+              <div class="timeline-content-col"></div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-row">
+              <div class="timeline-content-col">
+                <div class="timeline-content-card">
+                  <span class="timeline-step-num">03 / CREATIVE</span>
+                  <h4 class="timeline-step-title">UI/UX Design Systems</h4>
+                  <p class="timeline-step-desc">We build clean high-fidelity UI visual components, define spacing rules, construct animations, and draft custom interaction flows.</p>
+                </div>
+              </div>
+              <div class="timeline-node-col">
+                <div class="timeline-node">3</div>
+              </div>
+              <div class="timeline-content-col"></div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-row">
+              <div class="timeline-content-col">
+                <div class="timeline-content-card">
+                  <span class="timeline-step-num">04 / CODE</span>
+                  <h4 class="timeline-step-title">Production Development</h4>
+                  <p class="timeline-step-desc">We write clean modular React components, script core API integrations, configure secure server routing, and assemble databases.</p>
+                </div>
+              </div>
+              <div class="timeline-node-col">
+                <div class="timeline-node">4</div>
+              </div>
+              <div class="timeline-content-col"></div>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-row">
+              <div class="timeline-content-col">
+                <div class="timeline-content-card">
+                  <span class="timeline-step-num">05 / QUALITY</span>
+                  <h4 class="timeline-step-title">Testing &amp; QA Auditing</h4>
+                  <p class="timeline-step-desc">We deploy test scripts, run strict accessibility and cross-browser diagnostics, and optimize page load speeds.</p>
+                </div>
+              </div>
+              <div class="timeline-node-col">
+                <div class="timeline-node">5</div>
+              </div>
+              <div class="timeline-content-col"></div>
+            </div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-row">
+              <div class="timeline-content-col">
+                <div class="timeline-content-card">
+                  <span class="timeline-step-num">06 / DEPLOY</span>
+                  <h4 class="timeline-step-title">Launch &amp; Server Tuning</h4>
+                  <p class="timeline-step-desc">We release to cloud server platforms, configure caching controls, set up monitoring alerts, and transition to live updates.</p>
+                </div>
+              </div>
+              <div class="timeline-node-col">
+                <div class="timeline-node">6</div>
+              </div>
+              <div class="timeline-content-col"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Why Choose Us -->
+    <section class="services-section services-section-accent" aria-label="Why Choose NexRise">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Graphics left column -->
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+            <div class="why-graphics-container">
+              <div class="why-main-img-box">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Creative team collaboration" />
+              </div>
+              <!-- Floating graphic card 1 -->
+              <div class="why-floating-card floating-card-1">
+                <div class="why-float-icon"><i class="bi bi-shield-check"></i></div>
+                <div class="why-float-info">
+                  <span class="why-float-num">100%</span>
+                  <span class="why-float-txt">Secure Coding</span>
+                </div>
+              </div>
+              <!-- Floating graphic card 2 -->
+              <div class="why-floating-card floating-card-2">
+                <div class="why-float-icon"><i class="bi bi-lightning-charge"></i></div>
+                <div class="why-float-info">
+                  <span class="why-float-num">60fps</span>
+                  <span class="why-float-txt">Fluid Anim</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description right column -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <span class="section-badge">Why Choose Us</span>
+            <h2 class="section-title">We Build Enterprise Platforms <br/><span class="gradient-text">Engineered to Convert</span></h2>
+            <p class="section-subtitle">
+              We couple digital design aesthetics with strict software coding standards to construct sites that stand out and perform reliably.
+            </p>
+
+            <div class="why-feature-list">
+              <div class="why-feature-item">
+                <div class="why-feature-icon"><i class="bi bi-gem"></i></div>
+                <div class="why-feature-body">
+                  <h5>High-End Design System Standards</h5>
+                  <p>Every block, card layout, and button is governed by predefined variables for a consistent look.</p>
+                </div>
+              </div>
+              <div class="why-feature-item">
+                <div class="why-feature-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                <div class="why-feature-body">
+                  <h5>Conversion Optimization Focused</h5>
+                  <p>We map checkout paths and lead forms to minimize friction and increase conversions.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats Counters Grid -->
+            <div class="stats-grid">
+              <div class="stats-card">
+                <span class="stats-num" data-target="5" data-suffix="+">0</span>
+                <span class="stats-label">Years Experience</span>
+              </div>
+              <div class="stats-card">
+                <span class="stats-num" data-target="200" data-suffix="+">0</span>
+                <span class="stats-label">Projects Completed</span>
+              </div>
+              <div class="stats-card">
+                <span class="stats-num" data-target="100" data-suffix="+">0</span>
+                <span class="stats-label">Clients Satisfied</span>
+              </div>
+              <div class="stats-card">
+                <span class="stats-num" data-target="24" data-suffix="/7">0</span>
+                <span class="stats-label">Uptime Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Technology Stack -->
+    <section class="services-section services-section-light" aria-label="Tech Stack">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8" data-aos="fade-up">
+            <span class="section-badge">Our Stack</span>
+            <h2 class="section-title">Cutting-Edge Tech Stack <br/><span class="gradient-text">for Robust Applications</span></h2>
+            <p class="section-subtitle mx-auto">
+              We leverage modern language frameworks and tools to build robust, scalable applications.
+            </p>
+          </div>
+        </div>
+
+        <div class="tech-grid" data-aos="fade-up">
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-filetype-html"></i></div>
+            <span>HTML</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-filetype-css"></i></div>
+            <span>CSS</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-filetype-js"></i></div>
+            <span>JavaScript</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-code-square"></i></div>
+            <span>TypeScript</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-bootstrap"></i></div>
+            <span>React</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-arrow-up-right-circle"></i></div>
+            <span>Next.js</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-wind"></i></div>
+            <span>Tailwind CSS</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-node-plus"></i></div>
+            <span>Node.js</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-wordpress"></i></div>
+            <span>WordPress</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-layout-text-sidebar-reverse"></i></div>
+            <span>Elementor</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-bag-check"></i></div>
+            <span>WooCommerce</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-database"></i></div>
+            <span>MongoDB</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-google"></i></div>
+            <span>Firebase</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-git"></i></div>
+            <span>Git</span>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon-box"><i class="bi bi-figma"></i></div>
+            <span>Figma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Featured Services -->
+    <section class="services-section services-section-accent" aria-label="Featured Solutions">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-8" data-aos="fade-up">
+            <span class="section-badge">Case Spotlights</span>
+            <h2 class="section-title">High-Performance <br/><span class="gradient-text">Featured Capabilities</span></h2>
+            <p class="section-subtitle">
+              Take a closer look at our specialized service setups engineered for specific enterprise cases.
+            </p>
+          </div>
+        </div>
+
+        <!-- Featured Card 1 (Image Left) -->
+        <div class="featured-card" data-aos="fade-up">
+          <div class="row g-0">
+            <div class="col-lg-6 featured-card-img-col">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Interface" />
+            </div>
+            <div class="col-lg-6">
+              <div class="featured-card-body">
+                <span class="featured-badge">High Conversion</span>
+                <h3 class="featured-title">Custom E-Commerce Architecture</h3>
+                <p class="featured-desc">
+                  We build highly customized WooCommerce storefronts backed by cloud database clusters, fast caching rules, and structured conversion paths.
+                </p>
+                <ul class="featured-specs-list">
+                  <li class="featured-spec-item"><i class="bi bi-check2"></i> 1.2s avg. page load speed</li>
+                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Unified checkout forms</li>
+                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Seamless ERP syncing</li>
+                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Stripe integration</li>
+                </ul>
+                <a href="#contact-footer" class="services-btn services-btn-primary magnetic-btn self-start">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Card 2 (Image Right) -->
+        <div class="featured-card" data-aos="fade-up">
+          <div class="row g-0 flex-lg-row-reverse">
+            <div class="col-lg-6 featured-card-img-col">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Analytics Dashboard" />
+            </div>
+            <div class="col-lg-6">
+              <div class="featured-card-body">
+                <span class="featured-badge">Next-Gen Stack</span>
+                <h3 class="featured-title">Headless CMS &amp; Static Sites</h3>
+                <p class="featured-desc">
+                  Decouple your content management from the frontend layout. We build headless WordPress solutions linked with Next.js/React layouts for security and speed.
+                </p>
+                <ul class="featured-specs-list">
+                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Serverless hosting costs</li>
+                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Strict immunity to SQL injection</li>
+                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Dynamic content caching</li>
+                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Multi-channel API publishing</li>
+                </ul>
+                <a href="#contact-footer" class="services-btn services-btn-primary magnetic-btn self-start">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Testimonials -->
+    <section class="services-section services-section-light" aria-label="Customer Success">
+      <div class="container testimonials-section-wrapper">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8" data-aos="fade-up">
+            <span class="section-badge">Reviews</span>
+            <h2 class="section-title">What Our Enterprise <br/><span class="gradient-text">Partners Say About Us</span></h2>
+            <p class="section-subtitle mx-auto">
+              Read how we helped digital brands build responsive websites, optimize performance, and achieve digital goals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Swiper Slider Container -->
+        <div class="swiper testimonials-slider" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card-services">
+                <i class="bi bi-quote quote-icon-services"></i>
+                <p>
+                  "NexRise restructured our legacy WordPress setup into a headless Next.js frontend. Our core conversion metrics grew by 24% in the first quarter itself."
+                </p>
+                <div class="testimonial-services-footer">
+                  <div class="testimonial-avatar-services">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins" />
+                  </div>
+                  <div class="testimonial-info-services">
+                    <h5>Sarah Jenkins</h5>
+                    <span>Director of Product, Optima</span>
+                    <div class="testimonial-rating-services">
+                      <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card-services">
+                <i class="bi bi-quote quote-icon-services"></i>
+                <p>
+                  "The visual UI/UX details designed by NexRise gave our dashboard a premium SaaS look. Their modular CSS system made code changes simple to integrate."
+                </p>
+                <div class="testimonial-services-footer">
+                  <div class="testimonial-avatar-services">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Marcus Vane" />
+                  </div>
+                  <div class="testimonial-info-services">
+                    <h5>Marcus Vane</h5>
+                    <span>Co-founder, CloudWire</span>
+                    <div class="testimonial-rating-services">
+                      <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card-services">
+                <i class="bi bi-quote quote-icon-services"></i>
+                <p>
+                  "Their custom WooCommerce build has handles traffic peaks seamlessly during our holiday sales. Uptime support has been excellent and secure."
+                </p>
+                <div class="testimonial-services-footer">
+                  <div class="testimonial-avatar-services">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Elena Rostova" />
+                  </div>
+                  <div class="testimonial-info-services">
+                    <h5>Elena Rostova</h5>
+                    <span>E-Commerce Head, LoomDecor</span>
+                    <div class="testimonial-rating-services">
+                      <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pagination dots -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: FAQ -->
+    <section class="services-section services-section-accent" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8" data-aos="fade-up">
+            <span class="section-badge">Common Queries</span>
+            <h2 class="section-title">Frequently Asked <br/><span class="gradient-text">Questions</span></h2>
+            <p class="section-subtitle mx-auto">
+              Find fast answers to common questions about our technical execution and delivery structures.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion-wrapper" data-aos="fade-up">
+          <div class="accordion services-accordion" id="accordionFAQ">
+            <!-- FAQ Item 1 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                  How long does a typical custom website build take?
+                </button>
+              </h3>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  A typical full-cycle website build ranges between 4 to 8 weeks, depending on the complexity of layouts, animations, database scopes, and API integrations. We deliver functional specs in the second week to align on details.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                  What is a Headless CMS and why should I choose it?
+                </button>
+              </h3>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  A headless CMS decouples content storage from the visual presentation layer. It lets you write posts on a backend (like WordPress) while serving them through a lightning-fast React or Next.js static frontend, making your website immune to database attacks and extremely fast.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                  Do you perform custom SEO integration and optimization?
+                </button>
+              </h3>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  Yes. All layouts and pages are engineered with SEO best practices: semantic HTML tags, clean structural hierarchy, automatic sitemap generation, structured schema markups, metadata configurations, and performance optimization for core web vitals.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                  Do you offer support SLAs and hosting maintenance?
+                </button>
+              </h3>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  Yes, we offer multiple post-launch maintenance SLA contracts that cover server monitoring, performance audits, database backups, security patches, and minor visual overrides to keep your sites running perfectly.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: CTA Section -->
+    <section class="services-section services-section-light pt-0" aria-label="Start Project CTA">
+      <div class="container">
+        <div class="cta-banner-card" data-aos="fade-up">
+          <div class="cta-content-wrapper">
+            <span class="section-badge">Start Your Journey</span>
+            <h2>Ready to Start Your Project?</h2>
+            <p>
+              Partner with NexRise to build fast, custom, and secure platforms designed to elevate your brand.
+            </p>
+            <div class="hero-ctas">
+              <a href="mailto:hello@nexrise.com" class="services-btn services-btn-primary magnetic-btn">Get Free Quote</a>
+              <a href="#contact-footer" class="services-btn services-btn-outline magnetic-btn">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="logo-link">
+            <img src="logo.jpg" alt="NexRise" class="footer-logo-img" />
+          </a>
+          <p class="footer__tagline">Rise to the Next Level</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html">Graphic Design</a></li>
+              <li><a href="services.html">Development</a></li>
+              <li><a href="services.html">Brand Identity</a></li>
+              <li><a href="services.html">Marketing</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="#" target="_blank">Dribbble</a></li>
+              <li><a href="#" target="_blank">Behance</a></li>
+              <li><a href="#" target="_blank">Github</a></li>
+              <li><a href="#" target="_blank">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 NexRise. All rights reserved.</p>
+        <p>hello@nexrise.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS (Includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Root Theme JS (Handles custom cursor, page loader, fullscreen menu, theme toggling, counters) -->
+  <script src="script.js?v=6"></script>
+
+  <!-- Services Custom JS (AOS & Swiper Slider & Stats Counter & Mouse Parallax) -->
+  <script src="js/services.js"></script>
+</body>
+</html>
