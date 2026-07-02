@@ -261,162 +261,304 @@
       </div>
     </section>
 
-    <!-- Section 2: Service Cards Grid -->
+    <!-- Section 2: Featured Services Showcase -->
     <section id="services-grid" class="services-section services-section-accent" aria-label="Core Services">
       <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-5 justify-content-center text-center">
           <div class="col-lg-8" data-aos="fade-up">
             <span class="section-badge">Capabilities</span>
             <h2 class="section-title">High-Impact Solutions for <br/><span class="gradient-text">Modern Enterprises</span></h2>
-            <p class="section-subtitle">
+            <p class="section-subtitle mx-auto">
               We deliver custom full-cycle software architectures, brand design structures, and marketing frameworks tailored to scale.
             </p>
           </div>
         </div>
 
-        <div class="services-grid-wrapper">
-          <div class="row g-4">
-            <!-- 1. Web Development -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="service-card">
-                <div class="service-icon-box"><i class="bi bi-code-slash"></i></div>
-                <h3 class="service-card-title">Web Development</h3>
-                <p class="service-card-desc">Robust, lightweight, and modern applications tailored to deliver maximum speed and seamless performance.</p>
-                <ul class="service-features-list">
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Custom React &amp; Next.js</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> RESTful API Integrations</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Headless CMS setups</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Performance optimization</li>
-                </ul>
-                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+        <div class="featured-showcase-container">
+          <!-- 1. Web Development -->
+          <div class="featured-showcase-card" data-aos="fade-up">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6 showcase-img-col">
+                <div class="showcase-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web Development Mockup" class="showcase-img" />
+                  <div class="showcase-float-node"><i class="bi bi-code-slash"></i></div>
+                </div>
+              </div>
+              <div class="col-lg-6 showcase-content-col">
+                <div class="showcase-content">
+                  <span class="showcase-badge">Development</span>
+                  <h3 class="showcase-title">Enterprise Web Applications</h3>
+                  <p class="showcase-desc">We design and engineer bespoke, secure, and lightning-fast web applications built to scale. Our platforms are optimized for SEO, security, and maximum page speeds.</p>
+                  <ul class="showcase-features">
+                    <li><i class="bi bi-patch-check-fill"></i> React &amp; Next.js architectures</li>
+                    <li><i class="bi bi-patch-check-fill"></i> RESTful &amp; GraphQL APIs</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Headless CMS databases</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Performance audit tuning</li>
+                    <li><i class="bi bi-patch-check-fill"></i> W3C clean compliance</li>
+                  </ul>
+                  <div class="showcase-tech-tags">
+                    <span>React</span>
+                    <span>Next.js</span>
+                    <span>Node.js</span>
+                    <span>Tailwind CSS</span>
+                  </div>
+                  <div class="showcase-actions">
+                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- 2. UI/UX Design -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-card">
-                <div class="service-icon-box"><i class="bi bi-palette"></i></div>
-                <h3 class="service-card-title">UI/UX Design</h3>
-                <p class="service-card-desc">Visual design architectures and interactive systems optimized for fluid user navigation and engagement.</p>
-                <ul class="service-features-list">
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Figma Design Systems</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Dynamic Prototyping</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Interactive wireframes</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> User research &amp; testing</li>
-                </ul>
-                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+          <!-- 2. UI/UX Design -->
+          <div class="featured-showcase-card" data-aos="fade-up">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6 showcase-img-col">
+                <div class="showcase-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80" alt="UI/UX Design Mockup" class="showcase-img" />
+                  <div class="showcase-float-node"><i class="bi bi-palette"></i></div>
+                </div>
+              </div>
+              <div class="col-lg-6 showcase-content-col">
+                <div class="showcase-content">
+                  <span class="showcase-badge">Design</span>
+                  <h3 class="showcase-title">Creative Brand &amp; Product Design</h3>
+                  <p class="showcase-desc">Fluid user experiences and clean visual design assets that turn first-time visitors into loyal customers. We code high-fidelity prototypes and design libraries.</p>
+                  <ul class="showcase-features">
+                    <li><i class="bi bi-patch-check-fill"></i> Figma Design Systems</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Interactive prototyping</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Wireframing &amp; user journeys</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Accessibility compliance (WCAG)</li>
+                    <li><i class="bi bi-patch-check-fill"></i> User test auditing</li>
+                  </ul>
+                  <div class="showcase-tech-tags">
+                    <span>Figma</span>
+                    <span>Illustrator</span>
+                    <span>Photoshop</span>
+                    <span>After Effects</span>
+                  </div>
+                  <div class="showcase-actions">
+                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- 3. WordPress Development -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="service-card">
-                <div class="service-icon-box"><i class="bi bi-wordpress"></i></div>
-                <h3 class="service-card-title">WordPress Dev</h3>
-                <p class="service-card-desc">Flexible, fully customized CMS solutions designed for effortless control and rapid page load speeds.</p>
-                <ul class="service-features-list">
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Custom Theme Coding</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Elementor Customizations</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Custom plugin overrides</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Security hardening</li>
-                </ul>
-                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+          <!-- 3. WordPress Development -->
+          <div class="featured-showcase-card" data-aos="fade-up">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6 showcase-img-col">
+                <div class="showcase-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80" alt="WordPress Development" class="showcase-img" />
+                  <div class="showcase-float-node"><i class="bi bi-wordpress"></i></div>
+                </div>
+              </div>
+              <div class="col-lg-6 showcase-content-col">
+                <div class="showcase-content">
+                  <span class="showcase-badge">CMS</span>
+                  <h3 class="showcase-title">Bespoke WordPress Architectures</h3>
+                  <p class="showcase-desc">Get full control over your content with custom-coded themes, custom Gutenberg blocks, and optimized plugins that don't drag down your page load speeds.</p>
+                  <ul class="showcase-features">
+                    <li><i class="bi bi-patch-check-fill"></i> Custom theme architectures</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Gutenberg block creation</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Custom plugin integrations</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Security core hardening</li>
+                    <li><i class="bi bi-patch-check-fill"></i> High-performance databases</li>
+                  </ul>
+                  <div class="showcase-tech-tags">
+                    <span>WordPress</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="showcase-actions">
+                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- 4. E-Commerce Solutions -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="service-card">
-                <div class="service-icon-box"><i class="bi bi-cart3"></i></div>
-                <h3 class="service-card-title">E-Commerce</h3>
-                <p class="service-card-desc">High-conversion checkout paths and catalog pipelines built to support high user traffic and sales growth.</p>
-                <ul class="service-features-list">
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> WooCommerce Platforms</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Stripe &amp; Gateway setup</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Inventory automation</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Abandoned cart funnels</li>
-                </ul>
-                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+          <!-- 4. E-Commerce Solutions -->
+          <div class="featured-showcase-card" data-aos="fade-up">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6 showcase-img-col">
+                <div class="showcase-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Mockup" class="showcase-img" />
+                  <div class="showcase-float-node"><i class="bi bi-cart3"></i></div>
+                </div>
+              </div>
+              <div class="col-lg-6 showcase-content-col">
+                <div class="showcase-content">
+                  <span class="showcase-badge">Sales</span>
+                  <h3 class="showcase-title">High-Performance Storefronts</h3>
+                  <p class="showcase-desc">We create high-converting shopping channels and cart checkouts that process large volumes of transactions without latency or payment issues.</p>
+                  <ul class="showcase-features">
+                    <li><i class="bi bi-patch-check-fill"></i> Custom WooCommerce builds</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Stripe &amp; PayPal integrations</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Inventory sync automation</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Abandoned cart triggers</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Dynamic pricing rules</li>
+                  </ul>
+                  <div class="showcase-tech-tags">
+                    <span>WooCommerce</span>
+                    <span>Stripe</span>
+                    <span>GraphQL</span>
+                    <span>Shopify</span>
+                  </div>
+                  <div class="showcase-actions">
+                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- 5. SEO Optimization -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-card">
-                <div class="service-icon-box"><i class="bi bi-search"></i></div>
-                <h3 class="service-card-title">SEO Optimization</h3>
-                <p class="service-card-desc">Strategic audits and schema markups structured to maximize visibility and boost organic search rankings.</p>
-                <ul class="service-features-list">
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Technical SEO Audits</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Strategic Schema Markup</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Keyword targeting</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Site speed architecture</li>
-                </ul>
-                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+          <!-- 5. SEO Optimization -->
+          <div class="featured-showcase-card" data-aos="fade-up">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6 showcase-img-col">
+                <div class="showcase-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1571721795195-a2ca2d33e0b6?auto=format&fit=crop&w=800&q=80" alt="SEO Optimization Mockup" class="showcase-img" />
+                  <div class="showcase-float-node"><i class="bi bi-search"></i></div>
+                </div>
+              </div>
+              <div class="col-lg-6 showcase-content-col">
+                <div class="showcase-content">
+                  <span class="showcase-badge">Growth</span>
+                  <h3 class="showcase-title">Technical SEO &amp; Schema Auditing</h3>
+                  <p class="showcase-desc">Rank higher on Google and bring in organic visitors with detailed site speed tuning, semantic structured markup, and targeted indexing strategies.</p>
+                  <ul class="showcase-features">
+                    <li><i class="bi bi-patch-check-fill"></i> Strategic schema injection</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Core Web Vitals audit</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Keyword ranking monitoring</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Semantic sitemaps generation</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Backlink channel profiling</li>
+                  </ul>
+                  <div class="showcase-tech-tags">
+                    <span>Google Analytics</span>
+                    <span>SEMrush</span>
+                    <span>Ahrefs</span>
+                    <span>Schema.org</span>
+                  </div>
+                  <div class="showcase-actions">
+                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- 6. Digital Marketing -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="service-card">
-                <div class="service-icon-box"><i class="bi bi-megaphone"></i></div>
-                <h3 class="service-card-title">Digital Marketing</h3>
-                <p class="service-card-desc">Data-driven performance campaigns and landing pages optimized for maximum return on marketing spend.</p>
-                <ul class="service-features-list">
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Google &amp; Social Ads</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> High-converting landing pages</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Multi-channel funnels</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Realtime analytics monitoring</li>
-                </ul>
-                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+          <!-- 6. Digital Marketing -->
+          <div class="featured-showcase-card" data-aos="fade-up">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6 showcase-img-col">
+                <div class="showcase-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Mockup" class="showcase-img" />
+                  <div class="showcase-float-node"><i class="bi bi-megaphone"></i></div>
+                </div>
+              </div>
+              <div class="col-lg-6 showcase-content-col">
+                <div class="showcase-content">
+                  <span class="showcase-badge">Marketing</span>
+                  <h3 class="showcase-title">Data-Driven Campaigns</h3>
+                  <p class="showcase-desc">Scale your brand authority and client acquisition with high-impact ads, customized visual funnels, and constant A/B landing page testing.</p>
+                  <ul class="showcase-features">
+                    <li><i class="bi bi-patch-check-fill"></i> PPC Google Ads campaigns</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Paid social media strategy</li>
+                    <li><i class="bi bi-patch-check-fill"></i> High-converting landing pages</li>
+                    <li><i class="bi bi-patch-check-fill"></i> A/B testing funnels</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Conversion tracking setup</li>
+                  </ul>
+                  <div class="showcase-tech-tags">
+                    <span>Google Ads</span>
+                    <span>Meta Ads</span>
+                    <span>HubSpot</span>
+                    <span>Analytics</span>
+                  </div>
+                  <div class="showcase-actions">
+                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- 7. Mobile App Development -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="service-card">
-                <div class="service-icon-box"><i class="bi bi-phone"></i></div>
-                <h3 class="service-card-title">Mobile App Dev</h3>
-                <p class="service-card-desc">Cross-platform iOS and Android mobile architectures crafted to offer sleek native feel and fluid animations.</p>
-                <ul class="service-features-list">
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> React Native &amp; Flutter</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Shared offline storage</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Push notifications systems</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Store deployment management</li>
-                </ul>
-                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+          <!-- 7. Mobile App Development -->
+          <div class="featured-showcase-card" data-aos="fade-up">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6 showcase-img-col">
+                <div class="showcase-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="Mobile App Development Mockup" class="showcase-img" />
+                  <div class="showcase-float-node"><i class="bi bi-phone"></i></div>
+                </div>
+              </div>
+              <div class="col-lg-6 showcase-content-col">
+                <div class="showcase-content">
+                  <span class="showcase-badge">Mobile</span>
+                  <h3 class="showcase-title">Sleek Cross-Platform Apps</h3>
+                  <p class="showcase-desc">Reach your users wherever they are. We code responsive mobile apps with native fluid performance, offline database support, and smooth transitions.</p>
+                  <ul class="showcase-features">
+                    <li><i class="bi bi-patch-check-fill"></i> React Native &amp; Flutter code</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Offline-first databases</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Apple &amp; Google store setup</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Push notifications setup</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Biometric auth integrations</li>
+                  </ul>
+                  <div class="showcase-tech-tags">
+                    <span>React Native</span>
+                    <span>Flutter</span>
+                    <span>Firebase</span>
+                    <span>SQLite</span>
+                  </div>
+                  <div class="showcase-actions">
+                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- 8. Maintenance & Support -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-card">
-                <div class="service-icon-box"><i class="bi bi-wrench-adjustable"></i></div>
-                <h3 class="service-card-title">Maintenance &amp; Support</h3>
-                <p class="service-card-desc">24/7 uptime monitoring, server updates, and rapid incident response to keep your operations completely secure.</p>
-                <ul class="service-features-list">
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> 24/7 Server monitoring</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Security updates &amp; backups</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Uptime SLA guarantees</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Custom feature additions</li>
-                </ul>
-                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+          <!-- 8. Maintenance & Support -->
+          <div class="featured-showcase-card" data-aos="fade-up">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6 showcase-img-col">
+                <div class="showcase-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80" alt="Maintenance &amp; Support Mockup" class="showcase-img" />
+                  <div class="showcase-float-node"><i class="bi bi-wrench-adjustable"></i></div>
+                </div>
               </div>
-            </div>
-
-            <!-- 9. Cloud Solutions -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="service-card">
-                <div class="service-icon-box"><i class="bi bi-cloud-arrow-up"></i></div>
-                <h3 class="service-card-title">Cloud Solutions</h3>
-                <p class="service-card-desc">Scalable infrastructure hosting setups and automated deployment pipelines designed for 99.9% uptime.</p>
-                <ul class="service-features-list">
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> AWS &amp; Google Cloud setups</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Docker &amp; CI/CD Pipelines</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Database cluster designs</li>
-                  <li class="service-feature-item"><i class="bi bi-check-circle-fill"></i> Serverless setups</li>
-                </ul>
-                <a href="#contact-footer" class="service-card-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+              <div class="col-lg-6 showcase-content-col">
+                <div class="showcase-content">
+                  <span class="showcase-badge">Security</span>
+                  <h3 class="showcase-title">24/7 Server Tuning &amp; Support</h3>
+                  <p class="showcase-desc">Prevent downtime and protect customer data with regular automated backups, server patch installations, and instant incident response.</p>
+                  <ul class="showcase-features">
+                    <li><i class="bi bi-patch-check-fill"></i> 24/7 Server monitoring</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Weekly backups &amp; updates</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Instant incident response</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Uptime SLA guarantees</li>
+                    <li><i class="bi bi-patch-check-fill"></i> Technical helpdesk access</li>
+                  </ul>
+                  <div class="showcase-tech-tags">
+                    <span>AWS</span>
+                    <span>Google Cloud</span>
+                    <span>Docker</span>
+                    <span>Jenkins</span>
+                  </div>
+                  <div class="showcase-actions">
+                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -690,70 +832,7 @@
       </div>
     </section>
 
-    <!-- Section 6: Featured Services -->
-    <section class="services-section services-section-accent" aria-label="Featured Solutions">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-lg-8" data-aos="fade-up">
-            <span class="section-badge">Case Spotlights</span>
-            <h2 class="section-title">High-Performance <br/><span class="gradient-text">Featured Capabilities</span></h2>
-            <p class="section-subtitle">
-              Take a closer look at our specialized service setups engineered for specific enterprise cases.
-            </p>
-          </div>
-        </div>
 
-        <!-- Featured Card 1 (Image Left) -->
-        <div class="featured-card" data-aos="fade-up">
-          <div class="row g-0">
-            <div class="col-lg-6 featured-card-img-col">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Interface" />
-            </div>
-            <div class="col-lg-6">
-              <div class="featured-card-body">
-                <span class="featured-badge">High Conversion</span>
-                <h3 class="featured-title">Custom E-Commerce Architecture</h3>
-                <p class="featured-desc">
-                  We build highly customized WooCommerce storefronts backed by cloud database clusters, fast caching rules, and structured conversion paths.
-                </p>
-                <ul class="featured-specs-list">
-                  <li class="featured-spec-item"><i class="bi bi-check2"></i> 1.2s avg. page load speed</li>
-                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Unified checkout forms</li>
-                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Seamless ERP syncing</li>
-                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Stripe integration</li>
-                </ul>
-                <a href="#contact-footer" class="services-btn services-btn-primary magnetic-btn self-start">Get Started</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Featured Card 2 (Image Right) -->
-        <div class="featured-card" data-aos="fade-up">
-          <div class="row g-0 flex-lg-row-reverse">
-            <div class="col-lg-6 featured-card-img-col">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Analytics Dashboard" />
-            </div>
-            <div class="col-lg-6">
-              <div class="featured-card-body">
-                <span class="featured-badge">Next-Gen Stack</span>
-                <h3 class="featured-title">Headless CMS &amp; Static Sites</h3>
-                <p class="featured-desc">
-                  Decouple your content management from the frontend layout. We build headless WordPress solutions linked with Next.js/React layouts for security and speed.
-                </p>
-                <ul class="featured-specs-list">
-                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Serverless hosting costs</li>
-                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Strict immunity to SQL injection</li>
-                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Dynamic content caching</li>
-                  <li class="featured-spec-item"><i class="bi bi-check2"></i> Multi-channel API publishing</li>
-                </ul>
-                <a href="#contact-footer" class="services-btn services-btn-primary magnetic-btn self-start">Get Started</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Section 7: Testimonials -->
     <section class="services-section services-section-light" aria-label="Customer Success">
