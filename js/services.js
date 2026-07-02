@@ -123,6 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.15 });
     processObserver.observe(processSection);
+  }
+
   // 6. Scroll Reveal & Stagger Animation Observer
   const cards = document.querySelectorAll('.featured-showcase-card');
 
