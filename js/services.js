@@ -81,5 +81,47 @@ document.addEventListener('DOMContentLoaded', () => {
     statsObserver.observe(statsSection);
   }
 
+  // 4. Initialize Swiper for Horizontal Roadmap Timeline
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.process-slider-container', {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+      grabCursor: true,
+      navigation: {
+        nextEl: '.process-slider-next',
+        prevEl: '.process-slider-prev',
+      },
+      pagination: {
+        el: '.process-slider-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 6,
+          spaceBetween: 24,
+          allowTouchMove: false,
+        },
+        768: {
+          slidesPerView: 2.5,
+          spaceBetween: 20,
+          allowTouchMove: true,
+        }
+      }
+    });
+  }
 
+  // 5. Progress Line Animation on Scroll
+  const progressLine = document.querySelector('.process-progress-bar');
+  const processSection = document.querySelector('.process-slider-container');
+  if (progressLine && processSection) {
+    const processObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          progressLine.style.transform = 'scaleX(1)';
+          processObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    processObserver.observe(processSection);
+  }
 });
