@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.featured-showcase-card');
 
   if (cards.length > 0) {
-    // Desktop & Mobile Reveal Observer (triggers animation only once)
+    // Desktop & Mobile Reveal Observer (triggers animation only once, low threshold)
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -136,11 +136,24 @@ document.addEventListener('DOMContentLoaded', () => {
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.02 });
 
     cards.forEach(card => {
       revealObserver.observe(card);
     });
+
+    // Fallback: immediately reveal cards already in viewport on load
+    const checkInitialVisibility = () => {
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          card.classList.add('revealed');
+          card.classList.add('mobile-visible');
+          revealObserver.unobserve(card);
+        }
+      });
+    };
+    checkInitialVisibility();
 
     // Dynamic Scroll Focus-Opacity modulation on desktop
     const handleScrollOpacity = () => {
