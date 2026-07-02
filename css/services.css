@@ -248,6 +248,7 @@
 .showcase-scroll-track {
   position: relative;
   height: auto; /* Stacks normally on mobile/tablet */
+  overflow: visible !important; /* Fixed: Prevents sticky constraints */
 }
 
 .showcase-sticky-container {
@@ -299,12 +300,13 @@
     height: 100vh;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    padding: 0 !important;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--header-h) 0 2rem 0 !important;
   }
 
   .featured-showcase-container {
-    height: 80vh;
+    height: 65vh; /* Adjusted container height for scroll space */
     display: flex;
     align-items: center;
     justify-content: center;
