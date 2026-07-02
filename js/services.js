@@ -81,38 +81,5 @@ document.addEventListener('DOMContentLoaded', () => {
     statsObserver.observe(statsSection);
   }
 
-  // 4. Hero Section Mouse Parallax Effect
-  const heroSection = document.querySelector('.services-hero');
-  const parallaxShapes = document.querySelectorAll('.floating-shape-blur');
 
-  if (heroSection && parallaxShapes.length > 0) {
-    heroSection.addEventListener('mousemove', (e) => {
-      const { clientX, clientY } = e;
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      
-      const xPercent = (clientX / width - 0.5) * 2; // -1 to 1
-      const yPercent = (clientY / height - 0.5) * 2; // -1 to 1
-
-      parallaxShapes.forEach((shape, index) => {
-        const factor = (index + 1) * 15; // amount of shift
-        const xShift = xPercent * factor;
-        const yShift = yPercent * factor;
-        shape.style.transform = `translate(${xShift}px, ${yShift}px)`;
-      });
-    });
-
-    heroSection.addEventListener('mouseleave', () => {
-      parallaxShapes.forEach(shape => {
-        shape.style.transform = 'translate(0px, 0px)';
-        shape.style.transition = 'transform 0.5s ease-out';
-      });
-    });
-
-    heroSection.addEventListener('mouseenter', () => {
-      parallaxShapes.forEach(shape => {
-        shape.style.transition = 'none';
-      });
-    });
-  }
 });

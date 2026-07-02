@@ -26,6 +26,8 @@
 
   <!-- Main Root Stylesheet (For Header, Footer, Cursor, Navigation, Loader, Theme) -->
   <link rel="stylesheet" href="style.css?v=5" />
+  <!-- About Us Custom Stylesheet (For Sub-page breadcrumbs and buttons) -->
+  <link rel="stylesheet" href="css/style.css" />
   <!-- Services Custom Stylesheet (For Sub-page sections) -->
   <link rel="stylesheet" href="css/services.css" />
 </head>
@@ -218,33 +220,43 @@
     </div>
   </nav>
   <main>
-    <!-- Section 1: Hero Banner -->
-    <section class="services-hero" id="hero">
-      <div class="hero-glow-overlay"></div>
-      <div class="floating-shape-blur shape-blur-1"></div>
-      <div class="floating-shape-blur shape-blur-2"></div>
-      
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10" data-aos="fade-up" data-aos-duration="1000">
-            <span class="section-badge">Our Services</span>
-            <h1 class="hero-title">Custom Tech &amp; Design <br/><span class="gradient-text">Engineered for Growth</span></h1>
-            <p class="hero-subtitle">
-              We design and construct premium SaaS products, custom marketing architectures, and digital design platforms that attract users and accelerate conversion goals.
-            </p>
-            <div class="hero-ctas">
-              <a href="#services-grid" class="services-btn services-btn-primary magnetic-btn">Explore Services</a>
-              <a href="#contact-footer" class="services-btn services-btn-outline magnetic-btn">Contact Us</a>
-            </div>
-          </div>
-        </div>
+    <!-- Section 1: Hero Banner (Uses exact background design, patterns, glows, and 3D shapes from Home Page / About Page) -->
+    <section class="hero-section" id="hero" style="min-height: 80vh;">
+      <div class="hero__background">
+        <div class="hero__bg-grid"></div>
+        <div class="hero__glow"></div>
+        
+        <!-- Floating 3D Shapes (Same elements and classes as Home Page / About Page) -->
+        <div class="shape-3d shape-sphere"></div>
+        <div class="shape-3d shape-torus"></div>
+        <div class="shape-3d shape-cube"></div>
+        <div class="shape-3d shape-pyramid"></div>
       </div>
 
-      <!-- Scroll Indicator Animation -->
-      <div class="scroll-indicator-wrap" data-aos="fade-up" data-aos-delay="500">
-        <span>Scroll Down</span>
-        <div class="mouse-scroller">
-          <div class="mouse-wheel"></div>
+      <!-- Hero Content Container -->
+      <div class="container position-relative" style="z-index: 3; padding-top: calc(var(--header-h) + 5rem); padding-bottom: 5rem;">
+        <div class="row">
+          <div class="col-lg-8 text-start">
+            <!-- Breadcrumbs -->
+            <nav aria-label="breadcrumb" class="about-breadcrumb premium-reveal">
+              <ol class="about-breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Services</li>
+              </ol>
+            </nav>
+            <!-- Large Headings with scroll reveal -->
+            <h1 class="hero__title mb-4 premium-reveal" id="hero-title">
+              Custom Tech &amp; Design<br>
+              <span class="hero__title-accent">Engineered for Growth</span>
+            </h1>
+            <p class="lead mb-5 fs-5 text-secondary premium-reveal delay-1">
+              We design and construct premium SaaS products, custom marketing architectures, and digital design platforms that attract users and accelerate conversion goals.
+            </p>
+            <div class="d-flex flex-wrap gap-3 premium-reveal delay-2">
+              <a href="#services-grid" class="about-btn about-btn-primary magnetic-btn">Explore Services</a>
+              <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Contact Us</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
