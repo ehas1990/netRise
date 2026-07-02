@@ -71,7 +71,7 @@
   </header>
 
   <!-- Full Screen Navigation -->
-  <nav id="fullscreen-nav" class="fullscreen-nav" aria-hidden="true">
+<nav id="fullscreen-nav" class="fullscreen-nav" aria-hidden="true">
     <div class="nav-backdrop"></div>
     <div class="nav-overlay">
       <!-- Circular Close Button -->
@@ -86,19 +86,13 @@
           </div>
           
           <ul class="nav-menu" id="main-nav">
-            <!-- Row 1: Home -->
-            <li class="nav-item">
-              <div class="nav-item__header">
+            <!-- Row 1: Home (Active Highlighted) -->
+            <li class="nav-item nav-item--active">
+              <a href="index.html" class="nav-item__header">
                 <span class="nav-item__num">/ 01</span>
                 <span class="nav-item__label">Home</span>
                 <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
-              </div>
-              <ul class="nav-submenu">
-                <li><a href="#">Digital Agency</a></li>
-                <li><a href="#">Creative Agency</a></li>
-                <li><a href="#">Branding Studio</a></li>
-                <li><a href="#">Web Developer</a></li>
-              </ul>
+              </a>
             </li>
             
             <!-- Row 2: About Us -->
@@ -111,7 +105,7 @@
             </li>
             
             <!-- Row 3: Pages -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <div class="nav-item__header">
                 <span class="nav-item__num">/ 03</span>
                 <span class="nav-item__label">Pages</span>
@@ -119,13 +113,19 @@
               </div>
               <ul class="nav-submenu">
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Services</a></li>
                 <li><a href="#">Our Team</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">FAQ</a></li>
               </ul>
+            </li> -->
+             <li class="nav-item nav-item--link">
+              <a href="services.html" class="nav-item__header">
+                <span class="nav-item__num">/ 03</span>
+                <span class="nav-item__label">Services</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
             </li>
-            
             <!-- Row 4: Insights -->
             <li class="nav-item">
               <div class="nav-item__header">
@@ -140,8 +140,8 @@
               </ul>
             </li>
 
-            <!-- Row 5: Services (Active Highlighted) -->
-            <li class="nav-item nav-item--link nav-item--active">
+            <!-- Row 5: Services -->
+            <li class="nav-item nav-item--link">
               <a href="services.html" class="nav-item__header">
                 <span class="nav-item__num">/ 05</span>
                 <span class="nav-item__label">Services</span>
@@ -151,7 +151,7 @@
 
             <!-- Row 6: Portfolio -->
             <li class="nav-item nav-item--link">
-              <a href="index.html#works" class="nav-item__header">
+              <a href="#works" class="nav-item__header">
                 <span class="nav-item__num">/ 06</span>
                 <span class="nav-item__label">Portfolio</span>
                 <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
@@ -195,6 +195,8 @@
             </div>
           </div>
 
+
+
           <!-- Follow Us icon row -->
           <div class="follow-us-section">
             <p class="follow-us-title">Follow Us</p>
@@ -215,7 +217,6 @@
       </div>
     </div>
   </nav>
-
   <main>
     <!-- Section 1: Hero Banner -->
     <section class="services-hero" id="hero">
