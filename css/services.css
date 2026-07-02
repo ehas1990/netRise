@@ -244,11 +244,23 @@
   100% { opacity: 0; transform: translate(-50%, 15px); }
 }
 
-/* --- Section 2: Featured Services Showcase --- */
+/* --- Section 2: Featured Services Showcase & Scroll Storytelling --- */
+.showcase-scroll-track {
+  position: relative;
+  height: auto; /* Stacks normally on mobile/tablet */
+}
+
+.showcase-sticky-container {
+  position: relative;
+  height: auto;
+  padding: 4rem 0;
+}
+
 .featured-showcase-container {
   position: relative;
   z-index: 5;
   margin-top: 4rem;
+  width: 100%;
 }
 
 .featured-showcase-card {
@@ -273,6 +285,122 @@
   transform: translateY(-8px);
   border-color: rgba(37, 99, 235, 0.3);
   box-shadow: var(--shadow-premium-hover);
+}
+
+/* On Desktop (≥1024px) for Sticky Scroll Storytelling */
+@media (min-width: 1024px) {
+  .showcase-scroll-track {
+    height: 800vh; /* 8 steps * 100vh */
+  }
+
+  .showcase-sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+  }
+
+  .featured-showcase-container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .featured-showcase-card {
+    position: absolute;
+    inset: 0;
+    margin-bottom: 0 !important;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(60px) scale(0.95);
+    filter: blur(8px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .featured-showcase-card.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    z-index: 2;
+  }
+
+  .featured-showcase-card.is-passed {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-60px) scale(0.95);
+    filter: blur(8px);
+    z-index: 1;
+  }
+}
+
+/* Vertical Storytelling Progress Indicator (Desktop only) */
+.storytelling-progress-indicator {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .storytelling-progress-indicator {
+    display: flex;
+  }
+}
+
+.storytelling-progress-line-bg {
+  position: absolute;
+  width: 2px;
+  top: 10px;
+  bottom: 10px;
+  background: var(--border);
+  z-index: 1;
+}
+
+.storytelling-progress-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--color-accent-gradient);
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.storytelling-progress-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.storytelling-progress-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  transition: all 0.3s;
+  background: var(--bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.storytelling-progress-num.active {
+  color: var(--brand-cyan, #06b6d4);
+  font-weight: 700;
+  transform: scale(1.2);
 }
 
 /* Back-glow decoration on card hover */
@@ -460,23 +588,20 @@
     margin-bottom: 2.5rem;
   }
 }
-  transition: all 0.3s var(--ease-out);
-  position: relative;
-  z-index: 1;
-  margin-top: auto;
-  align-self: flex-start;
-}
 
-.service-card-btn i {
-  transition: transform 0.3s;
-}
-
-.service-card-btn:hover {
-  color: var(--brand-blue, #2563eb);
-}
-
-.service-card-btn:hover i {
-  transform: translateX(4px);
+/* Mobile scroll entrance reveal */
+@media (max-width: 1023px) {
+  .featured-showcase-card {
+    opacity: 0;
+    transform: translateY(45px) scale(0.97);
+    filter: blur(4px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .featured-showcase-card.mobile-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
 
 /* --- Section 3: Interactive Process Section --- */

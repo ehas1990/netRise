@@ -123,5 +123,78 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.15 });
     processObserver.observe(processSection);
+  // 6. Scroll Storytelling for Featured Services (Desktop only)
+  const track = document.querySelector('.showcase-scroll-track');
+  const cards = document.querySelectorAll('.featured-showcase-card');
+  const progressNumbers = document.querySelectorAll('.storytelling-progress-num');
+  const progressFill = document.querySelector('.storytelling-progress-fill');
+
+  if (track && cards.length > 0) {
+    // Mobile scroll entrance observer (triggers animation only once)
+    const mobileObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('mobile-visible');
+          mobileObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => {
+      mobileObserver.observe(card);
+    });
+
+    const handleScrollStorytelling = () => {
+      if (window.innerWidth >= 1024) {
+        const rect = track.getBoundingClientRect();
+        const trackHeight = rect.height;
+        const scrolled = -rect.top;
+        const windowHeight = window.innerHeight;
+
+        // Calculate progress ratio (0 to 1)
+        const progress = Math.max(0, Math.min(1, scrolled / (trackHeight - windowHeight)));
+
+        // Update progress line fill height
+        if (progressFill) {
+          progressFill.style.transform = `scaleY(${progress})`;
+        }
+
+        // Calculate card index to active
+        const totalCards = cards.length;
+        const cardIndex = Math.max(0, Math.min(totalCards - 1, Math.floor(progress * totalCards)));
+
+        cards.forEach((card, idx) => {
+          if (idx === cardIndex) {
+            card.classList.add('is-active');
+            card.classList.remove('is-passed');
+          } else if (idx < cardIndex) {
+            card.classList.add('is-passed');
+            card.classList.remove('is-active');
+          } else {
+            card.classList.remove('is-active');
+            card.classList.remove('is-passed');
+          }
+        });
+
+        // Highlight active number in indicator
+        progressNumbers.forEach((num, idx) => {
+          if (idx === cardIndex) {
+            num.classList.add('active');
+          } else {
+            num.classList.remove('active');
+          }
+        });
+      } else {
+        // Fallback for smaller screens: clear storytelling classes
+        cards.forEach(card => {
+          card.classList.remove('is-active', 'is-passed');
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollStorytelling);
+    window.addEventListener('resize', handleScrollStorytelling);
+    // Initial call to set active card on load
+    handleScrollStorytelling();
   }
 });
