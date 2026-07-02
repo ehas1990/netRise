@@ -123,78 +123,55 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.15 });
     processObserver.observe(processSection);
-  // 6. Scroll Storytelling for Featured Services (Desktop only)
-  const track = document.querySelector('.showcase-scroll-track');
+  // 6. Scroll Reveal & Stagger Animation Observer
   const cards = document.querySelectorAll('.featured-showcase-card');
-  const progressNumbers = document.querySelectorAll('.storytelling-progress-num');
-  const progressFill = document.querySelector('.storytelling-progress-fill');
 
-  if (track && cards.length > 0) {
-    // Mobile scroll entrance observer (triggers animation only once)
-    const mobileObserver = new IntersectionObserver((entries) => {
+  if (cards.length > 0) {
+    // Desktop & Mobile Reveal Observer (triggers animation only once)
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('mobile-visible');
-          mobileObserver.unobserve(entry.target);
+          entry.target.classList.add('revealed');
+          entry.target.classList.add('mobile-visible'); // For mobile compat
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
     cards.forEach(card => {
-      mobileObserver.observe(card);
+      revealObserver.observe(card);
     });
 
-    const handleScrollStorytelling = () => {
+    // Dynamic Scroll Focus-Opacity modulation on desktop
+    const handleScrollOpacity = () => {
       if (window.innerWidth >= 1024) {
-        const rect = track.getBoundingClientRect();
-        const trackHeight = rect.height;
-        const scrolled = -rect.top;
         const windowHeight = window.innerHeight;
+        const viewportCenter = windowHeight / 2;
 
-        // Calculate progress ratio (0 to 1)
-        const progress = Math.max(0, Math.min(1, scrolled / (trackHeight - windowHeight)));
-
-        // Update progress line fill height
-        if (progressFill) {
-          progressFill.style.transform = `scaleY(${progress})`;
-        }
-
-        // Calculate card index to active
-        const totalCards = cards.length;
-        const cardIndex = Math.max(0, Math.min(totalCards - 1, Math.floor(progress * totalCards)));
-
-        cards.forEach((card, idx) => {
-          if (idx === cardIndex) {
-            card.classList.add('is-active');
-            card.classList.remove('is-passed');
-          } else if (idx < cardIndex) {
-            card.classList.add('is-passed');
-            card.classList.remove('is-active');
-          } else {
-            card.classList.remove('is-active');
-            card.classList.remove('is-passed');
-          }
-        });
-
-        // Highlight active number in indicator
-        progressNumbers.forEach((num, idx) => {
-          if (idx === cardIndex) {
-            num.classList.add('active');
-          } else {
-            num.classList.remove('active');
+        cards.forEach((card) => {
+          if (card.classList.contains('revealed')) {
+            const rect = card.getBoundingClientRect();
+            const cardCenter = rect.top + rect.height / 2;
+            
+            // Distance from center of the screen
+            const distanceFromCenter = Math.abs(cardCenter - viewportCenter);
+            
+            // Calculate opacity: 1 at center, fading down to 0.4 when far
+            const maxDistance = windowHeight * 0.8;
+            const opacity = Math.max(0.4, 1 - (distanceFromCenter / maxDistance) * 0.6);
+            
+            card.style.opacity = opacity;
           }
         });
       } else {
-        // Fallback for smaller screens: clear storytelling classes
         cards.forEach(card => {
-          card.classList.remove('is-active', 'is-passed');
+          card.style.opacity = '';
         });
       }
     };
 
-    window.addEventListener('scroll', handleScrollStorytelling);
-    window.addEventListener('resize', handleScrollStorytelling);
-    // Initial call to set active card on load
-    handleScrollStorytelling();
+    window.addEventListener('scroll', handleScrollOpacity);
+    window.addEventListener('resize', handleScrollOpacity);
+    handleScrollOpacity();
   }
 });
