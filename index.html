@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexRise — Digital Agency & Creative Studio</title>
+  <meta name="description" content="NexRise is a creative digital agency specializing in innovative design, cutting-edge development, and brand strategy that helps businesses thrive." />
+  <meta name="keywords" content="digital agency, web design, branding, development, creative studio, NexRise" />
+  <meta property="og:title" content="NexRise — Digital Agency & Creative Studio" />
+  <meta property="og:description" content="We are a creative web agency specializing in innovative design and cutting-edge development." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+</head>
+<body data-theme="light">
+
+  <!-- Custom Cursor -->
+  <div id="cursor" class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <span class="cursor__text"></span>
+  </div>
+
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader__logo">
+      <img src="logo.jpg" alt="NexRise" class="loader__logo-img" />
+    </div>
+    <div class="loader__bar"><div class="loader__progress"></div></div>
+  </div>
+
+  <!-- Header (Exact matches index.html, with logo link corrected to index.html) -->
+  <header id="header" class="site-header">
+    <div class="header__logo">
+      <a href="index.html" class="logo-link">
+        <img src="logo.jpg" alt="NexRise" class="header-logo-img" />
+      </a>
+    </div>
+    <div class="header__controls">
+      <a href="#contact-footer" class="btn btn-outline header__cta magnetic-btn">
+        <span>Say Hello</span>
+        <i class="ph ph-arrow-up-right"></i>
+      </a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="theme-toggle__label">Night</span>
+        <span class="theme-toggle__icon">
+          <i class="ph ph-moon-stars"></i>
+        </span>
+      </button>
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+  </header>
+
+  <!-- Full Screen Navigation -->
+  <nav id="fullscreen-nav" class="fullscreen-nav" aria-hidden="true">
+    <div class="nav-backdrop"></div>
+    <div class="nav-overlay">
+      <!-- Circular Close Button -->
+      <button class="nav-close-btn" aria-label="Close menu"><i class="ph ph-x"></i></button>
+
+      <div class="nav-content">
+        <!-- Left column (70% width) -->
+        <div class="nav-left">
+          <div class="nav-left-header">
+            <p class="nav-left-tagline">🚀 Rise to the Next Level</p>
+            <p class="nav-left-services">Web Development | Digital Marketing | Growth Solutions</p>
+          </div>
+          
+          <ul class="nav-menu" id="main-nav">
+            <!-- Row 1: Home (Active Highlighted) -->
+            <li class="nav-item nav-item--active">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 01</span>
+                <span class="nav-item__label">Home</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="#">Digital Agency</a></li>
+                <li><a href="#">Creative Agency</a></li>
+                <li><a href="#">Branding Studio</a></li>
+                <li><a href="#">Web Developer</a></li>
+              </ul>
+            </li>
+            
+            <!-- Row 2: About Us -->
+            <li class="nav-item nav-item--link">
+              <a href="about.html" class="nav-item__header">
+                <span class="nav-item__num">/ 02</span>
+                <span class="nav-item__label">About Us</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+            
+            <!-- Row 3: Pages -->
+            <li class="nav-item">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 03</span>
+                <span class="nav-item__label">Pages</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </li>
+            
+            <!-- Row 4: Insights -->
+            <li class="nav-item">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 04</span>
+                <span class="nav-item__label">Insights</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="#">Blog Standard</a></li>
+                <li><a href="#">Blog Creative</a></li>
+                <li><a href="#">Single Post</a></li>
+              </ul>
+            </li>
+
+            <!-- Row 5: Services -->
+            <li class="nav-item nav-item--link">
+              <a href="#services" class="nav-item__header">
+                <span class="nav-item__num">/ 05</span>
+                <span class="nav-item__label">Services</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+
+            <!-- Row 6: Portfolio -->
+            <li class="nav-item nav-item--link">
+              <a href="#works" class="nav-item__header">
+                <span class="nav-item__num">/ 06</span>
+                <span class="nav-item__label">Portfolio</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+
+            <!-- Row 7: Contact -->
+            <li class="nav-item nav-item--link">
+              <a href="#contact" class="nav-item__header">
+                <span class="nav-item__num">/ 07</span>
+                <span class="nav-item__label">Contact</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right column (30% width) -->
+        <div class="nav-right">
+          <!-- Contact Card Premium -->
+          <div class="contact-card-premium">
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-envelope"></i></div>
+              <div class="contact-card-info">
+                <a href="mailto:hello@nexrise.com" class="contact-card-link">hello@nexrise.com</a>
+                <p class="contact-card-sub">We reply within 24 hours</p>
+              </div>
+            </div>
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-phone"></i></div>
+              <div class="contact-card-info">
+                <a href="tel:+12127089400" class="contact-card-link">+1 212-708-9400</a>
+                <p class="contact-card-sub">Mon - Fri: 9AM - 6PM</p>
+              </div>
+            </div>
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-map-pin"></i></div>
+              <div class="contact-card-info">
+                <span class="contact-card-text">11 West 53 Street,<br>New York, NY 10019<br>United States</span>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Follow Us icon row -->
+          <div class="follow-us-section">
+            <p class="follow-us-title">Follow Us</p>
+            <div class="follow-us-icons">
+              <a href="#" target="_blank" class="follow-icon" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            </div>
+          </div>
+
+          <!-- Footer note -->
+          <div class="nav-right-footer">
+            <p>Made with <span>❤️</span> by <a href="index.html">NexRise</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+ 
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero__background">
+      <div class="hero__bg-grid"></div>
+      <div class="hero__glow"></div>
+      
+      <!-- Floating 3D Shapes -->
+      <div class="shape-3d shape-sphere"></div>
+      <div class="shape-3d shape-torus"></div>
+      <div class="shape-3d shape-cube"></div>
+      <div class="shape-3d shape-pyramid"></div>
+    </div>
+
+    <div class="hero__content">
+      <h1 class="hero__title" id="hero-title">Design, Tech<br/><span class="hero__title-accent">&amp; much more...</span></h1>
+    </div>
+
+    <div class="hero__bottom">
+      <div class="hero__socials">
+        <a href="#" class="social-link" target="_blank">Dribbble</a>
+        <a href="#" class="social-link" target="_blank">Behance</a>
+        <a href="#" class="social-link" target="_blank">Github</a>
+        <a href="#" class="social-link" target="_blank">Codepen</a>
+        <a href="#" class="social-link" target="_blank">Figma</a>
+      </div>
+      <div class="hero__scroll">
+        <a href="#about" class="scroll-btn">
+          <span>Scroll to explore</span>
+          <i class="ph ph-arrow-down"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__tagline">
+      <p>Rise to the Next Level — Web Development · Digital Marketing · Growth Solutions</p>
+    </div>
+  </section>
+
+  <!-- About / Manifest Section -->
+  <section id="about" class="about-section section" style="position: relative; overflow: hidden;">
+    <div class="section-bg-wrapper">
+      <div class="section-bg-orb" style="top: -20%; right: -10%;"></div>
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="about__manifest">
+        <a href="#" class="manifest-link">
+          <p class="manifest-text">
+            We are a creative web agency specializing in innovative design and cutting-edge development.
+            <span>We help businesses stand out and thrive in the modern landscape.</span>
+          </p>
+        </a>
+      </div>
+      <div class="process-points">
+        <div class="process-card premium-reveal premium-reveal--3d delay-1 glow-card" id="process-1">
+          <div class="process-card__bg">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="Strategy Planning" loading="lazy" />
+          </div>
+          <div class="process-card__divider"></div>
+          <div class="process-card__header">
+            <div class="process-card__icon">
+              <i class="ph ph-crosshair"></i>
+            </div>
+            <h3>Strategy</h3>
+          </div>
+          <p class="process-card__desc">Discover how artificial intelligence is transforming artistic processes, pushing boundaries, and inspiring new possibilities in digital design.</p>
+          <div class="process-card__timeline">
+            <span class="tag">1-2 weeks timeline</span>
+          </div>
+        </div>
+        <div class="process-card premium-reveal premium-reveal--3d delay-2 glow-card" id="process-2">
+          <div class="process-card__bg">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" alt="Creative Design" loading="lazy" />
+          </div>
+          <div class="process-card__divider"></div>
+          <div class="process-card__header">
+            <div class="process-card__icon">
+              <i class="ph ph-bezier-curve"></i>
+            </div>
+            <h3>Design</h3>
+          </div>
+          <p class="process-card__desc">Discover how artificial intelligence is transforming artistic processes, pushing boundaries, and inspiring new possibilities in digital design.</p>
+          <div class="process-card__timeline">
+            <span class="tag">~2 weeks timeline</span>
+          </div>
+        </div>
+        <div class="process-card premium-reveal premium-reveal--3d delay-3 glow-card" id="process-3">
+          <div class="process-card__bg">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop" alt="Web Development" loading="lazy" />
+          </div>
+          <div class="process-card__divider"></div>
+          <div class="process-card__header">
+            <div class="process-card__icon">
+              <i class="ph ph-code-block"></i>
+            </div>
+            <h3>Development</h3>
+          </div>
+          <p class="process-card__desc">Discover how artificial intelligence is transforming artistic processes, pushing boundaries, and inspiring new possibilities in digital design.</p>
+          <div class="process-card__timeline">
+            <span class="tag">3-4 weeks timeline</span>
+          </div>
+          <div class="process-card__divider bottom"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works Showcase -->
+  <section class="works-section section">
+    <div class="works-showcase" id="works-showcase">
+      <div class="works-bg-images">
+        <div class="works-bg-img active" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&h=1280&fit=crop')"></div>
+        <div class="works-bg-img" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1280&fit=crop')"></div>
+        <div class="works-bg-img" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&h=1280&fit=crop')"></div>
+      </div>
+      <div class="works-overlay"></div>
+      <div class="works-items">
+        <a class="works-item" href="#" data-index="0">
+          <div class="works-item__inner">
+            <p class="works-item__title">Editorial<br/>illustrations set</p>
+            <div class="works-item__img">
+              <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&h=700&fit=crop" alt="Editorial illustrations" loading="lazy" />
+            </div>
+            <div class="works-item__tags">
+              <span class="tag">Design</span>
+              <span class="tag">Illustrations</span>
+              <span class="tag">Packaging</span>
+              <span class="tag">Marketing</span>
+            </div>
+          </div>
+        </a>
+        <a class="works-item" href="#" data-index="1">
+          <div class="works-item__inner">
+            <p class="works-item__title">Interactive<br/>concept</p>
+            <div class="works-item__img">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=700&fit=crop" alt="Interactive concept" loading="lazy" />
+            </div>
+            <div class="works-item__tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Development</span>
+              <span class="tag">Brand</span>
+              <span class="tag">Web App</span>
+            </div>
+          </div>
+        </a>
+        <a class="works-item" href="#" data-index="2">
+          <div class="works-item__inner">
+            <p class="works-item__title">Creative<br/>studio template</p>
+            <div class="works-item__img">
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&h=700&fit=crop" alt="Creative studio" loading="lazy" />
+            </div>
+            <div class="works-item__tags">
+              <span class="tag">Design</span>
+              <span class="tag">Branding</span>
+              <span class="tag">Identity</span>
+              <span class="tag">Strategy</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section section" style="position: relative; overflow: hidden;">
+    <div class="section-bg-wrapper">
+      <div class="section-bg-orb" style="bottom: -20%; left: -20%; background: radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 60%);"></div>
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="section-header">
+        <div class="section-header__left">
+          <h2 class="section-title text-mask"><span class="text-mask__inner premium-reveal">Intersection of art<br/>&amp; technology</span></h2>
+        </div>
+        <div class="section-header__right">
+          <a href="#" class="btn btn-outline magnetic-btn">All Services</a>
+        </div>
+      </div>
+      <div class="services-list">
+        <a href="#" class="service-item">
+          <div class="service-item__divider top"></div>
+          <div class="service-item__inner">
+            <span class="service-item__num">[01]</span>
+            <h3 class="service-item__title">Graphic design</h3>
+            <p class="service-item__desc">We create visually compelling designs that enhance user experience. We make sure your brand's visuals resonate with your audience.</p>
+          </div>
+          <div class="service-item__divider bottom"></div>
+        </a>
+        <a href="#" class="service-item">
+          <div class="service-item__divider top"></div>
+          <div class="service-item__inner">
+            <span class="service-item__num">[02]</span>
+            <h3 class="service-item__title">Creative development</h3>
+            <p class="service-item__desc">We build high-performance websites and applications using modern technologies. Our solutions are designed to be scalable and functional.</p>
+          </div>
+          <div class="service-item__divider bottom"></div>
+        </a>
+        <a href="#" class="service-item">
+          <div class="service-item__divider top"></div>
+          <div class="service-item__inner">
+            <span class="service-item__num">[03]</span>
+            <h3 class="service-item__title">Digital marketing solutions</h3>
+            <p class="service-item__desc">SEO and content marketing, social media management and paid campaigns — we help you reach and engage your target audience effectively.</p>
+          </div>
+          <div class="service-item__divider bottom"></div>
+        </a>
+        <a href="#" class="service-item">
+          <div class="service-item__divider top"></div>
+          <div class="service-item__inner">
+            <span class="service-item__num">[04]</span>
+            <h3 class="service-item__title">Brand identity</h3>
+            <p class="service-item__desc">From logo design to comprehensive brand strategies, we ensure your business stands out with a unique visual identity and consistent messaging.</p>
+          </div>
+          <div class="service-item__divider bottom"></div>
+        </a>
+        <a href="#" class="service-item">
+          <div class="service-item__divider top"></div>
+          <div class="service-item__inner">
+            <span class="service-item__num">[05]</span>
+            <h3 class="service-item__title">Long-lasting support</h3>
+            <p class="service-item__desc">We take the time to understand your unique needs and create tailored design solutions to help you make a lasting impact.</p>
+          </div>
+          <div class="service-item__divider bottom"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Divider -->
+  <section class="video-divider">
+    <div class="video-divider__inner">
+      <div class="video-divider__overlay"></div>
+      <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1920&h=800&fit=crop" alt="NexRise office" class="video-divider__bg" loading="lazy" />
+      <div class="video-divider__content">
+        <p class="video-divider__text">We craft digital experiences<br/>that matter</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section section" style="position: relative; overflow: hidden;">
+    <div class="section-bg-wrapper">
+      <div class="section-bg-orb" style="top: 10%; right: -20%; background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 60%);"></div>
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="section-header centered">
+        <h2 class="section-title text-mask"><span class="text-mask__inner premium-reveal">Few words<br/>from our clients</span></h2>
+        <div class="rating-badge premium-reveal delay-1">
+          <div class="stars">
+            <i class="ph ph-star-fill"></i>
+            <i class="ph ph-star-fill"></i>
+            <i class="ph ph-star-fill"></i>
+            <i class="ph ph-star-fill"></i>
+            <i class="ph ph-star-fill"></i>
+          </div>
+          <span>5.0 on Clutch</span>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-col testimonial-col--wide">
+          <div class="testimonial-card glow-card premium-reveal premium-reveal--3d">
+            <div class="testimonial-card__controls">
+              <div class="testimonial-card__quote">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 33"><path d="M11,11v22H0V11h11ZM11,11V0h11v11h-11ZM33,11v22h-11V11h11ZM44,0v11h-11V0h11Z"/></svg>
+              </div>
+              <a href="#" class="btn btn-sm">Project Page <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+            <div class="testimonial-card__content">
+              <p class="testimonial-card__text">Working with NexRise team was <span>an absolute pleasure!</span></p>
+            </div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="John Lemon" loading="lazy" />
+              </div>
+              <div class="testimonial-card__info">
+                <p class="testimonial-card__name">John Lemon</p>
+                <p class="testimonial-card__role">Brand Manager at <a href="#">Instant Design</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-img-block justify-end">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face" alt="Client" loading="lazy" />
+          </div>
+        </div>
+        <div class="testimonial-col testimonial-col--narrow">
+          <div class="testimonial-card testimonial-card--full glow-card premium-reveal premium-reveal--3d delay-1">
+            <div class="testimonial-card__controls">
+              <div class="testimonial-card__quote">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 33"><path d="M11,11v22H0V11h11ZM11,11V0h11v11h-11ZM33,11v22h-11V11h11ZM44,0v11h-11V0h11Z"/></svg>
+              </div>
+              <a href="#" class="btn btn-sm">Project Page <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+            <p class="testimonial-card__text">NexRise team took the time to understand our business needs <span>and translated them into a beautifully designed, user-friendly website.</span></p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=face" alt="Ashley Cherry" loading="lazy" />
+              </div>
+              <div class="testimonial-card__info">
+                <p class="testimonial-card__name">Ashley Cherry</p>
+                <p class="testimonial-card__role">SEO at <a href="#">Eye Candy</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials-row-2">
+        <div class="testimonial-img-block">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop&crop=face" alt="Client" loading="lazy" />
+        </div>
+        <div class="testimonial-col testimonial-col--mid">
+          <div class="testimonial-card glow-card premium-reveal premium-reveal--3d delay-2">
+            <div class="testimonial-card__controls">
+              <div class="testimonial-card__quote">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 33"><path d="M11,11v22H0V11h11ZM11,11V0h11v11h-11ZM33,11v22h-11V11h11ZM44,0v11h-11V0h11Z"/></svg>
+              </div>
+              <a href="#" class="btn btn-sm">Project Page <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+            <p class="testimonial-card__text">The NexRise team nailed it! They understood our vision <span>and delivered a sleek, intuitive site that our clients love.</span></p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face" alt="Lea Tomato" loading="lazy" />
+              </div>
+              <div class="testimonial-card__info">
+                <p class="testimonial-card__name">Lea Tomato</p>
+                <p class="testimonial-card__role">Senior Designer at <a href="#">The Way</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-img-block">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop&crop=face" alt="Client" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats / Numbers Section -->
+  <section class="stats-section section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" id="stat-1">
+          <div class="stat-item__divider"></div>
+          <div class="stat-item__number">
+            <span class="counter" data-target="120">0</span><span>+</span>
+          </div>
+          <p class="stat-item__label">Projects completed</p>
+        </div>
+        <div class="stat-item" id="stat-2">
+          <div class="stat-item__divider"></div>
+          <div class="stat-item__number">
+            <span class="counter" data-target="8">0</span>
+          </div>
+          <p class="stat-item__label">Years of experience</p>
+        </div>
+        <div class="stat-item" id="stat-3">
+          <div class="stat-item__divider"></div>
+          <div class="stat-item__number">
+            <span class="counter" data-target="40">0</span><span>+</span>
+          </div>
+          <p class="stat-item__label">Happy clients worldwide</p>
+        </div>
+        <div class="stat-item" id="stat-4">
+          <div class="stat-item__divider"></div>
+          <div class="stat-item__number">
+            <span class="counter" data-target="15">0</span>
+          </div>
+          <p class="stat-item__label">Team members</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog / Insights Section -->
+  <section id="insights" class="blog-section section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__left">
+          <h2 class="section-title text-mask"><span class="text-mask__inner premium-reveal">Latest insights<br/>&amp; articles</span></h2>
+        </div>
+        <div class="section-header__right">
+          <a href="#" class="btn btn-outline magnetic-btn premium-reveal delay-1">All Articles</a>
+        </div>
+      </div>
+      <div class="blog-list">
+        <a href="#" class="blog-item glow-card">
+          <div class="blog-item__divider top"></div>
+          <div class="blog-item__inner">
+            <div class="blog-item__meta">
+              <span class="tag">Design</span>
+              <span class="blog-item__date">Dec 12, 2025</span>
+            </div>
+            <h3 class="blog-item__title">The future of AI in creative design</h3>
+            <p class="blog-item__desc">Discover how artificial intelligence is transforming artistic processes and inspiring new possibilities.</p>
+            <span class="blog-item__read">Read more <i class="ph ph-arrow-up-right"></i></span>
+          </div>
+          <div class="blog-item__divider bottom"></div>
+        </a>
+        <a href="#" class="blog-item glow-card">
+          <div class="blog-item__divider top"></div>
+          <div class="blog-item__inner">
+            <div class="blog-item__meta">
+              <span class="tag">Development</span>
+              <span class="blog-item__date">Nov 28, 2025</span>
+            </div>
+            <h3 class="blog-item__title">Building performant web applications in 2026</h3>
+            <p class="blog-item__desc">Best practices and modern techniques for creating fast, scalable web experiences that delight users.</p>
+            <span class="blog-item__read">Read more <i class="ph ph-arrow-up-right"></i></span>
+          </div>
+          <div class="blog-item__divider bottom"></div>
+        </a>
+        <a href="#" class="blog-item glow-card">
+          <div class="blog-item__divider top"></div>
+          <div class="blog-item__inner">
+            <div class="blog-item__meta">
+              <span class="tag">Branding</span>
+              <span class="blog-item__date">Nov 05, 2025</span>
+            </div>
+            <h3 class="blog-item__title">Brand identity in the digital age</h3>
+            <p class="blog-item__desc">How to build a consistent, memorable brand presence across all digital touchpoints and platforms.</p>
+            <span class="blog-item__read">Read more <i class="ph ph-arrow-up-right"></i></span>
+          </div>
+          <div class="blog-item__divider bottom"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA Section -->
+  <section id="contact" class="contact-section section" style="position: relative; overflow: hidden;">
+    <div class="section-bg-wrapper">
+      <div class="section-bg-orb" style="top: 50%; left: 50%; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 60%);"></div>
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="contact-cta">
+        <div class="contact-cta__content">
+          <p class="contact-cta__label premium-reveal">Let's talk</p>
+          <h2 class="contact-cta__title text-mask"><span class="text-mask__inner premium-reveal delay-1">Have a project<br/>in mind?</span></h2>
+          <a href="mailto:hello@nexrise.com" class="contact-cta__email premium-reveal delay-2">hello@nexrise.com</a>
+          <a href="mailto:hello@nexrise.com" class="btn btn-primary btn-large magnetic-btn premium-reveal delay-3">Start a project</a>
+        </div>
+        <div class="contact-cta__visual">
+          <div class="contact-visual-box">
+            <div class="contact-visual-line"></div>
+            <div class="contact-visual-line"></div>
+            <div class="contact-visual-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track" id="marquee">
+      <div class="marquee-content">
+        <span>Digital Agency</span><span class="marquee-dot">✦</span>
+        <span>Brand Identity</span><span class="marquee-dot">✦</span>
+        <span>Creative Development</span><span class="marquee-dot">✦</span>
+        <span>UI/UX Design</span><span class="marquee-dot">✦</span>
+        <span>Digital Marketing</span><span class="marquee-dot">✦</span>
+        <span>Web Strategy</span><span class="marquee-dot">✦</span>
+        <span>Digital Agency</span><span class="marquee-dot">✦</span>
+        <span>Brand Identity</span><span class="marquee-dot">✦</span>
+        <span>Creative Development</span><span class="marquee-dot">✦</span>
+        <span>UI/UX Design</span><span class="marquee-dot">✦</span>
+        <span>Digital Marketing</span><span class="marquee-dot">✦</span>
+        <span>Web Strategy</span><span class="marquee-dot">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="logo-link">
+            <img src="logo.jpg" alt="NexRise" class="footer-logo-img" />
+          </a>
+          <p class="footer__tagline">Rise to the Next Level</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Graphic Design</a></li>
+              <li><a href="#">Development</a></li>
+              <li><a href="#">Brand Identity</a></li>
+              <li><a href="#">Marketing</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="#" target="_blank">Dribbble</a></li>
+              <li><a href="#" target="_blank">Behance</a></li>
+              <li><a href="#" target="_blank">Github</a></li>
+              <li><a href="#" target="_blank">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 NexRise. All rights reserved.</p>
+        <p>hello@nexrise.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=6"></script>
+</body>
+</html>

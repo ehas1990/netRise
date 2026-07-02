@@ -1,0 +1,557 @@
+/*
+============================================================
+* NexRise - Premium About Us Sub-page Styles
+* Integrates with the main workspace design system variables
+============================================================
+*/
+
+/* --- Custom Variables mapping to Site Theme --- */
+:root {
+  --color-accent-gradient: linear-gradient(135deg, var(--brand-blue, #2563eb) 0%, var(--brand-cyan, #06b6d4) 100%);
+  --color-accent-gradient-hover: linear-gradient(135deg, var(--brand-blue-light, #3b82f6) 0%, var(--brand-cyan, #06b6d4) 100%);
+  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.01);
+  --shadow-premium-hover: 0 20px 40px -12px rgba(37, 99, 235, 0.1);
+}
+
+/* --- Section Layout & Spacing --- */
+.about-page-section {
+  padding: var(--sp-2xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-page-section-light {
+  background: var(--bg);
+}
+
+.about-page-section-accent {
+  background: var(--bg-accent);
+}
+
+.about-subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brand-cyan, #06b6d4);
+  margin-bottom: var(--sp-sm);
+  display: block;
+}
+
+.about-title {
+  font-family: var(--font-main);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: var(--sp-md);
+  color: var(--fg);
+}
+
+/* --- Utility Typography & Pill buttons --- */
+.gradient-text {
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-btn {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.02em;
+  padding: 0.7rem 2rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: none;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.about-btn-primary {
+  background: var(--color-accent-gradient);
+  color: #fff !important;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+  border: none;
+}
+
+.about-btn-primary:hover {
+  background: var(--color-accent-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+}
+
+.about-btn-outline {
+  border: 1px solid var(--border-strong);
+  color: var(--fg);
+  background: transparent;
+}
+
+.about-btn-outline:hover {
+  border-color: var(--brand-blue, #2563eb);
+  color: var(--brand-blue, #2563eb);
+  transform: translateY(-2px);
+}
+
+/* --- Section 1: Hero Banner --- */
+.about-breadcrumb {
+  margin-bottom: var(--sp-md);
+}
+
+.about-breadcrumb-list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+}
+
+.about-breadcrumb-list a {
+  color: var(--fg-muted);
+  transition: color var(--dur-fast);
+}
+
+.about-breadcrumb-list a:hover {
+  color: var(--brand-blue, #2563eb);
+}
+
+.about-breadcrumb-list li::after {
+  content: '/';
+  margin-left: 10px;
+  color: var(--fg-subtle);
+}
+
+.about-breadcrumb-list li:last-child::after {
+  content: '';
+}
+
+.about-breadcrumb-list .active {
+  color: var(--brand-cyan, #06b6d4);
+}
+
+/* --- Section 2: Story Section --- */
+.story-badge-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: visible;
+}
+
+.story-badge-image {
+  border-radius: 16px;
+  width: 100%;
+  box-shadow: var(--shadow-premium);
+  border: 1px solid var(--border);
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.story-badge-wrap:hover .story-badge-image {
+  transform: scale(1.02);
+}
+
+.story-badge-xp {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  padding: 1.25rem 1.75rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-premium-hover);
+  animation: floatXp 5s ease-in-out infinite;
+}
+
+@keyframes floatXp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.value-tab-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: var(--sp-md);
+  transition: border-color var(--dur-base);
+  height: 100%;
+}
+
+.value-tab-card:hover {
+  border-color: var(--border-strong);
+}
+
+/* --- Section 3: Statistics Section --- */
+.stats-about-section {
+  padding: var(--sp-xl) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: var(--sp-md);
+  text-align: center;
+  box-shadow: var(--shadow-premium);
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.stat-about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-premium-hover);
+  border-color: var(--border-strong);
+}
+
+.stat-about-number {
+  font-family: var(--font-main);
+  font-size: var(--fs-3xl);
+  font-weight: 800;
+  margin-bottom: var(--sp-xs);
+  display: block;
+}
+
+.stat-about-label {
+  font-size: var(--fs-xs);
+  font-family: var(--font-mono);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* --- Section 4: Why Choose Us --- */
+.features-grid-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: var(--sp-md);
+  transition: all var(--dur-base) var(--ease-out);
+  height: 100%;
+}
+
+.features-grid-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-premium-hover);
+  border-color: var(--border-strong);
+}
+
+.features-grid-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--bg-accent);
+  color: var(--brand-blue, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: var(--sp-md);
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.features-grid-card:hover .features-grid-icon {
+  background: var(--color-accent-gradient);
+  color: #fff;
+}
+
+/* --- Section 5: Company Values --- */
+.values-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: var(--sp-lg);
+  height: 100%;
+  box-shadow: var(--shadow-premium);
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.values-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-premium-hover);
+  border-color: var(--border-strong);
+}
+
+.values-icon {
+  font-size: 1.75rem;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--sp-md);
+  display: inline-block;
+}
+
+/* --- Section 6: Process Timeline --- */
+.about-timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--sp-xl);
+}
+
+.about-timeline::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: var(--border-strong);
+  z-index: 1;
+}
+
+.about-timeline-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 22%;
+}
+
+.about-timeline-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-premium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--sp-md);
+  font-size: 1.35rem;
+  color: var(--fg);
+  position: relative;
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.about-timeline-step:hover .about-timeline-circle {
+  background: var(--color-accent-gradient);
+  color: #fff;
+  border-color: transparent;
+  transform: scale(1.1);
+  box-shadow: var(--shadow-premium-hover);
+}
+
+.about-timeline-num {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--fg);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 991.98px) {
+  .about-timeline {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  
+  .about-timeline::before {
+    top: 0;
+    left: 36px;
+    width: 1px;
+    height: 100%;
+  }
+  
+  .about-timeline-step {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    gap: var(--sp-md);
+    margin-bottom: var(--sp-lg);
+  }
+  
+  .about-timeline-step:last-child {
+    margin-bottom: 0;
+  }
+  
+  .about-timeline-circle {
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* --- Section 7: Team Section --- */
+.team-grid-card {
+  text-align: center;
+  margin-bottom: var(--sp-md);
+}
+
+.team-avatar-box {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto var(--sp-md);
+  box-shadow: var(--shadow-premium);
+  border: 4px solid var(--bg-card);
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.team-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.team-avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 8, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.team-social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.team-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-accent-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  transition: transform var(--dur-fast);
+}
+
+.team-social-btn:hover {
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+.team-grid-card:hover .team-avatar-box {
+  transform: scale(1.03);
+  border-color: var(--brand-cyan, #06b6d4);
+}
+
+.team-grid-card:hover .team-avatar-overlay {
+  opacity: 1;
+}
+
+.team-grid-card:hover .team-avatar-img {
+  transform: scale(1.08);
+}
+
+/* --- Section 8: Testimonials Slider --- */
+.testimonials-about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: var(--sp-lg);
+  margin: 10px;
+  box-shadow: var(--shadow-premium);
+}
+
+.rating-stars-list {
+  color: #F4C842; /* NexRise yellow stars */
+  margin-bottom: var(--sp-md);
+  font-size: 0.95rem;
+}
+
+.testimonial-about-quote {
+  font-size: var(--fs-md);
+  line-height: 1.75;
+  color: var(--fg);
+  font-style: italic;
+  margin-bottom: var(--sp-lg);
+  position: relative;
+}
+
+.testimonial-about-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow-premium);
+}
+
+/* --- Section 9: FAQ Accordion --- */
+.faq-about-accordion .accordion-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  margin-bottom: var(--sp-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+}
+
+.faq-about-accordion .accordion-button {
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  color: var(--fg);
+  background: transparent;
+  box-shadow: none;
+  padding: var(--sp-md);
+}
+
+.faq-about-accordion .accordion-button:not(.collapsed) {
+  color: var(--brand-blue, #2563eb);
+  background: var(--bg-accent);
+}
+
+.faq-about-accordion .accordion-button::after {
+  filter: grayscale(1) brightness(var(--theme-btn-brightness, 1));
+}
+
+[data-theme="dark"] .faq-about-accordion .accordion-button::after {
+  filter: invert(1);
+}
+
+.faq-about-accordion .accordion-body {
+  padding: 0 var(--sp-md) var(--sp-md);
+  color: var(--fg-muted);
+  line-height: 1.7;
+}
+
+/* --- Section 10: Call To Action (CTA) --- */
+.cta-gradient-box {
+  background: linear-gradient(135deg, var(--fg) 0%, var(--bg-accent) 150%);
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  padding: var(--sp-2xl) var(--sp-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-premium-hover);
+}
+
+.cta-gradient-box::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, rgba(6,182,212,0.05) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  bottom: -100px;
+  right: -50px;
+}

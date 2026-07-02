@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — NexRise</title>
+  <meta name="description" content="Discover our story, values, team members, and process of delivering premium digital agency solutions." />
+  <meta name="keywords" content="digital agency, creative design, web development, about us, NexRise" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <!-- Bootstrap 5 Grid & Accordion CSS (Bootstrap 5 Bundle) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Icons (Phosphor Icons for Site Header/Footer, Bootstrap Icons for Sub-page elements) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Main Root Stylesheet (For Header, Footer, Cursor, Navigation, Loader, Theme) -->
+  <link rel="stylesheet" href="style.css?v=5" />
+  <!-- About Us Custom Stylesheet (For Sub-page sections) -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-theme="light">
+
+  <!-- Custom Cursor (Exact matches index.html) -->
+  <div id="cursor" class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <span class="cursor__text"></span>
+  </div>
+
+  <!-- Page Loader (Exact matches index.html) -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader__logo">
+      <img src="logo.jpg" alt="NexRise" class="loader__logo-img" />
+    </div>
+    <div class="loader__bar"><div class="loader__progress"></div></div>
+  </div>
+
+  <!-- Header (Exact matches index.html, with logo link corrected to index.html) -->
+  <header id="header" class="site-header">
+    <div class="header__logo">
+      <a href="index.html" class="logo-link">
+        <img src="logo.jpg" alt="NexRise" class="header-logo-img" />
+      </a>
+    </div>
+    <div class="header__controls">
+      <a href="#contact-footer" class="btn btn-outline header__cta magnetic-btn">
+        <span>Say Hello</span>
+        <i class="ph ph-arrow-up-right"></i>
+      </a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="theme-toggle__label">Night</span>
+        <span class="theme-toggle__icon">
+          <i class="ph ph-moon-stars"></i>
+        </span>
+      </button>
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+  </header>
+
+  <!-- Full Screen Navigation -->
+  <nav id="fullscreen-nav" class="fullscreen-nav" aria-hidden="true">
+    <div class="nav-backdrop"></div>
+    <div class="nav-overlay">
+      <!-- Circular Close Button -->
+      <button class="nav-close-btn" aria-label="Close menu"><i class="ph ph-x"></i></button>
+
+      <div class="nav-content">
+        <!-- Left column (70% width) -->
+        <div class="nav-left">
+          <div class="nav-left-header">
+            <p class="nav-left-tagline">🚀 Rise to the Next Level</p>
+            <p class="nav-left-services">Web Development | Digital Marketing | Growth Solutions</p>
+          </div>
+          
+          <ul class="nav-menu" id="main-nav">
+            <!-- Row 1: Home -->
+            <li class="nav-item">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 01</span>
+                <span class="nav-item__label">Home</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="#">Digital Agency</a></li>
+                <li><a href="#">Creative Agency</a></li>
+                <li><a href="#">Branding Studio</a></li>
+                <li><a href="#">Web Developer</a></li>
+              </ul>
+            </li>
+            
+            <!-- Row 2: About Us (Active Highlighted) -->
+            <li class="nav-item nav-item--link nav-item--active">
+              <a href="about.html" class="nav-item__header">
+                <span class="nav-item__num">/ 02</span>
+                <span class="nav-item__label">About Us</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+            
+            <!-- Row 3: Pages -->
+            <li class="nav-item">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 03</span>
+                <span class="nav-item__label">Pages</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </li>
+            
+            <!-- Row 4: Insights -->
+            <li class="nav-item">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 04</span>
+                <span class="nav-item__label">Insights</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="#">Blog Standard</a></li>
+                <li><a href="#">Blog Creative</a></li>
+                <li><a href="#">Single Post</a></li>
+              </ul>
+            </li>
+
+            <!-- Row 5: Services -->
+            <li class="nav-item nav-item--link">
+              <a href="index.html#services" class="nav-item__header">
+                <span class="nav-item__num">/ 05</span>
+                <span class="nav-item__label">Services</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+
+            <!-- Row 6: Portfolio -->
+            <li class="nav-item nav-item--link">
+              <a href="index.html#works" class="nav-item__header">
+                <span class="nav-item__num">/ 06</span>
+                <span class="nav-item__label">Portfolio</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+
+            <!-- Row 7: Contact -->
+            <li class="nav-item nav-item--link">
+              <a href="#contact" class="nav-item__header">
+                <span class="nav-item__num">/ 07</span>
+                <span class="nav-item__label">Contact</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right column (30% width) -->
+        <div class="nav-right">
+          <!-- Contact Card Premium -->
+          <div class="contact-card-premium">
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-envelope"></i></div>
+              <div class="contact-card-info">
+                <a href="mailto:hello@nexrise.com" class="contact-card-link">hello@nexrise.com</a>
+                <p class="contact-card-sub">We reply within 24 hours</p>
+              </div>
+            </div>
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-phone"></i></div>
+              <div class="contact-card-info">
+                <a href="tel:+12127089400" class="contact-card-link">+1 212-708-9400</a>
+                <p class="contact-card-sub">Mon - Fri: 9AM - 6PM</p>
+              </div>
+            </div>
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-map-pin"></i></div>
+              <div class="contact-card-info">
+                <span class="contact-card-text">11 West 53 Street,<br>New York, NY 10019<br>United States</span>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Follow Us icon row -->
+          <div class="follow-us-section">
+            <p class="follow-us-title">Follow Us</p>
+            <div class="follow-us-icons">
+              <a href="#" target="_blank" class="follow-icon" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            </div>
+          </div>
+
+          <!-- Footer note -->
+          <div class="nav-right-footer">
+            <p>Made with <span>❤️</span> by <a href="index.html">NexRise</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Section 1: Hero Banner (Uses exact background design, patterns, glows, and 3D shapes from Home Page) -->
+    <section class="hero-section" id="hero" style="min-height: 80vh;">
+      <div class="hero__background">
+        <div class="hero__bg-grid"></div>
+        <div class="hero__glow"></div>
+        
+        <!-- Floating 3D Shapes (Same elements and classes as Home Page) -->
+        <div class="shape-3d shape-sphere"></div>
+        <div class="shape-3d shape-torus"></div>
+        <div class="shape-3d shape-cube"></div>
+        <div class="shape-3d shape-pyramid"></div>
+      </div>
+
+      <!-- Hero Content Container -->
+      <div class="container position-relative" style="z-index: 3; padding-top: calc(var(--header-h) + 5rem); padding-bottom: 5rem;">
+        <div class="row">
+          <div class="col-lg-8 text-start">
+            <!-- Breadcrumbs -->
+            <nav aria-label="breadcrumb" class="about-breadcrumb premium-reveal">
+              <ol class="about-breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">About Us</li>
+              </ol>
+            </nav>
+            <!-- Large Headings with scroll reveal -->
+            <h1 class="hero__title mb-4 premium-reveal" id="hero-title">
+              We Craft Premium<br>
+              <span class="hero__title-accent">Digital Experiences</span>
+            </h1>
+            <p class="lead mb-5 fs-5 text-secondary premium-reveal delay-1">
+              NexRise is a creative digital agency that stands at the intersection of design, engineering, and digital marketing. We elevate brands by building high-performing platforms.
+            </p>
+            <div class="d-flex flex-wrap gap-3 premium-reveal delay-2">
+              <a href="#story" class="about-btn about-btn-primary magnetic-btn">Read Our Story</a>
+              <a href="#cta" class="about-btn about-btn-outline magnetic-btn">Start a Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Company Story (Alternating BG - Accent) -->
+    <section id="story" class="about-page-section about-page-section-accent" aria-label="Company Story">
+      <!-- Background Orb decoration from home page style -->
+      <div class="section-bg-wrapper">
+        <div class="section-bg-orb" style="top: -10%; right: -10%;"></div>
+      </div>
+      
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="row align-items-center g-5">
+          <!-- Image Column -->
+          <div class="col-lg-6">
+            <div class="story-badge-wrap pe-lg-4 premium-reveal">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Collaborative meeting at NexRise office" class="story-badge-image">
+              <div class="story-badge-xp d-flex align-items-center gap-3">
+                <span class="fs-1 fw-bold text-gradient lh-1">10+</span>
+                <div class="lh-sm">
+                  <span class="d-block fw-bold text-uppercase fs-xs">Years Of</span>
+                  <span class="d-block text-secondary fs-xs">Innovation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Text Column -->
+          <div class="col-lg-6">
+            <span class="about-subtitle">Our Journey</span>
+            <h2 class="about-title display-5 premium-reveal">Driving Growth Through Clean Creative Solutions</h2>
+            <p class="text-secondary mb-4 premium-reveal delay-1">
+              Founded in 2016, NexRise has spent a decade pioneering web platforms, custom applications, and identity systems that align businesses with their users. We reject generic templates and construct architectures custom-tailored to accelerate market success.
+            </p>
+            
+            <div class="row g-4 mb-5 premium-reveal delay-2">
+              <div class="col-sm-6">
+                <div class="value-tab-card">
+                  <div class="features-grid-icon"><i class="bi bi-bullseye"></i></div>
+                  <h3 class="h5 fw-bold mb-2">Our Mission</h3>
+                  <p class="small text-secondary mb-0">To transform business challenges into clean, accessible web assets that create measurable digital authority.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="value-tab-card">
+                  <div class="features-grid-icon"><i class="bi bi-eye"></i></div>
+                  <h3 class="h5 fw-bold mb-2">Our Vision</h3>
+                  <p class="small text-secondary mb-0">To lead the next era of web design by merging immersive aesthetics with performance and strict accessibility.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="premium-reveal delay-2">
+              <a href="#why-choose-us" class="about-btn about-btn-primary magnetic-btn">Why Choose Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Statistics Section (Alternating BG - Light) -->
+    <section id="statistics" class="stats-about-section about-page-section-light" aria-label="Success Statistics">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Stat 1 -->
+          <div class="col-6 col-lg-3">
+            <div class="stat-about-card premium-reveal">
+              <div class="gradient-text fs-2 mb-2"><i class="bi bi-emoji-smile"></i></div>
+              <div class="stat-about-number text-gradient">
+                <span class="counter" data-target="2500">0</span><span>+</span>
+              </div>
+              <p class="stat-about-label">Happy Clients</p>
+            </div>
+          </div>
+          <!-- Stat 2 -->
+          <div class="col-6 col-lg-3">
+            <div class="stat-about-card premium-reveal delay-1">
+              <div class="gradient-text fs-2 mb-2"><i class="bi bi-check-circle"></i></div>
+              <div class="stat-about-number text-gradient">
+                <span class="counter" data-target="1200">0</span><span>+</span>
+              </div>
+              <p class="stat-about-label">Projects Completed</p>
+            </div>
+          </div>
+          <!-- Stat 3 -->
+          <div class="col-6 col-lg-3">
+            <div class="stat-about-card premium-reveal delay-2">
+              <div class="gradient-text fs-2 mb-2"><i class="bi bi-people"></i></div>
+              <div class="stat-about-number text-gradient">
+                <span class="counter" data-target="80">0</span><span>+</span>
+              </div>
+              <p class="stat-about-label">Expert Team</p>
+            </div>
+          </div>
+          <!-- Stat 4 -->
+          <div class="col-6 col-lg-3">
+            <div class="stat-about-card premium-reveal delay-3">
+              <div class="gradient-text fs-2 mb-2"><i class="bi bi-award"></i></div>
+              <div class="stat-about-number text-gradient">
+                <span class="counter" data-target="12">0</span><span>+</span>
+              </div>
+              <p class="stat-about-label">Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Why Choose Us (Alternating BG - Accent) -->
+    <section id="why-choose-us" class="about-page-section about-page-section-accent" aria-label="Benefits of partnering with us">
+      <!-- Background Orb decoration from home page style -->
+      <div class="section-bg-wrapper">
+        <div class="section-bg-orb" style="bottom: -10%; left: -10%;"></div>
+      </div>
+
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="row align-items-center g-5">
+          <!-- Left side Content -->
+          <div class="col-lg-5 col-xl-4">
+            <span class="about-subtitle">Benefits</span>
+            <h2 class="about-title display-5 premium-reveal">A Higher Standard of Product Delivery</h2>
+            <p class="text-secondary mb-5 premium-reveal delay-1">
+              We coordinate technical precision with commercial design metrics, ensuring your web assets outperform benchmarks.
+            </p>
+            <div class="premium-reveal delay-2">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Team planning digital transformation" class="img-fluid rounded-4 border border-1 border-white-50 shadow">
+            </div>
+          </div>
+          <!-- Right side 6 cards grid -->
+          <div class="col-lg-7 col-xl-8">
+            <div class="row g-4">
+              <!-- Card 1 -->
+              <div class="col-md-6">
+                <div class="features-grid-card premium-reveal">
+                  <div class="features-grid-icon"><i class="bi bi-lightbulb"></i></div>
+                  <h3 class="h5 fw-bold mb-2">Innovative Tech</h3>
+                  <p class="small text-secondary mb-0">Harnessing the latest HTML5 semantic elements and vanilla ES modules for lean performance.</p>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="col-md-6">
+                <div class="features-grid-card premium-reveal delay-1">
+                  <div class="features-grid-icon"><i class="bi bi-bezier2"></i></div>
+                  <h3 class="h5 fw-bold mb-2">Bespoke Design</h3>
+                  <p class="small text-secondary mb-0">Custom design mockups created individually for each client, maintaining unique branding identity.</p>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="col-md-6">
+                <div class="features-grid-card premium-reveal">
+                  <div class="features-grid-icon"><i class="bi bi-speedometer2"></i></div>
+                  <h3 class="h5 fw-bold mb-2">SEO Optimized</h3>
+                  <p class="small text-secondary mb-0">Built-in structural markups to score top ranking signals, improving query reach organically.</p>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="col-md-6">
+                <div class="features-grid-card premium-reveal delay-1">
+                  <div class="features-grid-icon"><i class="bi bi-universal-access"></i></div>
+                  <h3 class="h5 fw-bold mb-2">W3C Accessibility</h3>
+                  <p class="small text-secondary mb-0">Strict semantic codes validating modern accessibility requirements to welcome all audiences.</p>
+                </div>
+              </div>
+              <!-- Card 5 -->
+              <div class="col-md-6">
+                <div class="features-grid-card premium-reveal">
+                  <div class="features-grid-icon"><i class="bi bi-chat-heart"></i></div>
+                  <h3 class="h5 fw-bold mb-2">Client Centered</h3>
+                  <p class="small text-secondary mb-0">Dedicated project coordinators maintaining complete weekly check-ins and progress metrics.</p>
+                </div>
+              </div>
+              <!-- Card 6 -->
+              <div class="col-md-6">
+                <div class="features-grid-card premium-reveal delay-1">
+                  <div class="features-grid-icon"><i class="bi bi-shield-check"></i></div>
+                  <h3 class="h5 fw-bold mb-2">Agile & Resilient</h3>
+                  <p class="small text-secondary mb-0">Flexible iteration loops that react to changing market requirements instantly without delays.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Company Values (Alternating BG - Light) -->
+    <section id="values" class="about-page-section about-page-section-light" aria-label="Core Values">
+      <!-- Background Orb decoration from home page style -->
+      <div class="section-bg-wrapper">
+        <div class="section-bg-orb" style="top: 20%; right: -10%;"></div>
+      </div>
+
+      <div class="container" style="position: relative; z-index: 1;">
+        <!-- Section Header -->
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-6">
+            <span class="about-subtitle">Our Beliefs</span>
+            <h2 class="about-title display-5 premium-reveal">Values That Guide Our Every Line of Code</h2>
+            <p class="text-secondary mt-3 premium-reveal delay-1">We adhere to a consistent operational compass, ensuring transparency, engineering quality, and focus.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1: Integrity -->
+          <div class="col-md-6 col-lg-3">
+            <div class="values-card premium-reveal">
+              <div class="values-icon"><i class="bi bi-patch-check"></i></div>
+              <h3 class="h4 fw-bold mb-3">Integrity</h3>
+              <p class="text-secondary small mb-0">
+                We believe in complete transparency. Our contracts, metrics, and progress logs are continuously visible without hidden items.
+              </p>
+            </div>
+          </div>
+          <!-- Card 2: Innovation -->
+          <div class="col-md-6 col-lg-3">
+            <div class="values-card premium-reveal delay-1">
+              <div class="values-icon"><i class="bi bi-rocket-takeoff"></i></div>
+              <h3 class="h4 fw-bold mb-3">Innovation</h3>
+              <p class="text-secondary small mb-0">
+                We experiment continuously, integrating performance tools, vanilla scripting optimizations, and responsive systems to drive success.
+              </p>
+            </div>
+          </div>
+          <!-- Card 3: Quality -->
+          <div class="col-md-6 col-lg-3">
+            <div class="values-card premium-reveal delay-2">
+              <div class="values-icon"><i class="bi bi-gem"></i></div>
+              <h3 class="h4 fw-bold mb-3">Quality</h3>
+              <p class="text-secondary small mb-0">
+                Our code validates clean layout constraints. We test pages on multiple viewports to verify that UI flows perform flawlessly.
+              </p>
+            </div>
+          </div>
+          <!-- Card 4: Customer Focus -->
+          <div class="col-md-6 col-lg-3">
+            <div class="values-card premium-reveal delay-3">
+              <div class="values-icon"><i class="bi bi-heart-pulse"></i></div>
+              <h3 class="h4 fw-bold mb-3">Customer Focus</h3>
+              <p class="text-secondary small mb-0">
+                Your goals guide our layout decisions. We build applications around user needs, elevating customer engagement metrics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Our Process (Alternating BG - Accent) -->
+    <section id="process" class="about-page-section about-page-section-accent" aria-label="Development Process">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-6">
+            <span class="about-subtitle">How We Work</span>
+            <h2 class="about-title display-5 premium-reveal">Our Project Development Cycle</h2>
+            <p class="text-secondary mt-3 premium-reveal delay-1">From ideation to continuous deployment, here is how we convert vision into premium digital assets.</p>
+          </div>
+        </div>
+
+        <!-- Horizontal Timeline -->
+        <div class="about-timeline premium-reveal delay-2">
+          <!-- Step 1 -->
+          <div class="about-timeline-step">
+            <div class="about-timeline-circle">
+              <i class="bi bi-search"></i>
+              <span class="about-timeline-num">01</span>
+            </div>
+            <h3 class="h5 fw-bold mb-2">Discovery</h3>
+            <p class="small text-secondary mb-0">We investigate business structures, perform audience interviews, and define tech specifications.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="about-timeline-step">
+            <div class="about-timeline-circle">
+              <i class="bi bi-layout-text-window-reverse"></i>
+              <span class="about-timeline-num">02</span>
+            </div>
+            <h3 class="h5 fw-bold mb-2">Planning</h3>
+            <p class="small text-secondary mb-0">Creating mockups, user journey diagrams, wireframe layouts, and structural project roadmaps.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="about-timeline-step">
+            <div class="about-timeline-circle">
+              <i class="bi bi-code-slash"></i>
+              <span class="about-timeline-num">03</span>
+            </div>
+            <h3 class="h5 fw-bold mb-2">Development</h3>
+            <p class="small text-secondary mb-0">Building pages using semantic semantic-HTML code, optimized style rules, and vanilla javascript files.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="about-timeline-step">
+            <div class="about-timeline-circle">
+              <i class="bi bi-cloud-arrow-up"></i>
+              <span class="about-timeline-num">04</span>
+            </div>
+            <h3 class="h5 fw-bold mb-2">Launch</h3>
+            <p class="small text-secondary mb-0">Comprehensive loading speed checks, accessibility testing, and final hosting server deployment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Team Section (Alternating BG - Light) -->
+    <section id="team" class="about-page-section about-page-section-light" aria-label="Our Team">
+      <!-- Background Orb decoration from home page style -->
+      <div class="section-bg-wrapper">
+        <div class="section-bg-orb" style="bottom: 10%; left: -10%;"></div>
+      </div>
+
+      <div class="container" style="position: relative; z-index: 1;">
+        <!-- Section Header -->
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-6">
+            <span class="about-subtitle">Creative Leaders</span>
+            <h2 class="about-title display-5 premium-reveal">Meet the Creative Visionaries</h2>
+            <p class="text-secondary mt-3 premium-reveal delay-1">A collective of engineers, designers, and brand architects focused on digital excellence.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Member 1 -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="team-grid-card premium-reveal">
+              <div class="team-avatar-box">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=400&q=80" alt="Sarah Jenkins, CEO & Founder" class="team-avatar-img">
+                <div class="team-avatar-overlay">
+                  <div class="team-social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="Sarah Jenkins Linkedin" class="team-social-btn"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Sarah Jenkins Twitter" class="team-social-btn"><i class="bi bi-twitter-x"></i></a>
+                  </div>
+                </div>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Sarah Jenkins</h3>
+              <p class="small text-secondary uppercase font-mono tracking-wider">CEO & Founder</p>
+            </div>
+          </div>
+          <!-- Member 2 -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="team-grid-card premium-reveal delay-1">
+              <div class="team-avatar-box">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&h=400&q=80" alt="Michael Chen, CTO" class="team-avatar-img">
+                <div class="team-avatar-overlay">
+                  <div class="team-social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="Michael Chen Linkedin" class="team-social-btn"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank" aria-label="Michael Chen Github" class="team-social-btn"><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Michael Chen</h3>
+              <p class="small text-secondary uppercase font-mono tracking-wider">Chief Technology Officer</p>
+            </div>
+          </div>
+          <!-- Member 3 -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="team-grid-card premium-reveal delay-2">
+              <div class="team-avatar-box">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=400&q=80" alt="Elena Rostova, Design Director" class="team-avatar-img">
+                <div class="team-avatar-overlay">
+                  <div class="team-social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="Elena Rostova Linkedin" class="team-social-btn"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://dribbble.com" target="_blank" aria-label="Elena Rostova Dribbble" class="team-social-btn"><i class="bi bi-dribbble"></i></a>
+                  </div>
+                </div>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Elena Rostova</h3>
+              <p class="small text-secondary uppercase font-mono tracking-wider">Lead UI/UX Designer</p>
+            </div>
+          </div>
+          <!-- Member 4 -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="team-grid-card premium-reveal delay-3">
+              <div class="team-avatar-box">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80" alt="David Miller, Marketing Head" class="team-avatar-img">
+                <div class="team-avatar-overlay">
+                  <div class="team-social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="David Miller Linkedin" class="team-social-btn"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="David Miller Instagram" class="team-social-btn"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <h3 class="h5 fw-bold mb-1">David Miller</h3>
+              <p class="small text-secondary uppercase font-mono tracking-wider">Head of Marketing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Testimonials (Alternating BG - Accent) -->
+    <section id="testimonials" class="about-page-section about-page-section-accent" aria-label="Testimonials">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-6">
+            <span class="about-subtitle">Testimonials</span>
+            <h2 class="about-title display-5 premium-reveal">What Our Partners Say</h2>
+            <p class="text-secondary mt-3 premium-reveal delay-1">Read reviews from companies that scaled their operations with our digital products.</p>
+          </div>
+        </div>
+
+        <!-- Slider container -->
+        <div class="swiper testimonials-slider premium-reveal delay-2">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="testimonials-about-card">
+                <div class="rating-stars-list">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-about-quote">
+                  NexRise completely updated our web storefront. Their clean coding systems raised loading speed metrics by over 40%, generating immediate customer sales.
+                </p>
+                <div class="testimonial-about-author">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80" alt="Jessica V. avatar" class="testimonial-author-avatar">
+                  <div>
+                    <h4 class="h6 fw-bold mb-0">Jessica V.</h4>
+                    <p class="small text-secondary mb-0">Product VP, TechScale</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="testimonials-about-card">
+                <div class="rating-stars-list">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-about-quote">
+                  The design process was highly transparent. They communicated each milestone clearly and finalized the deployment project on schedule. Fantastic studio!
+                </p>
+                <div class="testimonial-about-author">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80" alt="Marcus K. avatar" class="testimonial-author-avatar">
+                  <div>
+                    <h4 class="h6 fw-bold mb-0">Marcus K.</h4>
+                    <p class="small text-secondary mb-0">Co-founder, FinFlow</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="testimonials-about-card">
+                <div class="rating-stars-list">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-about-quote">
+                  Exceptional accessibility support. Our team had tough guidelines, and NexRise handled everything flawlessly according to W3C standards.
+                </p>
+                <div class="testimonial-about-author">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80" alt="Sophia L. avatar" class="testimonial-author-avatar">
+                  <div>
+                    <h4 class="h6 fw-bold mb-0">Sophia L.</h4>
+                    <p class="small text-secondary mb-0">Director of Operations, CloudGrid</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Swiper Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: FAQ Accordion (Alternating BG - Light) -->
+    <section id="faq" class="about-page-section about-page-section-light" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-6">
+            <span class="about-subtitle">FAQ</span>
+            <h2 class="about-title display-5 premium-reveal">Frequently Asked Questions</h2>
+            <p class="text-secondary mt-3 premium-reveal delay-1">Quick answers to common questions about our collaborative processes.</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion faq-about-accordion premium-reveal delay-2" id="accordionFAQ">
+              <!-- FAQ Item 1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                    What does your design style consist of?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                  <div class="accordion-body">
+                    We specialize in premium modern layouts, soft shadows, large rounded border corners, and plenty of breathing margin room. This guarantees that your page content stands out while appearing premium and sophisticated in both light and dark modes.
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item 2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                    How do you optimize page loading performance?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                  <div class="accordion-body">
+                    By relying on optimized styling syntax, compressing media assets, loading fonts asynchronously, and using vanilla ES module scripts. We avoid bloated libraries to achieve high core web vital scores.
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item 3 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                    Is W3C validation guaranteed?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                  <div class="accordion-body">
+                    Yes. All files are checked against standard W3C markup rules to ensure clean structural tags, semantic layouts, and optimal browser support.
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item 4 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                    Do you offer ongoing post-launch maintenance?
+                  </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                  <div class="accordion-body">
+                    Absolutely. We offer multiple tiers of monthly coordination contracts that include server monitoring, performance auditing, and visual layout updates.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Call To Action (Alternating BG - Light) -->
+    <section id="cta" class="about-page-section about-page-section-light pt-0" aria-label="Call to Action">
+      <div class="container">
+        <div class="cta-gradient-box premium-reveal">
+          <div class="col-lg-8 mx-auto text-white">
+            <span class="about-subtitle text-gradient mb-3">Let's Create Together</span>
+            <h2 class="display-4 fw-bold mb-4">Ready to Rise to the Next Level?</h2>
+            <p class="lead text-white-50 mb-5 fs-5">
+              Partner with NexRise and construct custom, pixel-perfect platforms that attract users and accelerate conversion goals.
+            </p>
+            <a href="mailto:hello@nexrise.com" class="about-btn about-btn-primary magnetic-btn">
+              Get In Touch <i class="bi bi-chat-left-text-fill ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Exact copy from index.html, with links pointing to index.html/about.html) -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="logo-link">
+            <img src="logo.jpg" alt="NexRise" class="footer-logo-img" />
+          </a>
+          <p class="footer__tagline">Rise to the Next Level</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Graphic Design</a></li>
+              <li><a href="#">Development</a></li>
+              <li><a href="#">Brand Identity</a></li>
+              <li><a href="#">Marketing</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="#" target="_blank">Dribbble</a></li>
+              <li><a href="#" target="_blank">Behance</a></li>
+              <li><a href="#" target="_blank">Github</a></li>
+              <li><a href="#" target="_blank">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 NexRise. All rights reserved.</p>
+        <p>hello@nexrise.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS (Includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Root Theme JS (Handles custom cursor, page loader, fullscreen menu, theme toggling, counters) -->
+  <script src="script.js?v=6"></script>
+
+  <!-- About Us Custom JS (AOS & Swiper Slider) -->
+  <script src="js/main.js"></script>
+</body>
+</html>
