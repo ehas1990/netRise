@@ -219,345 +219,450 @@
       </div>
     </div>
   </nav>
-  <main>
-    <!-- Section 1: Hero Banner (Uses exact background design, patterns, glows, and 3D shapes from Home Page / About Page) -->
-    <section class="hero-section" id="hero" style="min-height: 80vh;">
-      <div class="hero__background">
-        <div class="hero__bg-grid"></div>
-        <div class="hero__glow"></div>
-        
-        <!-- Floating 3D Shapes (Same elements and classes as Home Page / About Page) -->
-        <div class="shape-3d shape-sphere"></div>
-        <div class="shape-3d shape-torus"></div>
-        <div class="shape-3d shape-cube"></div>
-        <div class="shape-3d shape-pyramid"></div>
-      </div>
+  <main class="services-main-container">
+    <!-- Premium Interactive Background -->
+    <div class="premium-bg-effects" aria-hidden="true">
+      <div class="bg-glow bg-glow-1"></div>
+      <div class="bg-glow bg-glow-2"></div>
+      <div class="bg-glow bg-glow-3"></div>
+      <div class="bg-grid-overlay"></div>
+      <div class="bg-noise-overlay"></div>
+      <div class="particles-container" id="particles-container"></div>
+    </div>
 
-      <!-- Hero Content Container -->
-      <div class="container position-relative" style="z-index: 3; padding-top: calc(var(--header-h) + 5rem); padding-bottom: 5rem;">
-        <div class="row">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+      <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="services-hero" id="hero">
+      <div class="container position-relative">
+        <div class="row min-vh-80 align-items-center py-5">
           <div class="col-lg-8 text-start">
-            <!-- Breadcrumbs -->
-            <nav aria-label="breadcrumb" class="about-breadcrumb premium-reveal">
-              <ol class="about-breadcrumb-list">
-                <li><a href="index.html">Home</a></li>
-                <li class="active">Services</li>
-              </ol>
-            </nav>
-            <!-- Large Headings with scroll reveal -->
-            <h1 class="hero__title mb-4 premium-reveal" id="hero-title">
-              Custom Tech &amp; Design<br>
-              <span class="hero__title-accent">Engineered for Growth</span>
+            <!-- Animated Badge -->
+            <div class="services-badge-wrap mb-4">
+              <span class="services-badge-pill">Capabilities</span>
+              <span class="services-badge-glowing-dot"></span>
+            </div>
+            
+            <!-- Splitted Headings -->
+            <h1 class="hero__title mb-4 reveal-text" id="services-hero-title">
+              Crafting Premium<br>
+              <span class="hero__title-accent">Digital Masterpieces</span>
             </h1>
-            <p class="lead mb-5 fs-5 text-secondary premium-reveal delay-1">
+            
+            <p class="lead mb-5 services-hero-subtitle text-secondary">
               We design and construct premium SaaS products, custom marketing architectures, and digital design platforms that attract users and accelerate conversion goals.
             </p>
-            <div class="d-flex flex-wrap gap-3 premium-reveal delay-2">
-              <a href="#services-grid" class="about-btn about-btn-primary magnetic-btn">Explore Services</a>
-              <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Contact Us</a>
+            
+            <div class="d-flex flex-wrap gap-4 services-hero-ctas">
+              <a href="#services-showcase" class="about-btn about-btn-primary magnetic-btn services-primary-btn">
+                <span>Explore Services</span>
+                <i class="ph ph-arrow-down ms-2"></i>
+              </a>
+              <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">
+                <span>Contact Us</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Animated Scroll Indicator -->
+      <div class="hero-scroll-indicator">
+        <div class="indicator-mouse">
+          <div class="indicator-wheel"></div>
+        </div>
+        <span class="indicator-text text-secondary">Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- Services Showcase (Alternating Sections) -->
+    <section id="services-showcase" class="showcase-container-wrapper" aria-label="Core Services">
+      <!-- Service 1: Web Development -->
+      <div class="showcase-section" id="service-webdev">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 showcase-image-col">
+              <div class="premium-image-wrapper">
+                <div class="image-glow-ring"></div>
+                <div class="clip-reveal-box">
+                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Enterprise Web Applications" class="showcase-image" />
+                </div>
+                <div class="image-float-badge"><i class="ph ph-code"></i></div>
+              </div>
+            </div>
+            <div class="col-lg-6 showcase-content-col">
+              <div class="service-details-card">
+                <span class="service-card-num">/ 01</span>
+                <span class="showcase-badge">Development</span>
+                <h3 class="showcase-card-title">Enterprise Web Applications</h3>
+                <p class="showcase-desc">We design and engineer bespoke, secure, and lightning-fast web applications built to scale. Our platforms are optimized for SEO, security, and maximum page speeds.</p>
+                <ul class="showcase-features">
+                  <li><i class="ph ph-check-circle-fill"></i> React &amp; Next.js architectures</li>
+                  <li><i class="ph ph-check-circle-fill"></i> RESTful &amp; GraphQL APIs</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Headless CMS databases</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Performance audit tuning</li>
+                </ul>
+                <div class="showcase-tech-tags">
+                  <span>React</span>
+                  <span>Next.js</span>
+                  <span>Node.js</span>
+                  <span>Tailwind CSS</span>
+                </div>
+                <div class="showcase-actions mt-4">
+                  <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="ph ph-arrow-up-right ms-2"></i></a>
+                  <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2: UI/UX Design -->
+      <div class="showcase-section" id="service-uiux">
+        <div class="container">
+          <div class="row align-items-center g-5 flex-lg-row-reverse">
+            <div class="col-lg-6 showcase-image-col">
+              <div class="premium-image-wrapper">
+                <div class="image-glow-ring"></div>
+                <div class="clip-reveal-box">
+                  <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1200&q=80" alt="Creative Brand &amp; Product Design" class="showcase-image" />
+                </div>
+                <div class="image-float-badge"><i class="ph ph-palette"></i></div>
+              </div>
+            </div>
+            <div class="col-lg-6 showcase-content-col">
+              <div class="service-details-card">
+                <span class="service-card-num">/ 02</span>
+                <span class="showcase-badge">Design</span>
+                <h3 class="showcase-card-title">Creative Brand &amp; Product Design</h3>
+                <p class="showcase-desc">Fluid user experiences and clean visual design assets that turn first-time visitors into loyal customers. We code high-fidelity prototypes and design libraries.</p>
+                <ul class="showcase-features">
+                  <li><i class="ph ph-check-circle-fill"></i> Figma Design Systems</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Interactive prototyping</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Wireframing &amp; user journeys</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Accessibility compliance (WCAG)</li>
+                </ul>
+                <div class="showcase-tech-tags">
+                  <span>Figma</span>
+                  <span>Illustrator</span>
+                  <span>Photoshop</span>
+                  <span>After Effects</span>
+                </div>
+                <div class="showcase-actions mt-4">
+                  <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="ph ph-arrow-up-right ms-2"></i></a>
+                  <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: WordPress Development -->
+      <div class="showcase-section" id="service-wordpress">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 showcase-image-col">
+              <div class="premium-image-wrapper">
+                <div class="image-glow-ring"></div>
+                <div class="clip-reveal-box">
+                  <img src="https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=1200&q=80" alt="Bespoke WordPress Architectures" class="showcase-image" />
+                </div>
+                <div class="image-float-badge"><i class="ph ph-globe"></i></div>
+              </div>
+            </div>
+            <div class="col-lg-6 showcase-content-col">
+              <div class="service-details-card">
+                <span class="service-card-num">/ 03</span>
+                <span class="showcase-badge">CMS</span>
+                <h3 class="showcase-card-title">Bespoke WordPress Architectures</h3>
+                <p class="showcase-desc">Get full control over your content with custom-coded themes, custom Gutenberg blocks, and optimized plugins that don't drag down your page load speeds.</p>
+                <ul class="showcase-features">
+                  <li><i class="ph ph-check-circle-fill"></i> Custom theme architectures</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Gutenberg block creation</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Custom plugin integrations</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Security core hardening</li>
+                </ul>
+                <div class="showcase-tech-tags">
+                  <span>WordPress</span>
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>JavaScript</span>
+                </div>
+                <div class="showcase-actions mt-4">
+                  <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="ph ph-arrow-up-right ms-2"></i></a>
+                  <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4: E-Commerce Solutions -->
+      <div class="showcase-section" id="service-ecommerce">
+        <div class="container">
+          <div class="row align-items-center g-5 flex-lg-row-reverse">
+            <div class="col-lg-6 showcase-image-col">
+              <div class="premium-image-wrapper">
+                <div class="image-glow-ring"></div>
+                <div class="clip-reveal-box">
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="High-Performance Storefronts" class="showcase-image" />
+                </div>
+                <div class="image-float-badge"><i class="ph ph-shopping-bag"></i></div>
+              </div>
+            </div>
+            <div class="col-lg-6 showcase-content-col">
+              <div class="service-details-card">
+                <span class="service-card-num">/ 04</span>
+                <span class="showcase-badge">Sales</span>
+                <h3 class="showcase-card-title">High-Performance Storefronts</h3>
+                <p class="showcase-desc">We create high-converting shopping channels and cart checkouts that process large volumes of transactions without latency or payment issues.</p>
+                <ul class="showcase-features">
+                  <li><i class="ph ph-check-circle-fill"></i> Custom WooCommerce builds</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Stripe &amp; PayPal integrations</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Inventory sync automation</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Abandoned cart triggers</li>
+                </ul>
+                <div class="showcase-tech-tags">
+                  <span>WooCommerce</span>
+                  <span>Stripe</span>
+                  <span>GraphQL</span>
+                  <span>Shopify</span>
+                </div>
+                <div class="showcase-actions mt-4">
+                  <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="ph ph-arrow-up-right ms-2"></i></a>
+                  <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5: SEO Optimization -->
+      <div class="showcase-section" id="service-seo">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 showcase-image-col">
+              <div class="premium-image-wrapper">
+                <div class="image-glow-ring"></div>
+                <div class="clip-reveal-box">
+                  <img src="https://images.unsplash.com/photo-1571721795195-a2ca2d33e0b6?auto=format&fit=crop&w=1200&q=80" alt="Technical SEO &amp; Schema Auditing" class="showcase-image" />
+                </div>
+                <div class="image-float-badge"><i class="ph ph-trend-up"></i></div>
+              </div>
+            </div>
+            <div class="col-lg-6 showcase-content-col">
+              <div class="service-details-card">
+                <span class="service-card-num">/ 05</span>
+                <span class="showcase-badge">Growth</span>
+                <h3 class="showcase-card-title">Technical SEO &amp; Schema Auditing</h3>
+                <p class="showcase-desc">Rank higher on Google and bring in organic visitors with detailed site speed tuning, semantic structured markup, and targeted indexing strategies.</p>
+                <ul class="showcase-features">
+                  <li><i class="ph ph-check-circle-fill"></i> Strategic schema injection</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Core Web Vitals audit</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Keyword ranking monitoring</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Semantic sitemaps generation</li>
+                </ul>
+                <div class="showcase-tech-tags">
+                  <span>Google Analytics</span>
+                  <span>SEMrush</span>
+                  <span>Ahrefs</span>
+                  <span>Schema.org</span>
+                </div>
+                <div class="showcase-actions mt-4">
+                  <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="ph ph-arrow-up-right ms-2"></i></a>
+                  <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 6: Digital Marketing -->
+      <div class="showcase-section" id="service-marketing">
+        <div class="container">
+          <div class="row align-items-center g-5 flex-lg-row-reverse">
+            <div class="col-lg-6 showcase-image-col">
+              <div class="premium-image-wrapper">
+                <div class="image-glow-ring"></div>
+                <div class="clip-reveal-box">
+                  <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=1200&q=80" alt="Data-Driven Campaigns" class="showcase-image" />
+                </div>
+                <div class="image-float-badge"><i class="ph ph-megaphone"></i></div>
+              </div>
+            </div>
+            <div class="col-lg-6 showcase-content-col">
+              <div class="service-details-card">
+                <span class="service-card-num">/ 06</span>
+                <span class="showcase-badge">Marketing</span>
+                <h3 class="showcase-card-title">Data-Driven Campaigns</h3>
+                <p class="showcase-desc">Scale your brand authority and client acquisition with high-impact ads, customized visual funnels, and constant A/B landing page testing.</p>
+                <ul class="showcase-features">
+                  <li><i class="ph ph-check-circle-fill"></i> PPC Google Ads campaigns</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Paid social media strategy</li>
+                  <li><i class="ph ph-check-circle-fill"></i> High-converting landing pages</li>
+                  <li><i class="ph ph-check-circle-fill"></i> A/B testing funnels</li>
+                </ul>
+                <div class="showcase-tech-tags">
+                  <span>Google Ads</span>
+                  <span>Meta Ads</span>
+                  <span>HubSpot</span>
+                  <span>Analytics</span>
+                </div>
+                <div class="showcase-actions mt-4">
+                  <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="ph ph-arrow-up-right ms-2"></i></a>
+                  <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 7: Mobile App Development -->
+      <div class="showcase-section" id="service-mobile">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 showcase-image-col">
+              <div class="premium-image-wrapper">
+                <div class="image-glow-ring"></div>
+                <div class="clip-reveal-box">
+                  <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80" alt="Sleek Cross-Platform Apps" class="showcase-image" />
+                </div>
+                <div class="image-float-badge"><i class="ph ph-device-mobile"></i></div>
+              </div>
+            </div>
+            <div class="col-lg-6 showcase-content-col">
+              <div class="service-details-card">
+                <span class="service-card-num">/ 07</span>
+                <span class="showcase-badge">Mobile</span>
+                <h3 class="showcase-card-title">Sleek Cross-Platform Apps</h3>
+                <p class="showcase-desc">Reach your users wherever they are. We code responsive mobile apps with native fluid performance, offline database support, and smooth transitions.</p>
+                <ul class="showcase-features">
+                  <li><i class="ph ph-check-circle-fill"></i> React Native &amp; Flutter code</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Offline-first databases</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Apple &amp; Google store setup</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Push notifications setup</li>
+                </ul>
+                <div class="showcase-tech-tags">
+                  <span>React Native</span>
+                  <span>Flutter</span>
+                  <span>Firebase</span>
+                  <span>SQLite</span>
+                </div>
+                <div class="showcase-actions mt-4">
+                  <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="ph ph-arrow-up-right ms-2"></i></a>
+                  <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 8: Maintenance & Support -->
+      <div class="showcase-section" id="service-support">
+        <div class="container">
+          <div class="row align-items-center g-5 flex-lg-row-reverse">
+            <div class="col-lg-6 showcase-image-col">
+              <div class="premium-image-wrapper">
+                <div class="image-glow-ring"></div>
+                <div class="clip-reveal-box">
+                  <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1200&q=80" alt="24/7 Server Tuning &amp; Support" class="showcase-image" />
+                </div>
+                <div class="image-float-badge"><i class="ph ph-wrench"></i></div>
+              </div>
+            </div>
+            <div class="col-lg-6 showcase-content-col">
+              <div class="service-details-card">
+                <span class="service-card-num">/ 08</span>
+                <span class="showcase-badge">Security</span>
+                <h3 class="showcase-card-title">24/7 Server Tuning &amp; Support</h3>
+                <p class="showcase-desc">Prevent downtime and protect customer data with regular automated backups, server patch installations, and instant incident response.</p>
+                <ul class="showcase-features">
+                  <li><i class="ph ph-check-circle-fill"></i> 24/7 Server monitoring</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Weekly backups &amp; updates</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Instant incident response</li>
+                  <li><i class="ph ph-check-circle-fill"></i> Uptime SLA guarantees</li>
+                </ul>
+                <div class="showcase-tech-tags">
+                  <span>AWS</span>
+                  <span>Google Cloud</span>
+                  <span>Docker</span>
+                  <span>Jenkins</span>
+                </div>
+                <div class="showcase-actions mt-4">
+                  <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="ph ph-arrow-up-right ms-2"></i></a>
+                  <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Featured Services Showcase & Alternating Scroll Reveal -->
-    <section id="services-grid" class="services-section services-section-accent" aria-label="Core Services">
-      <div class="container">
+    <!-- Why Choose Us Section -->
+    <section class="premium-why-choose-us" id="why-choose-us">
+      <div class="container position-relative">
         <div class="row mb-5 justify-content-center text-center">
-          <div class="col-lg-8" data-aos="fade-up">
-            <span class="section-badge">Capabilities</span>
-            <h2 class="section-title">High-Impact Solutions for <br/><span class="gradient-text">Modern Enterprises</span></h2>
-            <p class="section-subtitle mx-auto">
-              We deliver custom full-cycle software architectures, brand design structures, and marketing frameworks tailored to scale.
+          <div class="col-lg-8">
+            <span class="services-badge-pill">Value Proposition</span>
+            <h2 class="section-title reveal-text mt-3">We Build Enterprise Platforms <br><span class="hero__title-accent">Engineered to Convert</span></h2>
+            <p class="section-subtitle mx-auto text-secondary">
+              We couple digital design aesthetics with strict software coding standards to construct sites that stand out and perform reliably.
             </p>
           </div>
         </div>
 
-        <div class="featured-showcase-container">
-          <!-- 1. Web Development -->
-          <div class="featured-showcase-card">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-6 showcase-img-col">
-                <div class="showcase-img-wrapper">
-                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web Development Mockup" class="showcase-img" />
-                  <div class="showcase-float-node"><i class="bi bi-code-slash"></i></div>
-                </div>
-              </div>
-              <div class="col-lg-6 showcase-content-col">
-                <div class="showcase-content">
-                  <span class="showcase-badge">Development</span>
-                  <h3 class="showcase-title">Enterprise Web Applications</h3>
-                  <p class="showcase-desc">We design and engineer bespoke, secure, and lightning-fast web applications built to scale. Our platforms are optimized for SEO, security, and maximum page speeds.</p>
-                  <ul class="showcase-features">
-                    <li><i class="bi bi-patch-check-fill"></i> React &amp; Next.js architectures</li>
-                    <li><i class="bi bi-patch-check-fill"></i> RESTful &amp; GraphQL APIs</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Headless CMS databases</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Performance audit tuning</li>
-                    <li><i class="bi bi-patch-check-fill"></i> W3C clean compliance</li>
-                  </ul>
-                  <div class="showcase-tech-tags">
-                    <span>React</span>
-                    <span>Next.js</span>
-                    <span>Node.js</span>
-                    <span>Tailwind CSS</span>
-                  </div>
-                  <div class="showcase-actions">
-                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
-                  </div>
-                </div>
-              </div>
+        <div class="row g-4 align-items-center">
+          <!-- Left: 2 Cards Column -->
+          <div class="col-lg-6 d-flex flex-column gap-4">
+            <div class="why-premium-card">
+              <div class="why-card-glow"></div>
+              <div class="why-card-icon"><i class="ph ph-gem"></i></div>
+              <h4 class="why-card-title">High-End Design System Standards</h4>
+              <p class="why-card-text text-secondary">Every block, card layout, and button is governed by predefined variables for a consistent look.</p>
+            </div>
+            
+            <div class="why-premium-card">
+              <div class="why-card-glow"></div>
+              <div class="why-card-icon"><i class="ph ph-chart-line-up"></i></div>
+              <h4 class="why-card-title">Conversion Optimization Focused</h4>
+              <p class="why-card-text text-secondary">We map checkout paths and lead forms to minimize friction and increase conversions.</p>
             </div>
           </div>
 
-          <!-- 2. UI/UX Design -->
-          <div class="featured-showcase-card">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-6 showcase-img-col">
-                <div class="showcase-img-wrapper">
-                  <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80" alt="UI/UX Design Mockup" class="showcase-img" />
-                  <div class="showcase-float-node"><i class="bi bi-palette"></i></div>
+          <!-- Right: Statistics Counters Grid -->
+          <div class="col-lg-6">
+            <div class="stats-counters-box">
+              <div class="stats-counters-grid">
+                <div class="stat-counter-card">
+                  <div class="stat-counter-glow"></div>
+                  <span class="stat-number" data-target="8" data-suffix="+">0</span>
+                  <span class="stat-label text-secondary">Years Experience</span>
                 </div>
-              </div>
-              <div class="col-lg-6 showcase-content-col">
-                <div class="showcase-content">
-                  <span class="showcase-badge">Design</span>
-                  <h3 class="showcase-title">Creative Brand &amp; Product Design</h3>
-                  <p class="showcase-desc">Fluid user experiences and clean visual design assets that turn first-time visitors into loyal customers. We code high-fidelity prototypes and design libraries.</p>
-                  <ul class="showcase-features">
-                    <li><i class="bi bi-patch-check-fill"></i> Figma Design Systems</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Interactive prototyping</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Wireframing &amp; user journeys</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Accessibility compliance (WCAG)</li>
-                    <li><i class="bi bi-patch-check-fill"></i> User test auditing</li>
-                  </ul>
-                  <div class="showcase-tech-tags">
-                    <span>Figma</span>
-                    <span>Illustrator</span>
-                    <span>Photoshop</span>
-                    <span>After Effects</span>
-                  </div>
-                  <div class="showcase-actions">
-                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
-                  </div>
+                <div class="stat-counter-card">
+                  <div class="stat-counter-glow"></div>
+                  <span class="stat-number" data-target="120" data-suffix="+">0</span>
+                  <span class="stat-label text-secondary">Projects Completed</span>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. WordPress Development -->
-          <div class="featured-showcase-card">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-6 showcase-img-col">
-                <div class="showcase-img-wrapper">
-                  <img src="https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80" alt="WordPress Development" class="showcase-img" />
-                  <div class="showcase-float-node"><i class="bi bi-wordpress"></i></div>
+                <div class="stat-counter-card">
+                  <div class="stat-counter-glow"></div>
+                  <span class="stat-number" data-target="40" data-suffix="+">0</span>
+                  <span class="stat-label text-secondary">Clients Satisfied</span>
                 </div>
-              </div>
-              <div class="col-lg-6 showcase-content-col">
-                <div class="showcase-content">
-                  <span class="showcase-badge">CMS</span>
-                  <h3 class="showcase-title">Bespoke WordPress Architectures</h3>
-                  <p class="showcase-desc">Get full control over your content with custom-coded themes, custom Gutenberg blocks, and optimized plugins that don't drag down your page load speeds.</p>
-                  <ul class="showcase-features">
-                    <li><i class="bi bi-patch-check-fill"></i> Custom theme architectures</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Gutenberg block creation</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Custom plugin integrations</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Security core hardening</li>
-                    <li><i class="bi bi-patch-check-fill"></i> High-performance databases</li>
-                  </ul>
-                  <div class="showcase-tech-tags">
-                    <span>WordPress</span>
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                    <span>JavaScript</span>
-                  </div>
-                  <div class="showcase-actions">
-                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. E-Commerce Solutions -->
-          <div class="featured-showcase-card">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-6 showcase-img-col">
-                <div class="showcase-img-wrapper">
-                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Mockup" class="showcase-img" />
-                  <div class="showcase-float-node"><i class="bi bi-cart3"></i></div>
-                </div>
-              </div>
-              <div class="col-lg-6 showcase-content-col">
-                <div class="showcase-content">
-                  <span class="showcase-badge">Sales</span>
-                  <h3 class="showcase-title">High-Performance Storefronts</h3>
-                  <p class="showcase-desc">We create high-converting shopping channels and cart checkouts that process large volumes of transactions without latency or payment issues.</p>
-                  <ul class="showcase-features">
-                    <li><i class="bi bi-patch-check-fill"></i> Custom WooCommerce builds</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Stripe &amp; PayPal integrations</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Inventory sync automation</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Abandoned cart triggers</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Dynamic pricing rules</li>
-                  </ul>
-                  <div class="showcase-tech-tags">
-                    <span>WooCommerce</span>
-                    <span>Stripe</span>
-                    <span>GraphQL</span>
-                    <span>Shopify</span>
-                  </div>
-                  <div class="showcase-actions">
-                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5. SEO Optimization -->
-          <div class="featured-showcase-card">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-6 showcase-img-col">
-                <div class="showcase-img-wrapper">
-                  <img src="https://images.unsplash.com/photo-1571721795195-a2ca2d33e0b6?auto=format&fit=crop&w=800&q=80" alt="SEO Optimization Mockup" class="showcase-img" />
-                  <div class="showcase-float-node"><i class="bi bi-search"></i></div>
-                </div>
-              </div>
-              <div class="col-lg-6 showcase-content-col">
-                <div class="showcase-content">
-                  <span class="showcase-badge">Growth</span>
-                  <h3 class="showcase-title">Technical SEO &amp; Schema Auditing</h3>
-                  <p class="showcase-desc">Rank higher on Google and bring in organic visitors with detailed site speed tuning, semantic structured markup, and targeted indexing strategies.</p>
-                  <ul class="showcase-features">
-                    <li><i class="bi bi-patch-check-fill"></i> Strategic schema injection</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Core Web Vitals audit</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Keyword ranking monitoring</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Semantic sitemaps generation</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Backlink channel profiling</li>
-                  </ul>
-                  <div class="showcase-tech-tags">
-                    <span>Google Analytics</span>
-                    <span>SEMrush</span>
-                    <span>Ahrefs</span>
-                    <span>Schema.org</span>
-                  </div>
-                  <div class="showcase-actions">
-                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 6. Digital Marketing -->
-          <div class="featured-showcase-card">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-6 showcase-img-col">
-                <div class="showcase-img-wrapper">
-                  <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Mockup" class="showcase-img" />
-                  <div class="showcase-float-node"><i class="bi bi-megaphone"></i></div>
-                </div>
-              </div>
-              <div class="col-lg-6 showcase-content-col">
-                <div class="showcase-content">
-                  <span class="showcase-badge">Marketing</span>
-                  <h3 class="showcase-title">Data-Driven Campaigns</h3>
-                  <p class="showcase-desc">Scale your brand authority and client acquisition with high-impact ads, customized visual funnels, and constant A/B landing page testing.</p>
-                  <ul class="showcase-features">
-                    <li><i class="bi bi-patch-check-fill"></i> PPC Google Ads campaigns</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Paid social media strategy</li>
-                    <li><i class="bi bi-patch-check-fill"></i> High-converting landing pages</li>
-                    <li><i class="bi bi-patch-check-fill"></i> A/B testing funnels</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Conversion tracking setup</li>
-                  </ul>
-                  <div class="showcase-tech-tags">
-                    <span>Google Ads</span>
-                    <span>Meta Ads</span>
-                    <span>HubSpot</span>
-                    <span>Analytics</span>
-                  </div>
-                  <div class="showcase-actions">
-                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 7. Mobile App Development -->
-          <div class="featured-showcase-card">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-6 showcase-img-col">
-                <div class="showcase-img-wrapper">
-                  <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="Mobile App Development Mockup" class="showcase-img" />
-                  <div class="showcase-float-node"><i class="bi bi-phone"></i></div>
-                </div>
-              </div>
-              <div class="col-lg-6 showcase-content-col">
-                <div class="showcase-content">
-                  <span class="showcase-badge">Mobile</span>
-                  <h3 class="showcase-title">Sleek Cross-Platform Apps</h3>
-                  <p class="showcase-desc">Reach your users wherever they are. We code responsive mobile apps with native fluid performance, offline database support, and smooth transitions.</p>
-                  <ul class="showcase-features">
-                    <li><i class="bi bi-patch-check-fill"></i> React Native &amp; Flutter code</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Offline-first databases</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Apple &amp; Google store setup</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Push notifications setup</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Biometric auth integrations</li>
-                  </ul>
-                  <div class="showcase-tech-tags">
-                    <span>React Native</span>
-                    <span>Flutter</span>
-                    <span>Firebase</span>
-                    <span>SQLite</span>
-                  </div>
-                  <div class="showcase-actions">
-                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 8. Maintenance & Support -->
-          <div class="featured-showcase-card">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-6 showcase-img-col">
-                <div class="showcase-img-wrapper">
-                  <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80" alt="Maintenance &amp; Support Mockup" class="showcase-img" />
-                  <div class="showcase-float-node"><i class="bi bi-wrench-adjustable"></i></div>
-                </div>
-              </div>
-              <div class="col-lg-6 showcase-content-col">
-                <div class="showcase-content">
-                  <span class="showcase-badge">Security</span>
-                  <h3 class="showcase-title">24/7 Server Tuning &amp; Support</h3>
-                  <p class="showcase-desc">Prevent downtime and protect customer data with regular automated backups, server patch installations, and instant incident response.</p>
-                  <ul class="showcase-features">
-                    <li><i class="bi bi-patch-check-fill"></i> 24/7 Server monitoring</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Weekly backups &amp; updates</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Instant incident response</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Uptime SLA guarantees</li>
-                    <li><i class="bi bi-patch-check-fill"></i> Technical helpdesk access</li>
-                  </ul>
-                  <div class="showcase-tech-tags">
-                    <span>AWS</span>
-                    <span>Google Cloud</span>
-                    <span>Docker</span>
-                    <span>Jenkins</span>
-                  </div>
-                  <div class="showcase-actions">
-                    <a href="#contact-footer" class="about-btn about-btn-primary magnetic-btn">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
-                    <a href="#contact-footer" class="about-btn about-btn-outline magnetic-btn">Get Quote</a>
-                  </div>
+                <div class="stat-counter-card">
+                  <div class="stat-counter-glow"></div>
+                  <span class="stat-number" data-target="24" data-suffix="/7">0</span>
+                  <span class="stat-label text-secondary">Uptime Support</span>
                 </div>
               </div>
             </div>
@@ -566,187 +671,90 @@
       </div>
     </section>
 
-    <!-- Section 3: Interactive Process Section -->
-    <section class="services-section services-section-light" aria-label="Development Process">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-8" data-aos="fade-up">
-            <span class="section-badge">How We Work</span>
-            <h2 class="section-title">Our Step-by-Step <br/><span class="gradient-text">Execution Roadmap</span></h2>
-            <p class="section-subtitle mx-auto">
+    <!-- Process Section (4-step vertical timeline) -->
+    <section class="premium-process-section" id="process">
+      <div class="container position-relative">
+        <div class="row mb-5 justify-content-center text-center">
+          <div class="col-lg-8">
+            <span class="services-badge-pill">Methodology</span>
+            <h2 class="section-title reveal-text mt-3">Our 4-Step <br><span class="hero__title-accent">Execution Roadmap</span></h2>
+            <p class="section-subtitle mx-auto text-secondary">
               We deploy an interactive, iterative development timeline to transform complex ideas into reliable production platforms.
             </p>
           </div>
         </div>
 
-        <!-- Swiper container for horizontal timeline -->
-        <div class="swiper process-slider-container" data-aos="fade-up">
-          <!-- Connecting Timeline Progress Line (Desktop/Tablet) -->
-          <div class="process-progress-line">
-            <div class="process-progress-bar"></div>
+        <!-- Timeline container -->
+        <div class="timeline-container">
+          <!-- Active scroll progress line -->
+          <div class="timeline-progress-line">
+            <div class="timeline-progress-fill" id="timeline-progress-fill"></div>
           </div>
-          
-          <div class="swiper-wrapper">
-            <!-- Step 1 -->
-            <div class="swiper-slide process-slide-item">
-              <div class="process-card-premium">
-                <div class="process-badge-wrap">
-                  <span class="process-badge-num">01</span>
-                  <span class="process-badge-phase">DISCOVERY</span>
-                </div>
-                <div class="process-icon-circle"><i class="bi bi-chat-left-dots"></i></div>
-                <h4 class="process-card-title">Consultation &amp; Scoping</h4>
-                <p class="process-card-desc">We align on core business objectives, define the exact scope, map technical challenges, and set architectural targets.</p>
-              </div>
-            </div>
 
-            <!-- Step 2 -->
-            <div class="swiper-slide process-slide-item">
-              <div class="process-card-premium">
-                <div class="process-badge-wrap">
-                  <span class="process-badge-num">02</span>
-                  <span class="process-badge-phase">ARCHITECTURE</span>
-                </div>
-                <div class="process-icon-circle"><i class="bi bi-journal-check"></i></div>
-                <h4 class="process-card-title">Planning &amp; Blueprinting</h4>
-                <p class="process-card-desc">We compile user flows, document functional specification protocols, select core database backbones, and architect data paths.</p>
+          <!-- Step 1 -->
+          <div class="timeline-step">
+            <div class="timeline-node">
+              <div class="node-dot"></div>
+              <div class="node-glow"></div>
+            </div>
+            <div class="timeline-content timeline-content-left">
+              <div class="timeline-card">
+                <div class="step-num">01</div>
+                <div class="step-icon"><i class="ph ph-chats-circle"></i></div>
+                <h4 class="step-title">Discovery</h4>
+                <p class="step-desc text-secondary">We align on core business objectives, define the exact scope, map technical challenges, and set architectural targets.</p>
               </div>
             </div>
-
-            <!-- Step 3 -->
-            <div class="swiper-slide process-slide-item">
-              <div class="process-card-premium">
-                <div class="process-badge-wrap">
-                  <span class="process-badge-num">03</span>
-                  <span class="process-badge-phase">CREATIVE</span>
-                </div>
-                <div class="process-icon-circle"><i class="bi bi-bezier2"></i></div>
-                <h4 class="process-card-title">UI/UX Design Systems</h4>
-                <p class="process-card-desc">We build clean high-fidelity UI visual components, define spacing rules, construct animations, and draft custom interaction flows.</p>
-              </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="swiper-slide process-slide-item">
-              <div class="process-card-premium">
-                <div class="process-badge-wrap">
-                  <span class="process-badge-num">04</span>
-                  <span class="process-badge-phase">CODE</span>
-                </div>
-                <div class="process-icon-circle"><i class="bi bi-code-slash"></i></div>
-                <h4 class="process-card-title">Production Development</h4>
-                <p class="process-card-desc">We write clean modular React components, script core API integrations, configure secure server routing, and assemble databases.</p>
-              </div>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="swiper-slide process-slide-item">
-              <div class="process-card-premium">
-                <div class="process-badge-wrap">
-                  <span class="process-badge-num">05</span>
-                  <span class="process-badge-phase">QUALITY</span>
-                </div>
-                <div class="process-icon-circle"><i class="bi bi-shield-check"></i></div>
-                <h4 class="process-card-title">Testing &amp; QA Auditing</h4>
-                <p class="process-card-desc">We deploy test scripts, run strict accessibility and cross-browser diagnostics, and optimize page load speeds.</p>
-              </div>
-            </div>
-
-            <!-- Step 6 -->
-            <div class="swiper-slide process-slide-item">
-              <div class="process-card-premium">
-                <div class="process-badge-wrap">
-                  <span class="process-badge-num">06</span>
-                  <span class="process-badge-phase">DEPLOY</span>
-                </div>
-                <div class="process-icon-circle"><i class="bi bi-rocket-takeoff"></i></div>
-                <h4 class="process-card-title">Launch &amp; Server Tuning</h4>
-                <p class="process-card-desc">We release to cloud server platforms, configure caching controls, set up monitoring alerts, and transition to live updates.</p>
-              </div>
-            </div>
+            <div class="timeline-spacer"></div>
           </div>
-          
-          <!-- Navigation arrows (tablet/mobile) -->
-          <div class="process-slider-prev"><i class="bi bi-chevron-left"></i></div>
-          <div class="process-slider-next"><i class="bi bi-chevron-right"></i></div>
-          
-          <!-- Pagination dots (tablet/mobile) -->
-          <div class="process-slider-pagination"></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Section 4: Why Choose Us -->
-    <section class="services-section services-section-accent" aria-label="Why Choose NexRise">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Graphics left column -->
-          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-            <div class="why-graphics-container">
-              <div class="why-main-img-box">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Creative team collaboration" />
-              </div>
-              <!-- Floating graphic card 1 -->
-              <div class="why-floating-card floating-card-1">
-                <div class="why-float-icon"><i class="bi bi-shield-check"></i></div>
-                <div class="why-float-info">
-                  <span class="why-float-num">100%</span>
-                  <span class="why-float-txt">Secure Coding</span>
-                </div>
-              </div>
-              <!-- Floating graphic card 2 -->
-              <div class="why-floating-card floating-card-2">
-                <div class="why-float-icon"><i class="bi bi-lightning-charge"></i></div>
-                <div class="why-float-info">
-                  <span class="why-float-num">60fps</span>
-                  <span class="why-float-txt">Fluid Anim</span>
-                </div>
+          <!-- Step 2 -->
+          <div class="timeline-step">
+            <div class="timeline-spacer"></div>
+            <div class="timeline-node">
+              <div class="node-dot"></div>
+              <div class="node-glow"></div>
+            </div>
+            <div class="timeline-content timeline-content-right">
+              <div class="timeline-card">
+                <div class="step-num">02</div>
+                <div class="step-icon"><i class="ph ph-pencil-circle"></i></div>
+                <h4 class="step-title">Design</h4>
+                <p class="step-desc text-secondary">We build clean high-fidelity UI visual components, define spacing rules, construct animations, and draft custom interaction flows.</p>
               </div>
             </div>
           </div>
 
-          <!-- Description right column -->
-          <div class="col-lg-6" data-aos="fade-left">
-            <span class="section-badge">Why Choose Us</span>
-            <h2 class="section-title">We Build Enterprise Platforms <br/><span class="gradient-text">Engineered to Convert</span></h2>
-            <p class="section-subtitle">
-              We couple digital design aesthetics with strict software coding standards to construct sites that stand out and perform reliably.
-            </p>
-
-            <div class="why-feature-list">
-              <div class="why-feature-item">
-                <div class="why-feature-icon"><i class="bi bi-gem"></i></div>
-                <div class="why-feature-body">
-                  <h5>High-End Design System Standards</h5>
-                  <p>Every block, card layout, and button is governed by predefined variables for a consistent look.</p>
-                </div>
-              </div>
-              <div class="why-feature-item">
-                <div class="why-feature-icon"><i class="bi bi-graph-up-arrow"></i></div>
-                <div class="why-feature-body">
-                  <h5>Conversion Optimization Focused</h5>
-                  <p>We map checkout paths and lead forms to minimize friction and increase conversions.</p>
-                </div>
+          <!-- Step 3 -->
+          <div class="timeline-step">
+            <div class="timeline-node">
+              <div class="node-dot"></div>
+              <div class="node-glow"></div>
+            </div>
+            <div class="timeline-content timeline-content-left">
+              <div class="timeline-card">
+                <div class="step-num">03</div>
+                <div class="step-icon"><i class="ph ph-code-blocks"></i></div>
+                <h4 class="step-title">Development</h4>
+                <p class="step-desc text-secondary">We write clean modular React components, script core API integrations, configure secure server routing, and assemble databases.</p>
               </div>
             </div>
+            <div class="timeline-spacer"></div>
+          </div>
 
-            <!-- Stats Counters Grid -->
-            <div class="stats-grid">
-              <div class="stats-card">
-                <span class="stats-num" data-target="5" data-suffix="+">0</span>
-                <span class="stats-label">Years Experience</span>
-              </div>
-              <div class="stats-card">
-                <span class="stats-num" data-target="200" data-suffix="+">0</span>
-                <span class="stats-label">Projects Completed</span>
-              </div>
-              <div class="stats-card">
-                <span class="stats-num" data-target="100" data-suffix="+">0</span>
-                <span class="stats-label">Clients Satisfied</span>
-              </div>
-              <div class="stats-card">
-                <span class="stats-num" data-target="24" data-suffix="/7">0</span>
-                <span class="stats-label">Uptime Support</span>
+          <!-- Step 4 -->
+          <div class="timeline-step">
+            <div class="timeline-spacer"></div>
+            <div class="timeline-node">
+              <div class="node-dot"></div>
+              <div class="node-glow"></div>
+            </div>
+            <div class="timeline-content timeline-content-right">
+              <div class="timeline-card">
+                <div class="step-num">04</div>
+                <div class="step-icon"><i class="ph ph-rocket-launch"></i></div>
+                <h4 class="step-title">Launch</h4>
+                <p class="step-desc text-secondary">We release to cloud server platforms, configure caching controls, set up monitoring alerts, and transition to live updates.</p>
               </div>
             </div>
           </div>
@@ -754,262 +762,26 @@
       </div>
     </section>
 
-    <!-- Section 5: Technology Stack -->
-    <section class="services-section services-section-light" aria-label="Tech Stack">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-8" data-aos="fade-up">
-            <span class="section-badge">Our Stack</span>
-            <h2 class="section-title">Cutting-Edge Tech Stack <br/><span class="gradient-text">for Robust Applications</span></h2>
-            <p class="section-subtitle mx-auto">
-              We leverage modern language frameworks and tools to build robust, scalable applications.
-            </p>
-          </div>
-        </div>
-
-        <div class="tech-grid" data-aos="fade-up">
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-filetype-html"></i></div>
-            <span>HTML</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-filetype-css"></i></div>
-            <span>CSS</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-filetype-js"></i></div>
-            <span>JavaScript</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-code-square"></i></div>
-            <span>TypeScript</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-bootstrap"></i></div>
-            <span>React</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-arrow-up-right-circle"></i></div>
-            <span>Next.js</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-wind"></i></div>
-            <span>Tailwind CSS</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-node-plus"></i></div>
-            <span>Node.js</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-wordpress"></i></div>
-            <span>WordPress</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-layout-text-sidebar-reverse"></i></div>
-            <span>Elementor</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-bag-check"></i></div>
-            <span>WooCommerce</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-database"></i></div>
-            <span>MongoDB</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-google"></i></div>
-            <span>Firebase</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-git"></i></div>
-            <span>Git</span>
-          </div>
-          <div class="tech-card">
-            <div class="tech-icon-box"><i class="bi bi-figma"></i></div>
-            <span>Figma</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Section 7: Testimonials -->
-    <section class="services-section services-section-light" aria-label="Customer Success">
-      <div class="container testimonials-section-wrapper">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-8" data-aos="fade-up">
-            <span class="section-badge">Reviews</span>
-            <h2 class="section-title">What Our Enterprise <br/><span class="gradient-text">Partners Say About Us</span></h2>
-            <p class="section-subtitle mx-auto">
-              Read how we helped digital brands build responsive websites, optimize performance, and achieve digital goals.
-            </p>
-          </div>
-        </div>
-
-        <!-- Swiper Slider Container -->
-        <div class="swiper testimonials-slider" data-aos="fade-up">
-          <div class="swiper-wrapper">
-            <!-- Testimonial 1 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card-services">
-                <i class="bi bi-quote quote-icon-services"></i>
-                <p>
-                  "NexRise restructured our legacy WordPress setup into a headless Next.js frontend. Our core conversion metrics grew by 24% in the first quarter itself."
-                </p>
-                <div class="testimonial-services-footer">
-                  <div class="testimonial-avatar-services">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins" />
-                  </div>
-                  <div class="testimonial-info-services">
-                    <h5>Sarah Jenkins</h5>
-                    <span>Director of Product, Optima</span>
-                    <div class="testimonial-rating-services">
-                      <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card-services">
-                <i class="bi bi-quote quote-icon-services"></i>
-                <p>
-                  "The visual UI/UX details designed by NexRise gave our dashboard a premium SaaS look. Their modular CSS system made code changes simple to integrate."
-                </p>
-                <div class="testimonial-services-footer">
-                  <div class="testimonial-avatar-services">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Marcus Vane" />
-                  </div>
-                  <div class="testimonial-info-services">
-                    <h5>Marcus Vane</h5>
-                    <span>Co-founder, CloudWire</span>
-                    <div class="testimonial-rating-services">
-                      <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card-services">
-                <i class="bi bi-quote quote-icon-services"></i>
-                <p>
-                  "Their custom WooCommerce build has handles traffic peaks seamlessly during our holiday sales. Uptime support has been excellent and secure."
-                </p>
-                <div class="testimonial-services-footer">
-                  <div class="testimonial-avatar-services">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Elena Rostova" />
-                  </div>
-                  <div class="testimonial-info-services">
-                    <h5>Elena Rostova</h5>
-                    <span>E-Commerce Head, LoomDecor</span>
-                    <div class="testimonial-rating-services">
-                      <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Pagination dots -->
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 8: FAQ -->
-    <section class="services-section services-section-accent" aria-label="Frequently Asked Questions">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-8" data-aos="fade-up">
-            <span class="section-badge">Common Queries</span>
-            <h2 class="section-title">Frequently Asked <br/><span class="gradient-text">Questions</span></h2>
-            <p class="section-subtitle mx-auto">
-              Find fast answers to common questions about our technical execution and delivery structures.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-accordion-wrapper" data-aos="fade-up">
-          <div class="accordion services-accordion" id="accordionFAQ">
-            <!-- FAQ Item 1 -->
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                  How long does a typical custom website build take?
-                </button>
-              </h3>
-              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
-                <div class="accordion-body">
-                  A typical full-cycle website build ranges between 4 to 8 weeks, depending on the complexity of layouts, animations, database scopes, and API integrations. We deliver functional specs in the second week to align on details.
-                </div>
-              </div>
-            </div>
-
-            <!-- FAQ Item 2 -->
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                  What is a Headless CMS and why should I choose it?
-                </button>
-              </h3>
-              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                <div class="accordion-body">
-                  A headless CMS decouples content storage from the visual presentation layer. It lets you write posts on a backend (like WordPress) while serving them through a lightning-fast React or Next.js static frontend, making your website immune to database attacks and extremely fast.
-                </div>
-              </div>
-            </div>
-
-            <!-- FAQ Item 3 -->
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                  Do you perform custom SEO integration and optimization?
-                </button>
-              </h3>
-              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                <div class="accordion-body">
-                  Yes. All layouts and pages are engineered with SEO best practices: semantic HTML tags, clean structural hierarchy, automatic sitemap generation, structured schema markups, metadata configurations, and performance optimization for core web vitals.
-                </div>
-              </div>
-            </div>
-
-            <!-- FAQ Item 4 -->
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                  Do you offer support SLAs and hosting maintenance?
-                </button>
-              </h3>
-              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                <div class="accordion-body">
-                  Yes, we offer multiple post-launch maintenance SLA contracts that cover server monitoring, performance audits, database backups, security patches, and minor visual overrides to keep your sites running perfectly.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 9: CTA Section -->
-    <section class="services-section services-section-light pt-0" aria-label="Start Project CTA">
-      <div class="container">
-        <div class="cta-banner-card" data-aos="fade-up">
-          <div class="cta-content-wrapper">
-            <span class="section-badge">Start Your Journey</span>
-            <h2>Ready to Start Your Project?</h2>
-            <p>
+    <!-- CTA Section -->
+    <section class="premium-cta-section" id="cta">
+      <div class="container position-relative">
+        <div class="cta-card">
+          <div class="cta-card-glow"></div>
+          <div class="cta-glow-blob"></div>
+          <div class="cta-content text-center">
+            <span class="services-badge-pill mb-3">Get Started</span>
+            <h2 class="cta-title mb-4">Have a project<br><span class="hero__title-accent">in mind?</span></h2>
+            <p class="cta-desc text-secondary mb-5 mx-auto">
               Partner with NexRise to build fast, custom, and secure platforms designed to elevate your brand.
             </p>
-            <div class="hero-ctas">
-              <a href="mailto:hello@nexrise.com" class="services-btn services-btn-primary magnetic-btn">Get Free Quote</a>
-              <a href="#contact-footer" class="services-btn services-btn-outline magnetic-btn">Contact Us</a>
+            <div class="d-flex justify-content-center gap-4 flex-wrap">
+              <a href="mailto:hello@nexrise.com" class="about-btn about-btn-primary magnetic-btn">
+                <span>Start a Project</span>
+                <i class="ph ph-arrow-up-right ms-2"></i>
+              </a>
+              <a href="mailto:hello@nexrise.com" class="about-btn about-btn-outline magnetic-btn">
+                <span>Email Us</span>
+              </a>
             </div>
           </div>
         </div>
@@ -1067,16 +839,17 @@
   <!-- Bootstrap 5 Bundle JS (Includes Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- Root Theme JS (Handles custom cursor, page loader, fullscreen menu, theme toggling, counters) -->
   <script src="script.js?v=6"></script>
 
   <!-- Services Custom JS (AOS & Swiper Slider & Stats Counter & Mouse Parallax) -->
-  <script src="js/services.js"></script>
+  <script src="js/services.js?v=7"></script>
 </body>
 </html>

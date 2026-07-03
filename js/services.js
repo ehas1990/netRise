@@ -1,192 +1,360 @@
 /**
- * NexRise - Services Page Specific Interactions
- * Version: 1.0.0
+ * NexRise - Redesigned Services Page Premium Interactions
+ * Powered by GSAP, ScrollTrigger, and Lenis Smooth Scroll
  * Author: Antigravity Code Assistant
+ * Version: 2.0.0
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize AOS (Animate On Scroll)
-  if (typeof AOS !== 'undefined') {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-out-quad',
-      once: true,
-      mirror: false
+  'use strict';
+
+  // ============================================================
+  // 1. INITIALIZE LENIS SMOOTH SCROLL
+  // ============================================================
+  let lenis;
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExponential
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 1.5,
+      infinite: false,
     });
+
+    // Sync ScrollTrigger with Lenis
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
   }
 
-  // 2. Initialize Swiper for Testimonials
-  if (typeof Swiper !== 'undefined') {
-    new Swiper('.testimonials-slider', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      grabCursor: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 24
-        },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 30
-        }
+  // ============================================================
+  // 2. TEXT SPLITTING UTILITY FOR REVEAL ANIMATIONS
+  // ============================================================
+  const splitTextElements = document.querySelectorAll('.reveal-text');
+  splitTextElements.forEach((el) => {
+    const text = el.textContent.trim();
+    el.innerHTML = '';
+    
+    // Split by words to keep spacing intact
+    const words = text.split(/\s+/);
+    words.forEach((word, wordIdx) => {
+      const wordSpan = document.createElement('span');
+      wordSpan.style.display = 'inline-block';
+      wordSpan.style.whiteSpace = 'nowrap';
+      wordSpan.style.overflow = 'hidden';
+      wordSpan.classList.add('word-wrap');
+
+      const chars = word.split('');
+      chars.forEach((char) => {
+        const charSpan = document.createElement('span');
+        charSpan.textContent = char;
+        charSpan.classList.add('char');
+        charSpan.style.display = 'inline-block';
+        charSpan.style.transform = 'translateY(100%)';
+        wordSpan.appendChild(charSpan);
+      });
+
+      el.appendChild(wordSpan);
+
+      // Append trailing space
+      if (wordIdx < words.length - 1) {
+        const space = document.createTextNode(' ');
+        el.appendChild(space);
       }
     });
+  });
+
+  // ============================================================
+  // 3. HERO TIMELINE ENTRANCE
+  // ============================================================
+  const heroTl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.2 } });
+  
+  // Animate Hero Badge and Dot
+  heroTl.from('.services-badge-wrap', {
+    opacity: 0,
+    y: 30,
+    delay: 0.4
+  });
+
+  // Animate split title characters
+  heroTl.to('#services-hero-title .char', {
+    y: '0%',
+    stagger: 0.015,
+    duration: 1.4,
+    ease: 'power4.out'
+  }, '-=0.8');
+
+  // Animate subtitle
+  heroTl.from('.services-hero-subtitle', {
+    opacity: 0,
+    y: 30,
+    duration: 1.2
+  }, '-=1.0');
+
+  // Animate CTA buttons
+  heroTl.from('.services-hero-ctas', {
+    opacity: 0,
+    y: 20,
+    duration: 1.0
+  }, '-=0.8');
+
+  // Animate bottom scroll indicator
+  heroTl.from('.hero-scroll-indicator', {
+    opacity: 0,
+    y: 15,
+    duration: 0.8
+  }, '-=0.6');
+
+  // ============================================================
+  // 4. DYNAMIC FLOATING BACKGROUND PARTICLES
+  // ============================================================
+  const particlesContainer = document.getElementById('particles-container');
+  if (particlesContainer) {
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 12 : 28;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('bg-particle');
+      
+      const size = gsap.utils.random(1.5, 4);
+      gsap.set(particle, {
+        width: size,
+        height: size,
+        x: gsap.utils.random(0, window.innerWidth),
+        y: gsap.utils.random(0, window.innerHeight * 2.8),
+        scale: gsap.utils.random(0.6, 2.0),
+        opacity: gsap.utils.random(0.08, 0.25)
+      });
+      
+      particlesContainer.appendChild(particle);
+
+      // Unique floating timeline for each particle
+      gsap.to(particle, {
+        y: `+=${gsap.utils.random(120, 320)}`,
+        x: `+=${gsap.utils.random(-80, 80)}`,
+        duration: gsap.utils.random(12, 28),
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      });
+    }
   }
 
-  // 3. Stats Counter Animation on Scroll
-  const statsSection = document.querySelector('.stats-grid');
-  const statsNums = document.querySelectorAll('.stats-num');
-  let animated = false;
+  // ============================================================
+  // 5. SCROLL PROGRESS BAR (GLOBAL)
+  // ============================================================
+  gsap.to('#scroll-progress-bar', {
+    width: '100%',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: 'body',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 0.1
+    }
+  });
 
-  const countUp = (element) => {
-    const target = parseInt(element.getAttribute('data-target')) || 0;
-    const suffix = element.getAttribute('data-suffix') || '';
-    let count = 0;
-    const duration = 2000; // 2 seconds
-    const speed = target / (duration / 16); // ~60fps
+  // ============================================================
+  // 6. ALTERNATING SHOWCASE SECTIONS ANIMATION
+  // ============================================================
+  const showcaseSections = document.querySelectorAll('.showcase-section');
+  showcaseSections.forEach((section) => {
+    const imageCol = section.querySelector('.showcase-image-col');
+    const contentCol = section.querySelector('.showcase-content-col');
+    const image = section.querySelector('.showcase-image');
+    const badge = section.querySelector('.image-float-badge');
+    const glow = section.querySelector('.image-glow-ring');
 
-    const updateCount = () => {
-      count += speed;
-      if (count >= target) {
-        element.textContent = target + suffix;
-      } else {
-        element.textContent = Math.floor(count) + suffix;
-        requestAnimationFrame(updateCount);
+    // Entrance animation for columns
+    gsap.fromTo(imageCol, 
+      { opacity: 0, y: 70 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.4,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 78%',
+          toggleActions: 'play none none none'
+        }
       }
-    };
-    updateCount();
-  };
+    );
 
-  if (statsSection && statsNums.length > 0) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !animated) {
-          statsNums.forEach(num => countUp(num));
-          animated = true;
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    statsObserver.observe(statsSection);
-  }
-
-  // 4. Initialize Swiper for Horizontal Roadmap Timeline
-  if (typeof Swiper !== 'undefined') {
-    new Swiper('.process-slider-container', {
-      slidesPerView: 1.2,
-      spaceBetween: 16,
-      grabCursor: true,
-      navigation: {
-        nextEl: '.process-slider-next',
-        prevEl: '.process-slider-prev',
-      },
-      pagination: {
-        el: '.process-slider-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        1024: {
-          slidesPerView: 6,
-          spaceBetween: 24,
-          allowTouchMove: false,
-        },
-        768: {
-          slidesPerView: 2.5,
-          spaceBetween: 20,
-          allowTouchMove: true,
+    gsap.fromTo(contentCol,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.4,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 72%',
+          toggleActions: 'play none none none'
         }
       }
-    });
-  }
+    );
 
-  // 5. Progress Line Animation on Scroll
-  const progressLine = document.querySelector('.process-progress-bar');
-  const processSection = document.querySelector('.process-slider-container');
-  if (progressLine && processSection) {
-    const processObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          progressLine.style.transform = 'scaleX(1)';
-          processObserver.unobserve(entry.target);
+    // Parallax scroll effects inside the sections
+    if (image) {
+      gsap.to(image, {
+        yPercent: 12,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
         }
       });
-    }, { threshold: 0.15 });
-    processObserver.observe(processSection);
-  }
+    }
 
-  // 6. Scroll Reveal & Stagger Animation Observer
-  const cards = document.querySelectorAll('.featured-showcase-card');
-
-  if (cards.length > 0) {
-    // Desktop & Mobile Reveal Observer (triggers animation only once, low threshold)
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          entry.target.classList.add('mobile-visible'); // For mobile compat
-          revealObserver.unobserve(entry.target);
+    if (badge) {
+      gsap.to(badge, {
+        yPercent: -25,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
         }
       });
-    }, { threshold: 0.02 });
+    }
 
-    cards.forEach(card => {
-      revealObserver.observe(card);
-    });
+    if (glow) {
+      gsap.to(glow, {
+        yPercent: -8,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+  });
 
-    // Fallback: immediately reveal cards already in viewport on load
-    const checkInitialVisibility = () => {
-      cards.forEach(card => {
+  // ============================================================
+  // 7. 3D CARD MOUSE TILT EFFECT
+  // ============================================================
+  const tiltElements = document.querySelectorAll('.premium-image-wrapper, .service-details-card, .why-premium-card, .timeline-card');
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  if (!isTouchDevice) {
+    tiltElements.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          card.classList.add('revealed');
-          card.classList.add('mobile-visible');
-          revealObserver.unobserve(card);
-        }
+        
+        // Calculate coordinates relative to center of the card
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        // Transform tilt range (max 5 degrees for smooth effect)
+        const tiltX = -(y / (rect.height / 2)) * 5;
+        const tiltY = (x / (rect.width / 2)) * 5;
+        
+        gsap.to(card, {
+          rotateX: tiltX,
+          rotateY: tiltY,
+          transformPerspective: 800,
+          ease: 'power1.out',
+          duration: 0.35
+        });
       });
-    };
-    checkInitialVisibility();
 
-    // Dynamic Scroll Focus-Opacity modulation on desktop
-    const handleScrollOpacity = () => {
-      if (window.innerWidth >= 1024) {
-        const windowHeight = window.innerHeight;
-        const viewportCenter = windowHeight / 2;
-
-        cards.forEach((card) => {
-          if (card.classList.contains('revealed')) {
-            const rect = card.getBoundingClientRect();
-            const cardCenter = rect.top + rect.height / 2;
-            
-            // Distance from center of the screen
-            const distanceFromCenter = Math.abs(cardCenter - viewportCenter);
-            
-            // Calculate opacity: 1 at center, fading down to 0.4 when far
-            const maxDistance = windowHeight * 0.8;
-            const opacity = Math.max(0.4, 1 - (distanceFromCenter / maxDistance) * 0.6);
-            
-            card.style.opacity = opacity;
-          }
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          rotateX: 0,
+          rotateY: 0,
+          ease: 'power3.out',
+          duration: 0.6
         });
-      } else {
-        cards.forEach(card => {
-          card.style.opacity = '';
-        });
-      }
-    };
-
-    window.addEventListener('scroll', handleScrollOpacity);
-    window.addEventListener('resize', handleScrollOpacity);
-    handleScrollOpacity();
+      });
+    });
   }
+
+  // ============================================================
+  // 8. WHY CHOOSE US COUNTER TWEENS
+  // ============================================================
+  const statNumbers = document.querySelectorAll('.stat-number');
+  statNumbers.forEach((num) => {
+    const target = parseInt(num.getAttribute('data-target')) || 0;
+    const suffix = num.getAttribute('data-suffix') || '';
+    const counterObj = { val: 0 };
+
+    gsap.to(counterObj, {
+      val: target,
+      duration: 2.5,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.stats-counters-box',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      },
+      onUpdate: () => {
+        num.textContent = Math.floor(counterObj.val) + suffix;
+      }
+    });
+  });
+
+  // ============================================================
+  // 9. PROCESS SECTION TIMELINE PROGRESS SCROLL
+  // ============================================================
+  const timelineProgressFill = document.getElementById('timeline-progress-fill');
+  const timelineSteps = document.querySelectorAll('.timeline-step');
+
+  if (timelineProgressFill && timelineSteps.length > 0) {
+    gsap.fromTo(timelineProgressFill,
+      { height: '0%' },
+      {
+        height: '100%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.timeline-container',
+          start: 'top 55%',
+          end: 'bottom 45%',
+          scrub: true,
+          onUpdate: (self) => {
+            const currentHeightPct = self.progress;
+            
+            // Loop steps to active-toggle classes as the scroll progresses
+            timelineSteps.forEach((step) => {
+              const rect = step.getBoundingClientRect();
+              const container = document.querySelector('.timeline-container');
+              const containerRect = container.getBoundingClientRect();
+              
+              // Find ratio location of current step inside the container
+              const stepCenter = (rect.top + rect.height / 2) - containerRect.top;
+              const stepPct = stepCenter / containerRect.height;
+              
+              if (currentHeightPct >= stepPct - 0.06) {
+                step.classList.add('active');
+              } else {
+                step.classList.remove('active');
+              }
+            });
+          }
+        }
+      }
+    );
+  }
+
+  // ============================================================
+  // 10. REFRESH SCROLLTRIGGER ON WINDOW RESIZE
+  // ============================================================
+  window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
+  });
 });
