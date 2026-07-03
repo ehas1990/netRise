@@ -713,3 +713,24 @@ body {
   pointer-events: none;
   z-index: 1;
 }
+
+/* Explicit Text Color Overrides for CTA Section (Forcing Dark Theme Contrast on Light/Dark layouts) */
+.premium-agency-cta .cta-ref-heading {
+  color: #ffffff !important;
+}
+
+.premium-agency-cta .cta-ref-description {
+  color: #a3a3a3 !important;
+}
+
+.premium-agency-cta .cta-item-text h4 {
+  color: #ffffff !important;
+}
+
+.premium-agency-cta .cta-item-text p {
+  color: #8c8c8c !important;
+}
+
+.premium-agency-cta .cta-bullet {
+  color: #a3a3a3 !important;
+}
