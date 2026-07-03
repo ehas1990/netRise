@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Portfolio — NexRise</title>
+  <meta name="description" content="Explore our premium portfolio showcases. We build responsive, award-winning applications and web design integrations." />
+  
+  <!-- Bootstrap 5 Grid CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Main stylesheets -->
+  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <!-- Page specific stylesheet -->
+  <link rel="stylesheet" href="css/portfolio.css" />
+</head>
+<body data-theme="light">
+
+  <!-- Premium Reusable Background Effects -->
+  <div class="premium-bg-effects" aria-hidden="true">
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-grid-overlay"></div>
+    <div class="bg-noise-overlay"></div>
+    <div class="particles-container" id="particles-container"></div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor" class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <span class="cursor__text"></span>
+  </div>
+
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader__logo">
+      <img src="logo.jpg" alt="NexRise" class="loader__logo-img" />
+    </div>
+    <div class="loader__bar"><div class="loader__progress"></div></div>
+  </div>
+
+  <!-- Header -->
+  <header id="header" class="site-header">
+    <div class="header__logo">
+      <a href="index.html" class="logo-link">
+        <img src="logo.jpg" alt="NexRise" class="header-logo-img" />
+      </a>
+    </div>
+    <div class="header__controls">
+      <a href="contact.html" class="btn btn-outline header__cta magnetic-btn">
+        <span>Say Hello</span>
+        <i class="ph ph-arrow-up-right"></i>
+      </a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="theme-toggle__label">Night</span>
+        <span class="theme-toggle__icon">
+          <i class="ph ph-moon-stars"></i>
+        </span>
+      </button>
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+  </header>
+
+  <!-- Full Screen Navigation -->
+  <nav id="fullscreen-nav" class="fullscreen-nav" aria-hidden="true">
+    <div class="nav-backdrop"></div>
+    <div class="nav-overlay">
+      <button class="nav-close-btn" aria-label="Close menu"><i class="ph ph-x"></i></button>
+      <div class="nav-content">
+        <div class="nav-left">
+          <div class="nav-left-header">
+            <p class="nav-left-tagline">🚀 Rise to the Next Level</p>
+            <p class="nav-left-services">Web Development | Digital Marketing | Growth Solutions</p>
+          </div>
+          
+          <ul class="nav-menu" id="main-nav">
+            <li class="nav-item nav-item--link">
+              <a href="index.html" class="nav-item__header">
+                <span class="nav-item__num">/ 01</span>
+                <span class="nav-item__label">Home</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+            <li class="nav-item nav-item--link">
+              <a href="about.html" class="nav-item__header">
+                <span class="nav-item__num">/ 02</span>
+                <span class="nav-item__label">About Us</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+            <li class="nav-item nav-item--link">
+              <a href="services.html" class="nav-item__header">
+                <span class="nav-item__num">/ 03</span>
+                <span class="nav-item__label">Services</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+            <li class="nav-item nav-item--link">
+              <a href="contact.html" class="nav-item__header">
+                <span class="nav-item__num">/ 04</span>
+                <span class="nav-item__label">Contact</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <div class="nav-right-header">
+            <p class="nav-right-tagline">Connect With Us</p>
+          </div>
+          <div class="nav-right-content">
+            <div class="nav-contact-item">
+              <span>Send an Email</span>
+              <a href="mailto:hello@nexrise.com" class="nav-contact-link">hello@nexrise.com</a>
+            </div>
+            <div class="nav-contact-item">
+              <span>Call Us</span>
+              <a href="tel:+1234567890" class="nav-contact-link">+1 (234) 567-890</a>
+            </div>
+            <div class="nav-contact-item">
+              <span>Visit Us</span>
+              <span class="nav-contact-text">123 Innovation Way, Tech District, CA</span>
+            </div>
+            <div class="nav-social-links">
+              <a href="#" target="_blank" class="follow-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+              <a href="#" target="_blank" class="follow-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            </div>
+          </div>
+          <div class="nav-right-footer">
+            <p>Made with <span>❤️</span> by <a href="index.html">NexRise</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Section 1: Hero Banner -->
+    <section class="hero-section" id="hero" style="min-height: 75vh;">
+      <div class="hero__background">
+        <div class="hero__bg-grid"></div>
+        <div class="hero__glow"></div>
+        <div class="shape-3d shape-sphere" data-speed="0.2"></div>
+        <div class="shape-3d shape-torus" data-speed="-0.15"></div>
+        <div class="shape-3d shape-cube" data-speed="0.3"></div>
+        <div class="shape-3d shape-pyramid" data-speed="-0.25"></div>
+      </div>
+
+      <div class="container position-relative" style="z-index: 3; padding-top: calc(var(--header-h) + 5rem); padding-bottom: 5rem;">
+        <div class="row">
+          <div class="col-lg-8 text-start">
+            <!-- Breadcrumbs -->
+            <nav aria-label="breadcrumb" class="about-breadcrumb premium-reveal">
+              <ol class="about-breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Portfolio</li>
+              </ol>
+            </nav>
+            <h1 class="hero__title mb-4 reveal-text" id="hero-title">
+              Our Premium<br>
+              <span class="hero__title-accent">Works Showcase</span>
+            </h1>
+            <p class="lead mb-5 fs-5 text-secondary">
+              A curated collection of pixel-perfect applications, custom designs, and high-performing digital frameworks designed for scale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Category Filter Bar -->
+    <section class="portfolio-filter-section">
+      <div class="container">
+        <ul class="filter-pills-wrap">
+          <li><button class="filter-pill-btn is-active" data-filter="all">All Projects</button></li>
+          <li><button class="filter-pill-btn" data-filter="design">Web Design</button></li>
+          <li><button class="filter-pill-btn" data-filter="development">Web Development</button></li>
+          <li><button class="filter-pill-btn" data-filter="uiux">UI/UX</button></li>
+          <li><button class="filter-pill-btn" data-filter="branding">Branding</button></li>
+          <li><button class="filter-pill-btn" data-filter="wordpress">WordPress</button></li>
+          <li><button class="filter-pill-btn" data-filter="react">React</button></li>
+          <li><button class="filter-pill-btn" data-filter="nextjs">Next.js</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: Portfolio Cards Grid -->
+    <section class="portfolio-grid-section">
+      <div class="container">
+        <!-- Initial Projects Grid -->
+        <div class="portfolio-grid">
+          <!-- Project 1 -->
+          <div class="project-showcase-card glass-glow-card" data-category="design branding uiux">
+            <div class="project-card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Aether Agency Web mockup" />
+              <div class="project-card-overlay">
+                <span class="project-category-tag">Design / Branding</span>
+                <h3>Aether Agency</h3>
+                <p>A luxury design portal featuring hardware-accelerated animations and layouts.</p>
+                <a href="#" class="project-view-btn">View Project <i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <div class="project-card-details">
+              <div>
+                <span class="project-category-tag">Design / Branding</span>
+                <h3>Aether Agency</h3>
+                <p class="mb-0">A luxury design portal featuring hardware-accelerated animations and layouts.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-showcase-card glass-glow-card" data-category="development react nextjs uiux">
+            <div class="project-card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Quantum Dashboard mockup" />
+              <div class="project-card-overlay">
+                <span class="project-category-tag">React / Next.js</span>
+                <h3>Quantum Dashboard</h3>
+                <p>High-frequency data analytics interface utilizing optimized charts and states.</p>
+                <a href="#" class="project-view-btn">View Project <i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <div class="project-card-details">
+              <div>
+                <span class="project-category-tag">React / Next.js</span>
+                <h3>Quantum Dashboard</h3>
+                <p class="mb-0">High-frequency data analytics interface utilizing optimized charts and states.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-showcase-card glass-glow-card" data-category="design wordpress">
+            <div class="project-card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Helios Commerce mockup" />
+              <div class="project-card-overlay">
+                <span class="project-category-tag">Design / WordPress</span>
+                <h3>Helios Commerce</h3>
+                <p>Custom WooCommerce integration styled with glassmorphic cards and filters.</p>
+                <a href="#" class="project-view-btn">View Project <i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <div class="project-card-details">
+              <div>
+                <span class="project-category-tag">Design / WordPress</span>
+                <h3>Helios Commerce</h3>
+                <p class="mb-0">Custom WooCommerce integration styled with glassmorphic cards and filters.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-showcase-card glass-glow-card" data-category="branding uiux">
+            <div class="project-card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1601134467661-3d775b999c8b?auto=format&fit=crop&w=800&q=80" alt="Nova Brand Identity mockup" />
+              <div class="project-card-overlay">
+                <span class="project-category-tag">Branding / UI/UX</span>
+                <h3>Nova Brand Identity</h3>
+                <p>Comprehensive corporate rebranding, guideline sets, and responsive app patterns.</p>
+                <a href="#" class="project-view-btn">View Project <i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <div class="project-card-details">
+              <div>
+                <span class="project-category-tag">Branding / UI/UX</span>
+                <h3>Nova Brand Identity</h3>
+                <p class="mb-0">Comprehensive corporate rebranding, guideline sets, and responsive app patterns.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-showcase-card glass-glow-card" data-category="development react uiux">
+            <div class="project-card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Vesper Application mockup" />
+              <div class="project-card-overlay">
+                <span class="project-category-tag">React / Development</span>
+                <h3>Vesper Application</h3>
+                <p>Interactive client collaboration dashboard running on responsive nodes.</p>
+                <a href="#" class="project-view-btn">View Project <i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <div class="project-card-details">
+              <div>
+                <span class="project-category-tag">React / Development</span>
+                <h3>Vesper Application</h3>
+                <p class="mb-0">Interactive client collaboration dashboard running on responsive nodes.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-showcase-card glass-glow-card" data-category="wordpress design">
+            <div class="project-card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Apex Corporate Site mockup" />
+              <div class="project-card-overlay">
+                <span class="project-category-tag">WordPress / Design</span>
+                <h3>Apex Corporate Site</h3>
+                <p>A multi-page enterprise solution optimized for speed, CLS, and core web vitals.</p>
+                <a href="#" class="project-view-btn">View Project <i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <div class="project-card-details">
+              <div>
+                <span class="project-category-tag">WordPress / Design</span>
+                <h3>Apex Corporate Site</h3>
+                <p class="mb-0">A multi-page enterprise solution optimized for speed, CLS, and core web vitals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden Drawer Container (Revealed on Load More click) -->
+        <div id="hidden-projects-wrapper" class="d-none">
+          <div class="portfolio-grid mt-4 pt-2">
+            <!-- Project 7 -->
+            <div class="project-showcase-card glass-glow-card" data-category="development react uiux">
+              <div class="project-card-image-wrap">
+                <img src="https://images.unsplash.com/photo-1510519138101-570d1dca3d66?auto=format&fit=crop&w=800&q=80" alt="Zephyr Fitness Tracker mockup" />
+                <div class="project-card-overlay">
+                  <span class="project-category-tag">React / UI/UX</span>
+                  <h3>Zephyr Tracker</h3>
+                  <p>Smart health monitoring dashboard utilizing synchronized device telemetry feeds.</p>
+                  <a href="#" class="project-view-btn">View Project <i class="ph ph-arrow-up-right"></i></a>
+                </div>
+              </div>
+              <div class="project-card-details">
+                <div>
+                  <span class="project-category-tag">React / UI/UX</span>
+                  <h3>Zephyr Tracker</h3>
+                  <p class="mb-0">Smart health monitoring dashboard utilizing synchronized device telemetry feeds.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-showcase-card glass-glow-card" data-category="development branding nextjs">
+              <div class="project-card-image-wrap">
+                <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=800&q=80" alt="Aero Drone Delivery mockup" />
+                <div class="project-card-overlay">
+                  <span class="project-category-tag">Next.js / Development</span>
+                  <h3>Aero Drone Portal</h3>
+                  <p>Logistics tracking platform with custom visual markers and SVG maps.</p>
+                  <a href="#" class="project-view-btn">View Project <i class="ph ph-arrow-up-right"></i></a>
+                </div>
+              </div>
+              <div class="project-card-details">
+                <div>
+                  <span class="project-category-tag">Next.js / Development</span>
+                  <h3>Aero Drone Portal</h3>
+                  <p class="mb-0">Logistics tracking platform with custom visual markers and SVG maps.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load More Container -->
+        <div class="load-more-container">
+          <button id="load-more-trigger" class="load-more-btn glass-glow-card">
+            <span class="load-more-spinner"></span>
+            <span class="load-btn-text">Load More Projects</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Call to Action -->
+    <section id="cta" class="about-page-section about-page-section-light" aria-label="Call to Action">
+      <div class="container">
+        <div class="cta-gradient-box premium-reveal">
+          <div class="col-lg-8 mx-auto text-white">
+            <span class="about-subtitle text-gradient mb-3">Work With Us</span>
+            <h2 class="display-4 fw-bold mb-4">Have an Idea in Mind?</h2>
+            <p class="lead text-white-50 mb-5 fs-5">
+              Let's create robust digital solutions together. Speak with our experts and start designing your future.
+            </p>
+            <a href="contact.html" class="about-btn about-btn-primary magnetic-btn">
+              Let's Talk <i class="bi bi-chat-left-text-fill ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="logo-link">
+            <img src="logo.jpg" alt="NexRise" class="footer-logo-img" />
+          </a>
+          <p class="footer__tagline">Rise to the Next Level</p>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__nav-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Graphic Design</a></li>
+              <li><a href="#">Development</a></li>
+              <li><a href="#">Brand Identity</a></li>
+              <li><a href="#">Marketing</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-col">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="#" target="_blank">Dribbble</a></li>
+              <li><a href="#" target="_blank">Behance</a></li>
+              <li><a href="#" target="_blank">Github</a></li>
+              <li><a href="#" target="_blank">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 NexRise. All rights reserved.</p>
+        <p>hello@nexrise.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Root Theme JS -->
+  <script src="script.js?v=6"></script>
+
+  <!-- Premium Scroll & Interactive Animation Library -->
+  <script src="js/animations.js"></script>
+
+  <!-- Portfolio Page Custom Script -->
+  <script src="js/portfolio.js"></script>
+</body>
+</html>
