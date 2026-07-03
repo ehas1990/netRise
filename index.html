@@ -12,9 +12,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 </head>
 <body data-theme="light">
+
+  <!-- Premium Reusable Background Effects -->
+  <div class="premium-bg-effects" aria-hidden="true">
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-grid-overlay"></div>
+    <div class="bg-noise-overlay"></div>
+    <div class="particles-container" id="particles-container"></div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
 
   <!-- Custom Cursor -->
   <div id="cursor" class="cursor" aria-hidden="true">
@@ -211,14 +226,14 @@
       <div class="hero__glow"></div>
       
       <!-- Floating 3D Shapes -->
-      <div class="shape-3d shape-sphere"></div>
-      <div class="shape-3d shape-torus"></div>
-      <div class="shape-3d shape-cube"></div>
-      <div class="shape-3d shape-pyramid"></div>
+      <div class="shape-3d shape-sphere" data-speed="0.2"></div>
+      <div class="shape-3d shape-torus" data-speed="-0.15"></div>
+      <div class="shape-3d shape-cube" data-speed="0.3"></div>
+      <div class="shape-3d shape-pyramid" data-speed="-0.25"></div>
     </div>
 
     <div class="hero__content">
-      <h1 class="hero__title" id="hero-title">Design, Tech<br/><span class="hero__title-accent">&amp; much more...</span></h1>
+      <h1 class="hero__title reveal-text" id="hero-title">Design, Tech<br/><span class="hero__title-accent">&amp; much more...</span></h1>
     </div>
 
     <div class="hero__bottom">
@@ -722,6 +737,17 @@
     </div>
   </footer>
 
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Root Theme JS -->
   <script src="script.js?v=6"></script>
+
+  <!-- Premium Scroll & Interactive Animation Library -->
+  <script src="js/animations.js"></script>
 </body>
 </html>

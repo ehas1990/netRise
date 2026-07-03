@@ -28,8 +28,23 @@
   <link rel="stylesheet" href="style.css?v=5" />
   <!-- About Us Custom Stylesheet (For Sub-page sections) -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 </head>
 <body data-theme="light">
+
+  <!-- Premium Reusable Background Effects -->
+  <div class="premium-bg-effects" aria-hidden="true">
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-grid-overlay"></div>
+    <div class="bg-noise-overlay"></div>
+    <div class="particles-container" id="particles-container"></div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
 
   <!-- Custom Cursor (Exact matches index.html) -->
   <div id="cursor" class="cursor" aria-hidden="true">
@@ -226,10 +241,10 @@
         <div class="hero__glow"></div>
         
         <!-- Floating 3D Shapes (Same elements and classes as Home Page) -->
-        <div class="shape-3d shape-sphere"></div>
-        <div class="shape-3d shape-torus"></div>
-        <div class="shape-3d shape-cube"></div>
-        <div class="shape-3d shape-pyramid"></div>
+        <div class="shape-3d shape-sphere" data-speed="0.2"></div>
+        <div class="shape-3d shape-torus" data-speed="-0.15"></div>
+        <div class="shape-3d shape-cube" data-speed="0.3"></div>
+        <div class="shape-3d shape-pyramid" data-speed="-0.25"></div>
       </div>
 
       <!-- Hero Content Container -->
@@ -244,7 +259,7 @@
               </ol>
             </nav>
             <!-- Large Headings with scroll reveal -->
-            <h1 class="hero__title mb-4 premium-reveal" id="hero-title">
+            <h1 class="hero__title mb-4 reveal-text" id="hero-title">
               We Craft Premium<br>
               <span class="hero__title-accent">Digital Experiences</span>
             </h1>
@@ -872,16 +887,23 @@
   <!-- Bootstrap 5 Bundle JS (Includes Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Root Theme JS (Handles custom cursor, page loader, fullscreen menu, theme toggling, counters) -->
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Root Theme JS -->
   <script src="script.js?v=6"></script>
 
-  <!-- About Us Custom JS (AOS & Swiper Slider) -->
+  <!-- About Us Custom JS -->
   <script src="js/main.js"></script>
+
+  <!-- Premium Scroll & Interactive Animation Library -->
+  <script src="js/animations.js"></script>
 </body>
 </html>
