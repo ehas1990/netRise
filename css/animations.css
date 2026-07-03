@@ -515,3 +515,201 @@ body {
 .submit-btn-glow:hover i {
   transform: translate3d(4px, -3px, 0);
 }
+
+/* --- Reference Image Match CTA Redesign --- */
+.cta-limited-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #f97316;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}
+
+.cta-limited-badge i {
+  color: #f97316;
+  font-size: 0.85rem;
+}
+
+.cta-ref-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.cta-accent-color {
+  color: #f97316;
+  background: linear-gradient(135deg, #f97316 0%, #ffb800 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-ref-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #a3a3a3 !important;
+  max-width: 460px;
+}
+
+.cta-btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-ref-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.35);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cta-ref-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
+}
+
+.cta-ref-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: transparent;
+  color: #ffb800 !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 184, 0, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cta-ref-btn-secondary:hover {
+  background: rgba(255, 184, 0, 0.05);
+  border-color: #ffb800;
+  transform: translateY(-2px);
+}
+
+/* Right Side List Items */
+.cta-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cta-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  background: rgba(30, 30, 30, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.03) !important;
+  transition: all 0.3s ease;
+}
+
+.cta-list-item:hover {
+  transform: translateX(5px);
+  background: rgba(40, 40, 40, 0.45) !important;
+  border-color: rgba(249, 115, 22, 0.15) !important;
+}
+
+.cta-item-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f97316;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.cta-item-text h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+  margin-top: 0;
+}
+
+.cta-item-text p {
+  font-size: 0.8rem;
+  color: #8c8c8c;
+  margin-bottom: 0;
+}
+
+.cta-bullets-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-bullet {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #a3a3a3;
+}
+
+.cta-bullet i {
+  color: #10b981; /* green checkmark */
+  font-size: 0.9rem;
+}
+
+/* Specific main card styling for dark theme and overlay logic */
+[data-theme="dark"] .cta-two-col-card.glass-glow-card {
+  background: #111112 !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+[data-theme="light"] .cta-two-col-card.glass-glow-card {
+  background: #151517 !important; /* Keep it dark like the ref image for contrast */
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.cta-grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-corner-glow {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}

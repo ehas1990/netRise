@@ -798,68 +798,90 @@
       </div>
     </section>
 
-    <!-- Redesigned Premium Agency Call to Action -->
+    <!-- Redesigned Premium Agency Call to Action (Reference Image Match) -->
     <section class="premium-agency-cta" id="cta-section">
       <div class="container">
         <div class="cta-two-col-card glass-glow-card">
-          <!-- Aurora lighting backdrop & mouse follow light -->
-          <div class="cta-aurora-glow"></div>
+          <!-- Spotlight Cursor tracker, Grid overlay and Corner glow -->
+          <div class="cta-grid-overlay"></div>
           <div class="cta-mouse-light"></div>
+          <div class="cta-corner-glow"></div>
           
           <div class="row align-items-center g-5">
             <!-- Left Side -->
             <div class="col-lg-6 col-12 text-start position-relative" style="z-index: 2;">
-              <!-- Background animated shapes behind heading -->
-              <div class="cta-circle cta-circle-1"></div>
-              <div class="cta-circle cta-circle-2"></div>
-              <svg class="cta-svg-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="rgba(6, 182, 212, 0.12)" stroke-width="0.3" />
-                <path d="M0,30 Q25,60 50,30 T100,30" fill="none" stroke="rgba(37, 99, 235, 0.08)" stroke-width="0.3" />
-              </svg>
-
-              <div class="cta-badge">
-                <span class="cta-badge-dot"></span>
-                <span>Work with us</span>
+              <!-- Badge -->
+              <div class="cta-limited-badge">
+                <i class="ph ph-star-fill"></i>
+                <span>Limited Time Offer</span>
               </div>
-              <h2 class="display-5 fw-bold mb-4">
-                Ready to Rise to the<br><span class="hero__title-accent">Next Level?</span>
+              
+              <!-- Heading -->
+              <h2 class="cta-ref-heading mb-4">
+                Ready to Transform<br>
+                <span class="cta-accent-color">Your Business?</span>
               </h2>
-              <p class="cta-description text-secondary mb-5 fs-5">
-                Partner with NexRise and construct custom, pixel-perfect platforms that attract users and accelerate conversion goals.
+              
+              <!-- Description -->
+              <p class="cta-ref-description text-secondary mb-5">
+                Join thousands of companies already using our cutting-edge technology to scale faster, work smarter, and innovate boldly.
               </p>
-              <a href="contact.html" class="about-btn about-btn-primary submit-btn-glow magnetic-btn">
-                <span>Get In Touch</span>
-                <i class="ph ph-arrow-up-right"></i>
-              </a>
+              
+              <!-- Buttons -->
+              <div class="cta-btn-group">
+                <a href="contact.html" class="cta-ref-btn-primary magnetic-btn">
+                  <span>Start Free Trial</span>
+                  <i class="ph ph-arrow-right"></i>
+                </a>
+                <a href="contact.html" class="cta-ref-btn-secondary magnetic-btn">
+                  <span>Schedule Demo</span>
+                  <i class="ph ph-calendar"></i>
+                </a>
+              </div>
             </div>
 
-            <!-- Right Side (Floating glass cards) -->
-            <div class="col-lg-6 col-12 position-relative d-flex justify-content-center align-items-center" style="min-height: 380px; z-index: 2;">
-              <div class="floating-cards-container">
-                <!-- Card 1: Completed Projects -->
-                <div class="float-stat-card card-1 glass-glow-card">
-                  <div class="float-card-icon"><i class="ph ph-rocket-launch"></i></div>
-                  <div>
-                    <h3 class="stat-number" data-target="50" data-suffix="+">50+</h3>
-                    <p class="stat-label">Completed Projects</p>
+            <!-- Right Side (List Items & Bullet Features) -->
+            <div class="col-lg-6 col-12 position-relative" style="z-index: 2;">
+              <div class="cta-list-container">
+                <!-- Item 1 -->
+                <div class="cta-list-item glass-glow-card">
+                  <div class="cta-item-icon-box"><i class="ph ph-lightning"></i></div>
+                  <div class="cta-item-text">
+                    <h4>Lightning Fast Setup</h4>
+                    <p>Get started in under 5 minutes</p>
                   </div>
                 </div>
-                <!-- Card 2: Years Experience -->
-                <div class="float-stat-card card-2 glass-glow-card">
-                  <div class="float-card-icon"><i class="ph ph-briefcase"></i></div>
-                  <div>
-                    <h3 class="stat-number" data-target="5" data-suffix="+">5+</h3>
-                    <p class="stat-label">Years Experience</p>
+                <!-- Item 2 -->
+                <div class="cta-list-item glass-glow-card">
+                  <div class="cta-item-icon-box"><i class="ph ph-lock-key"></i></div>
+                  <div class="cta-item-text">
+                    <h4>Enterprise Security</h4>
+                    <p>Bank-level encryption & compliance</p>
                   </div>
                 </div>
-                <!-- Card 3: Client Satisfaction -->
-                <div class="float-stat-card card-3 glass-glow-card">
-                  <div class="float-card-icon"><i class="ph ph-sparkles"></i></div>
-                  <div>
-                    <h3 class="stat-number" data-target="100" data-suffix="%">100%</h3>
-                    <p class="stat-label">Client Satisfaction</p>
+                <!-- Item 3 -->
+                <div class="cta-list-item glass-glow-card">
+                  <div class="cta-item-icon-box"><i class="ph ph-thumbs-up"></i></div>
+                  <div class="cta-item-text">
+                    <h4>Dedicated Support Team</h4>
+                    <p>Expert help when you need it</p>
                   </div>
                 </div>
+                <!-- Item 4 -->
+                <div class="cta-list-item glass-glow-card">
+                  <div class="cta-item-icon-box"><i class="ph ph-headset"></i></div>
+                  <div class="cta-item-text">
+                    <h4>Support</h4>
+                    <p>24/7 dedicated support team</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Bullet features -->
+              <div class="cta-bullets-row mt-4">
+                <span class="cta-bullet"><i class="ph ph-check-circle-fill"></i> No credit card required</span>
+                <span class="cta-bullet"><i class="ph ph-check-circle-fill"></i> 14-day free trial</span>
+                <span class="cta-bullet"><i class="ph ph-check-circle-fill"></i> Cancel anytime</span>
               </div>
             </div>
           </div>
