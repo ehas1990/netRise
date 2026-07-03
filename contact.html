@@ -76,11 +76,14 @@
   </header>
 
   <!-- Full Screen Navigation -->
-  <nav id="fullscreen-nav" class="fullscreen-nav" aria-hidden="true">
+ <nav id="fullscreen-nav" class="fullscreen-nav" aria-hidden="true">
     <div class="nav-backdrop"></div>
     <div class="nav-overlay">
+      <!-- Circular Close Button -->
       <button class="nav-close-btn" aria-label="Close menu"><i class="ph ph-x"></i></button>
+
       <div class="nav-content">
+        <!-- Left column (70% width) -->
         <div class="nav-left">
           <div class="nav-left-header">
             <p class="nav-left-tagline">🚀 Rise to the Next Level</p>
@@ -88,13 +91,16 @@
           </div>
           
           <ul class="nav-menu" id="main-nav">
-            <li class="nav-item nav-item--link">
+            <!-- Row 1: Home (Active Highlighted) -->
+            <li class="nav-item nav-item--active">
               <a href="index.html" class="nav-item__header">
                 <span class="nav-item__num">/ 01</span>
                 <span class="nav-item__label">Home</span>
                 <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
               </a>
             </li>
+            
+            <!-- Row 2: About Us -->
             <li class="nav-item nav-item--link">
               <a href="about.html" class="nav-item__header">
                 <span class="nav-item__num">/ 02</span>
@@ -102,49 +108,97 @@
                 <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
               </a>
             </li>
-            <li class="nav-item nav-item--link">
+            
+            <!-- Row 3: Pages -->
+            <!-- <li class="nav-item">
+              <div class="nav-item__header">
+                <span class="nav-item__num">/ 03</span>
+                <span class="nav-item__label">Pages</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </div>
+              <ul class="nav-submenu">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </li> -->
+             <li class="nav-item nav-item--link">
               <a href="services.html" class="nav-item__header">
                 <span class="nav-item__num">/ 03</span>
                 <span class="nav-item__label">Services</span>
                 <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
               </a>
             </li>
-            <li class="nav-item nav-item--link nav-item--active">
+        
+           
+
+            <!-- Row 6: Portfolio -->
+            <li class="nav-item nav-item--link">
+              <a href="#works" class="nav-item__header">
+                <span class="nav-item__num">/ 06</span>
+                <span class="nav-item__label">Portfolio</span>
+                <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
+              </a>
+            </li>
+
+            <!-- Row 7: Contact -->
+            <li class="nav-item nav-item--link">
               <a href="contact.html" class="nav-item__header">
-                <span class="nav-item__num">/ 04</span>
+                <span class="nav-item__num">/ 07</span>
                 <span class="nav-item__label">Contact</span>
                 <div class="nav-item__arrow"><i class="ph ph-arrow-right"></i></div>
               </a>
             </li>
           </ul>
         </div>
+
+        <!-- Right column (30% width) -->
         <div class="nav-right">
-          <div class="nav-right-header">
-            <p class="nav-right-tagline">Connect With Us</p>
+          <!-- Contact Card Premium -->
+          <div class="contact-card-premium">
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-envelope"></i></div>
+              <div class="contact-card-info">
+                <a href="mailto:hello@nexrise.com" class="contact-card-link">hello@nexrise.com</a>
+                <p class="contact-card-sub">We reply within 24 hours</p>
+              </div>
+            </div>
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-phone"></i></div>
+              <div class="contact-card-info">
+                <a href="tel:+12127089400" class="contact-card-link">+1 212-708-9400</a>
+                <p class="contact-card-sub">Mon - Fri: 9AM - 6PM</p>
+              </div>
+            </div>
+            <div class="contact-card-row">
+              <div class="contact-card-icon"><i class="ph ph-map-pin"></i></div>
+              <div class="contact-card-info">
+                <span class="contact-card-text">11 West 53 Street,<br>New York, NY 10019<br>United States</span>
+              </div>
+            </div>
           </div>
-          <div class="nav-right-content">
-            <div class="nav-contact-item">
-              <span>Send an Email</span>
-              <a href="mailto:hello@nexrise.com" class="nav-contact-link">hello@nexrise.com</a>
-            </div>
-            <div class="nav-contact-item">
-              <span>Call Us</span>
-              <a href="tel:+1234567890" class="nav-contact-link">+1 (234) 567-890</a>
-            </div>
-            <div class="nav-contact-item">
-              <span>Visit Us</span>
-              <span class="nav-contact-text">123 Innovation Way, Tech District, CA</span>
-            </div>
-            <div class="nav-social-links">
+
+
+
+          <!-- Follow Us icon row -->
+          <div class="follow-us-section">
+            <p class="follow-us-title">Follow Us</p>
+            <div class="follow-us-icons">
+              <a href="#" target="_blank" class="follow-icon" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
               <a href="#" target="_blank" class="follow-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
               <a href="#" target="_blank" class="follow-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
               <a href="#" target="_blank" class="follow-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
             </div>
           </div>
+
+          <!-- Footer note -->
           <div class="nav-right-footer">
             <p>Made with <span>❤️</span> by <a href="index.html">NexRise</a></p>
           </div>
         </div>
+
       </div>
     </div>
   </nav>
