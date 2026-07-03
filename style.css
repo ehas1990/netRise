@@ -666,10 +666,10 @@ p { line-height: 1.65; }
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   margin-top: 83px;
   margin-bottom: 2rem;
-  height: fit-content;
+  height: 500px !important;
   transition: all 0.4s var(--ease-out);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .contact-card-premium::before {
