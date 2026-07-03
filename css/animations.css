@@ -236,12 +236,18 @@ body {
   position: relative;
   padding: 4.5rem;
   border-radius: 32px;
-  background: var(--glass-bg-reusable);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid var(--glass-border-reusable);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .cta-two-col-card {
+  background: rgba(10, 10, 8, 0.45);
+  border-color: rgba(245, 244, 240, 0.04);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
 .cta-aurora-glow {
