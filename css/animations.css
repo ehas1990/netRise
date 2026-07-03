@@ -420,3 +420,98 @@ body {
     animation: none !important;
   }
 }
+
+/* --- Redesigned CTA Visual Effects & Micro-interactions --- */
+.cta-mouse-light {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+[data-theme="light"] .cta-mouse-light {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
+  mix-blend-mode: multiply;
+}
+
+/* Wavy SVG Lines behind Heading */
+.cta-svg-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Decorative Floating Circles */
+.cta-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(6, 182, 212, 0.2);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-circle-1 {
+  width: 140px;
+  height: 140px;
+  top: 15%;
+  left: -20px;
+  animation: rotateCircle1 22s infinite linear;
+}
+
+.cta-circle-2 {
+  width: 220px;
+  height: 220px;
+  bottom: 10%;
+  left: 30%;
+  animation: rotateCircle2 28s infinite linear;
+}
+
+@keyframes rotateCircle1 {
+  0% { transform: rotate(0deg) scale(0.95); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(0.95); }
+}
+
+@keyframes rotateCircle2 {
+  0% { transform: rotate(360deg) scale(1.05); }
+  50% { transform: rotate(180deg) scale(0.95); }
+  100% { transform: rotate(0deg) scale(1.05); }
+}
+
+/* Premium stat card micro-interactions */
+.float-stat-card:hover {
+  transform: scale(1.03) translateY(-8px) !important;
+  border-color: rgba(6, 182, 212, 0.25) !important;
+  box-shadow: 0 25px 50px rgba(6, 182, 212, 0.2) !important;
+}
+
+/* Premium Button Styling extensions */
+.submit-btn-glow {
+  background: var(--color-accent-gradient) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3) !important;
+  color: #fff !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.submit-btn-glow:hover {
+  transform: scale(1.025) !important;
+  box-shadow: 0 12px 35px rgba(6, 182, 212, 0.5) !important;
+}
+
+.submit-btn-glow i {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.submit-btn-glow:hover i {
+  transform: translate3d(4px, -3px, 0);
+}

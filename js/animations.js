@@ -352,7 +352,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================================
-  // 10. REFRESH SCROLLTRIGGER ON RESIZE
+  // 10. SPOTLIGHT CURSOR CAPTURE (CTA CONTAINER)
+  // ============================================================
+  const ctaContainers = document.querySelectorAll('.cta-two-col-card');
+  ctaContainers.forEach(card => {
+    const light = card.querySelector('.cta-mouse-light');
+    if (light) {
+      // Set initial position
+      gsap.set(light, { x: 300, y: 150 });
+      
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        gsap.to(light, {
+          x: x,
+          y: y,
+          duration: 0.35,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+      });
+    }
+  });
+
+  // ============================================================
+  // 11. REFRESH SCROLLTRIGGER ON RESIZE
   // ============================================================
   window.addEventListener('resize', () => {
     ScrollTrigger.refresh();
