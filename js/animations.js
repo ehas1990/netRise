@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let lenis;
   if (typeof Lenis !== 'undefined') {
     lenis = new Lenis({
-      duration: 1.4,
+      duration: 1.2,
+      lerp: 0.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExponential
       direction: 'vertical',
       gestureDirection: 'vertical',
@@ -245,15 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
         opacity: 0, 
         y: 50,
         x: card.classList.contains('process-card') || card.classList.contains('testimonial-card') ? 0 : directionX,
-        scale: 0.96,
-        filter: 'blur(4px)'
+        scale: 0.96
       },
       {
         opacity: 1,
         y: 0,
         x: 0,
         scale: 1,
-        filter: 'blur(0px)',
         duration: 1.2,
         ease: 'power3.out',
         scrollTrigger: {
@@ -269,11 +268,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const headings = document.querySelectorAll('.section-title, .about__manifest p, .manifest-text');
   headings.forEach(heading => {
     gsap.fromTo(heading,
-      { opacity: 0, y: 30, filter: 'blur(2px)' },
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        filter: 'blur(0px)',
         duration: 1.2,
         ease: 'power2.out',
         scrollTrigger: {
@@ -307,7 +305,8 @@ document.addEventListener('DOMContentLoaded', () => {
           rotateY: tiltY,
           transformPerspective: 800,
           ease: 'power1.out',
-          duration: 0.35
+          duration: 0.35,
+          overwrite: 'auto'
         });
       });
 
@@ -316,7 +315,8 @@ document.addEventListener('DOMContentLoaded', () => {
           rotateX: 0,
           rotateY: 0,
           ease: 'power3.out',
-          duration: 0.6
+          duration: 0.6,
+          overwrite: 'auto'
         });
       });
     });

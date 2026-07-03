@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let lenis;
   if (typeof Lenis !== 'undefined') {
     lenis = new Lenis({
-      duration: 1.4,
+      duration: 1.2,
+      lerp: 0.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExponential
       direction: 'vertical',
       gestureDirection: 'vertical',
@@ -270,7 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
           rotateY: tiltY,
           transformPerspective: 800,
           ease: 'power1.out',
-          duration: 0.35
+          duration: 0.35,
+          overwrite: 'auto'
         });
       });
 
@@ -279,7 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
           rotateX: 0,
           rotateY: 0,
           ease: 'power3.out',
-          duration: 0.6
+          duration: 0.6,
+          overwrite: 'auto'
         });
       });
     });

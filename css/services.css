@@ -898,3 +898,20 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* GPU Hardware Acceleration for smooth elements */
+.premium-image-wrapper, 
+.premium-image-wrapper img, 
+.showcase-image,
+.service-details-card,
+.why-premium-card,
+.stat-counter-card,
+.timeline-card,
+.cta-card,
+.bg-glow,
+.timeline-node {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}

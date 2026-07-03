@@ -205,3 +205,22 @@ body {
 .parallax-img-wrapper:hover img {
   transform: scale(1.08);
 }
+
+/* GPU Hardware Acceleration for smooth elements */
+.parallax-img-wrapper, 
+.parallax-img-wrapper img, 
+.glass-glow-card,
+.bg-glow,
+.shape-3d,
+.process-card,
+.works-item,
+.service-item,
+.blog-item,
+.testimonial-card,
+.value-card,
+.team-card {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}

@@ -41,7 +41,7 @@
     curX += (mouseX - curX) * 0.15;
     curY += (mouseY - curY) * 0.15;
     if (cursor) {
-      cursor.style.transform = `translate(${curX}px, ${curY}px)`;
+      cursor.style.transform = `translate3d(${curX}px, ${curY}px, 0)`;
     }
     rafId = requestAnimationFrame(animateCursor);
   }
