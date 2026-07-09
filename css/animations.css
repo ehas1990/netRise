@@ -230,6 +230,7 @@ body {
   padding: 6rem 0;
   position: relative;
   z-index: 5;
+  background-color: #0a0a08;
 }
 
 .cta-two-col-card {

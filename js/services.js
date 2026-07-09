@@ -315,34 +315,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   // 9. PROCESS SECTION TIMELINE PROGRESS SCROLL
   // ============================================================
-  const timelineProgressFill = document.getElementById('timeline-progress-fill');
-  const timelineSteps = document.querySelectorAll('.timeline-step');
+  const horizontalProgressFill = document.getElementById('horizontal-timeline-progress-fill');
+  const horizontalSteps = document.querySelectorAll('.horizontal-timeline-container .timeline-step');
 
-  if (timelineProgressFill && timelineSteps.length > 0) {
-    gsap.fromTo(timelineProgressFill,
-      { height: '0%' },
+  if (horizontalProgressFill && horizontalSteps.length > 0) {
+    gsap.fromTo(horizontalProgressFill,
+      { width: '0%' },
       {
-        height: '100%',
+        width: '100%',
         ease: 'none',
         scrollTrigger: {
-          trigger: '.timeline-container',
-          start: 'top 55%',
-          end: 'bottom 45%',
+          trigger: '.horizontal-timeline-container',
+          start: 'top 75%',
+          end: 'center 45%',
           scrub: true,
           onUpdate: (self) => {
-            const currentHeightPct = self.progress;
+            const currentWidthPct = self.progress;
             
-            // Loop steps to active-toggle classes as the scroll progresses
-            timelineSteps.forEach((step) => {
-              const rect = step.getBoundingClientRect();
-              const container = document.querySelector('.timeline-container');
-              const containerRect = container.getBoundingClientRect();
-              
-              // Find ratio location of current step inside the container
-              const stepCenter = (rect.top + rect.height / 2) - containerRect.top;
-              const stepPct = stepCenter / containerRect.height;
-              
-              if (currentHeightPct >= stepPct - 0.06) {
+            horizontalSteps.forEach((step, index) => {
+              const stepPct = index / (horizontalSteps.length - 1);
+              if (currentWidthPct >= stepPct - 0.05) {
                 step.classList.add('active');
               } else {
                 step.classList.remove('active');
