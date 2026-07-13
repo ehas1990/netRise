@@ -1986,7 +1986,14 @@ p { line-height: 1.65; }
   margin-bottom: 1.25rem;
 }
 
-.footer__nav-col ul { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer__nav-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0px !important;
+    margin: 0px !important;
+    list-style: none !important;
+}
 
 .footer__nav-col a {
   font-size: var(--fs-sm);
