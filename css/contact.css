@@ -74,8 +74,8 @@
 }
 
 [data-theme="dark"] .info-card-icon-wrap {
-  background: rgba(245, 244, 240, 0.02);
-  border-color: rgba(245, 244, 240, 0.04);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .info-glass-card:hover .info-card-icon-wrap {
@@ -125,7 +125,7 @@
 }
 
 [data-theme="dark"] .contact-form-card {
-  background: #111112 !important;
+  background: #111827 !important;
 }
 
 /* Force light contrast on inputs and text inside contact-form-card since it is always dark */
@@ -160,7 +160,7 @@
 
 [data-theme="dark"] .contact-form-card .glass-input:focus ~ label,
 [data-theme="dark"] .contact-form-card .glass-input:not(:placeholder-shown) ~ label {
-  background: #111112 !important;
+  background: #111827 !important;
 }
 
 .form-group-floating {

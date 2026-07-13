@@ -205,10 +205,26 @@
 
 .stat-about-number {
   font-family: var(--font-main);
-  font-size: var(--fs-3xl);
+  font-size: clamp(18px, 4vw, 24px);
   font-weight: 800;
+  line-height: 1.2;
   margin-bottom: var(--sp-xs);
   display: block;
+  word-break: keep-all;
+}
+
+@media (max-width: 767px) {
+  .stat-about-number {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-about-number {
+    font-size: 18px;
+    line-height: 1.15;
+  }
 }
 
 .stat-about-label {
@@ -542,6 +558,10 @@
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-premium-hover);
+}
+
+[data-theme="dark"] .cta-gradient-box {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-accent) 150%) !important;
 }
 
 .cta-gradient-box::after {
